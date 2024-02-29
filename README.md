@@ -4,15 +4,15 @@
 
 ## Alunos integrantes da equipe
 
-* [Nome completo do aluno 1]
-* [Nome completo do aluno 2]
-* [Nome completo do aluno 3]
-* [Nome completo do aluno 4]
+* [Pedro Henrique Moreira Caixeta Ferreira]
+* [Gabriel Galindo]
+* [João Gabriel Perez Monteiro]
+* [Marcus Viniccius]
 
 ## Professores responsáveis
 
-* [Nome completo do professor 1]
-* [Nome completo do professor 2]
+* [Lucila Ishitani]
+* [Soraia Lúcia da Silva]
 
 ## Instruções de utilização
 
