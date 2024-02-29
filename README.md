@@ -5,7 +5,7 @@
 ## Alunos integrantes da equipe
 
 * Pedro Henrique Moreira Caixeta Ferreira
-* Gabriel Galindo]
+* Gabriel Galindo
 * João Gabriel Perez Monteiro
 * Marcus Viniccius
 
