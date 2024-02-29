@@ -1,18 +1,18 @@
-# [Recanto do Guerreiro]
+# Recanto do Guerreiro
 
 [Escreva um ou dois  parágrafo resumindo o objetivo do seu projeto.]
 
 ## Alunos integrantes da equipe
 
-* [Pedro Henrique Moreira Caixeta Ferreira]
-* [Gabriel Galindo]
-* [João Gabriel Perez Monteiro]
-* [Marcus Viniccius]
+* Pedro Henrique Moreira Caixeta Ferreira
+* Gabriel Galindo]
+* João Gabriel Perez Monteiro
+* Marcus Viniccius
 
 ## Professores responsáveis
 
-* [Lucila Ishitani]
-* [Soraia Lúcia da Silva]
+* Lucila Ishitani
+* Soraia Lúcia da Silva
 
 ## Instruções de utilização
 
