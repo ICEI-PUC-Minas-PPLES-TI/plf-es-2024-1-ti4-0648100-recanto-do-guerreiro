@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+    <link rel="stylesheet" href="/Codigo/client/css/gerenciarManutencoes.css" />
+    <title>Sistema SanzCar - Manutenções/Oficinas</title>
+</head>
+
+<body>
+    <nav>
+        <div class="navbar">
+            <div class="logo">SanzCar</div>
+            <ul class="menu">
+                <li><a href="index.html">Pagina Principal</a></li>
+                <li><a href="CrudVeiculo.html">Veiculos</a></li>
+                <li><a href="CrudCadastroOficinas.html">Oficinas</a></li>
+                <li><a href="CrudGerenciarManutencoes.html">Manutenções</a></li>
+                <li><a href="relatorioVeiculo.html">Relatório</a></li>
+            </ul>
+            <div class="login-button">
+                <a href="login.html">Login</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>CRUD de Manutenções de Veículos</h1>
+
+        <!-- Formulário para adicionar uma nova manutenção -->
+        <h2>Adicionar Nova Manutenção</h2>
+        <form id="addMaintenanceForm" onsubmit="addManutencao(event)">
+            <label for="vehicle">Veículo:</label>
+            <select id="vehicle" name="vehicle">
+            </select>
+
+            <label for="problem">Problema:</label>
+            <input type="text" id="problem" name="problem" />
+
+            <label for="workshop">Oficina:</label>
+            <select id="workshop" name="workshop">
+            </select>
+
+            <label for="budget">Orçamento:</label>
+            <input type="text" id="budget" name="budget" />
+
+            <label for="startDate">Data de Início:</label>
+            <input type="date" id="startDate" name="startDate" />
+
+            <label for="endDate">Data de Saída/Término:</label>
+            <input type="date" id="endDate" name="endDate" />
+
+            <button type="submit" style="display: block;">Cadastrar Manutenção</button>
+            <button type="reset" style="display: block;">Limpar</button>
+        </form>
+
+        <!-- Tabela para exibir as manutenções cadastradas -->
+        <h2>Lista de Manutenções</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Veículo</th>
+                    <th>Problema</th>
+                    <th>Oficina</th>
+                    <th>Orçamento</th>
+                    <th>Data de Início</th>
+                    <th>Data de Saída/Término</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="maintenanceList">
+                <!-- Aqui você pode listar as manutenções cadastradas posteriormente usando JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-address">
+                <h3>Endereço:</h3>
+                <p>Rua da Empresa, 123</p>
+                <p>Cidade, Estado, CEP 12345-678</p>
+            </div>
+            <div class="footer-contact">
+                <h3>Contato:</h3>
+                <p>Email: contato@sanzcar.com</p>
+                <p>Telefone: (123) 456-7890</p>
+            </div>
+        </div>
+    </footer>
+    <script src="/Codigo/client/js/verifyLogin.js"></script>
+    <script src="/Codigo/client/js/gerenciarManutencoes.js">
+        // JavaScript para adicionar/manipular manutenções
+    </script>
+    <script src="/Codigo/client/js/masks.js">
+        // JavaScript para aplicar máscaras
+    </script>
+</body>
+
+</html>

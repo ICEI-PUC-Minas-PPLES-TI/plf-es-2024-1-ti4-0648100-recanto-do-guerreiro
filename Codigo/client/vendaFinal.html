@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="/Codigo/client/css/vendaFinal.css">
+    <title>Sistema SanzCar - Atualizar veículo</title>
+
+</head>
+
+<body>
+    <nav>
+        <div class="navbar">
+            <div class="logo">SanzCar</div>
+            <ul class="menu">
+                <li><a href="index.html">Pagina Principal</a></li>
+                <li><a href="CrudVeiculo.html">Veiculos</a></li>
+                <li><a href="CrudCadastroOficinas.html">Oficinas</a></li>
+                <li><a href="CrudGerenciarManutencoes.html">Manutenções</a></li>
+                <li><a href="relatorioVeiculo.html">Relatório</a></li>
+
+            </ul>
+            <div class="login-button">
+                <a href="login.html">Login</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Sistema SanzCars - Registrar Venda Veículo</h1>
+        <!-- <form id="add-workshop-form" onsubmit="Oficina(event)"> -->
+        <h3>Informações do Veiculo</h3>
+        <form class="form-carro" id="add-workshop-form">
+            <label for="marca">Marca:</label>
+            <input type="text" id="marca" name="marca" disabled>
+            <label for="modelo">Modelo:</label>
+            <input type="text" id="modelo" name="modelo" disabled>
+            <label for="ano">Ano:</label>
+            <input type="text" id="ano" name="ano" disabled>
+            <label for="placa">Placa:</label>
+            <input type="text" id="placa" name="placa" disabled>
+        </form>
+        <h3>Informações da Venda</h3>
+        <form class="form-venda" onsubmit="validarTelefone(event)">
+            <label for="preco">Preco:</label>
+            <input type="text" id="preco" name="preco">
+            <label for="nomeComprador">Nome Comprador:</label>
+            <input type="text" id="nomeComprador" name="nomeComprador">
+            <label for="telefoneComprador">Telefone Comprador:</label>
+            <input type="number" id="telefoneComprador" name="telefoneComprador">
+            <label for="emailComprador">Email Comprador:</label>
+            <input type="email" id="emailComprador" name="emailComprador">
+            <label for="dataVenda">Data da Venda:</label>
+            <input type="date" id="dataVenda" name="dataVenda" />
+
+            <button type="submit" id="btn_submit">Registar Venda</button>
+        </form>
+    </div>
+        
+    <footer>
+        <div class="footer-content">
+            <div class="footer-address">
+                <h3>Endereço:</h3>
+                <p>Rua da Empresa, 123</p>
+                <p>Cidade, Estado, CEP 12345-678</p>
+            </div>
+            <div class="footer-contact">
+                <h3>Contato:</h3>
+                <p>Email: contato@sanzcar.com</p>
+                <p>Telefone: (123) 456-7890</p>
+            </div>
+        </div>
+    </footer>
+    <script src="/Codigo/client/js/verifyLogin.js"></script>
+    <script src="/Codigo/client/js/vendaFinal.js"></script>
+    <script src="/Codigo/client/js/masks.js"></script>
+</body>
+
+</html>

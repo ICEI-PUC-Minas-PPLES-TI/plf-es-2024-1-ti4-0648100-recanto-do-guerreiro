@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="/Codigo/client/css/cadastroOficinas.css">
+    <title>Sistema SanzCar - Oficinas</title>
+
+</head>
+
+<body>
+    <nav>
+        <div class="navbar">
+            <div class="logo">SanzCar</div>
+            <ul class="menu">
+                <li><a href="index.html">Pagina Principal</a></li>
+                <li><a href="CrudVeiculo.html">Veiculos</a></li>
+                <li><a href="CrudCadastroOficinas.html">Oficinas</a></li>
+                <li><a href="CrudGerenciarManutencoes.html">Manutenções</a></li>
+                <li><a href="relatorioVeiculo.html">Relatório</a></li>
+
+            </ul>
+            <div class="login-button">
+                <a href="login.html">Login</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Sistema SanzCars - Manutenções</h1>
+        <h2>Atualizar Manutenção</h2>
+        <!-- <form id="add-workshop-form" onsubmit="Oficina(event)"> -->
+        <form id="putManutencoes" onsubmit="putManutencao(event)">
+            <label for="idmanutencao">ID:</label>
+            <input type="text" id="idmanutencao" name="idmanutencao" required disabled>
+
+            <label for="veiculo">Veículo:</label>
+            <div id="veiculo"></div>
+
+            <label for="problema">Problema:</label>
+            <input type="text" id="problema" name="problema" required />
+
+            <label for="oficina">Oficina:</label>
+            <select id="oficina" name="oficina" >
+
+            </select>
+
+            <label for="orcamento">Orçamento:</label>
+            <input type="text" id="orcamento" name="orcamento" required />
+
+            <label for="dataInicio">Data de Início:</label>
+            <input type="date" id="dataInicio" name="dataInicio" required />
+
+            <label for="dataSaida">Data de Saída/Término:</label>
+            <input type="date" id="dataSaida" name="dataSaida" required />
+
+            <button type="submit" style="display: block;">Atualizar Manutenção</button>
+            <button type="reset" style="display: block;">Limpar</button>
+        </form>
+    </div>
+    <footer>
+        <div class="footer-content">
+
+            <div class="footer-address">
+                <h3>Endereço:</h3>
+                <p>Rua da Empresa, 123</p>
+                <p>Cidade, Estado, CEP 12345-678</p>
+            </div>
+            <div class="footer-contact">
+                <h3>Contato:</h3>
+                <p>Email: contato@sanzcar.com</p>
+                <p>Telefone: (123) 456-7890</p>
+            </div>
+        </div>
+    </footer>
+    <script src="/Codigo/client/js/verifyLogin.js"></script>
+    <script src="/Codigo/client/js/attManutencao.js"></script>
+    <script src="/Codigo/client/js/masks.js"></script>
+</body>
+
+</html>

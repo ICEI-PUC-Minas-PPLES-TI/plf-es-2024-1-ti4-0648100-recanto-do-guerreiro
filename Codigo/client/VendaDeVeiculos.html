@@ -1,0 +1,43 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerenciamento de Venda de Veículos</title>
+    <link rel="stylesheet" href="/Codigo/client/css/VendaVeiculo.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Gerenciamento de Venda de Veículos</h1>
+    </header>
+    <div class="container">
+      <h2>Veículo à Venda</h2>
+      <form id="negociacaoForm" onsubmit="return deletAtt(event)">
+        <div id="idNegociacao"></div>
+      <div class="vehicle-info">
+        <label for="carro">Selecione o Carro:</label>
+        <select id="carro">
+      
+        </select>
+      
+        <label for="preco">Preço de Venda:</label>
+        <input type="number" id="preco" placeholder="Digite o preço de venda" />
+        
+
+        <label class="ok" for="troca">Aceitar Trocas:</label>
+        <input type="checkbox" id="troca" />
+
+        <label for="promocao">Promoção na Venda (em %):</label>
+        <input
+          type="number"
+          id="promocaoPercent"
+          placeholder="Digite a porcentagem de desconto"
+        />
+        <button type="submit" id="atualizarNegocio">Atualizar Negociação</button>
+        <button type="submit" id="deletarNegocio">Deletar Negociação</button>
+      </form>
+      </div>
+    </div>
+    <script src="/Codigo/client/js/verifyLogin.js"></script>
+    <script src="/Codigo/client/js/VendaVeiculo.js"></script>
+  </body>
+</html>

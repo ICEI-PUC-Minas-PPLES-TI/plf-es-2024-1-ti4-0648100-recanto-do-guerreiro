@@ -1,0 +1,195 @@
+/* Estilo para o container do formulário */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1,
+h2 {
+  text-align: center;
+  color: #007bff;
+}
+
+/* Estilo para as labels e inputs do formulário */
+label,
+input,
+textarea {
+  display: block;
+  margin-bottom: 10px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Estilo para o botão de envio do formulário */
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilo para a barra de navegação (nav) */
+nav {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 0;
+}
+
+/* Estilo para o rodapé (footer) */
+footer {
+  background-color: #007bff;
+  color: #fff;
+  padding: 20px 0;
+}
+
+/* Estilo para a barra de navegação (responsivo) */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .menu {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .menu li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .login-button {
+    text-align: center;
+    margin-top: 20px;
+  }
+}
+nav {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 0;
+}
+
+.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  flex: 1;
+}
+
+.menu li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  transition: text-decoration 0.3s;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+.login-button {
+  text-align: right;
+}
+
+.login-button a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+}
+footer {
+  background-color: #007bff;
+  color: #fff;
+  padding: 20px 0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.footer-logo img {
+  max-width: 100px;
+  height: auto;
+}
+
+.footer-logo p {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.footer-address,
+.footer-contact {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.footer-address h3,
+.footer-contact h3,
+.footer-social h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.footer-social a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  margin-top: 5px;
+}
+
+.footer-social a:hover {
+  text-decoration: underline;
+}
