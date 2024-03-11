@@ -2,16 +2,10 @@
 //inicializa os modelos e conecta ao bd
 const config = require('../config/bd');
 const { Sequelize } = require('sequelize');
-const Carro = require('../models/Carro');
-const Oficina = require('../models/Oficina');
-const Manutencao = require('../models/manutencao');
-const Checklist = require('../models/Checklist')
-const Negociacao = require('../models/negociacao');
-const VendaFinal = require('../models/VendaFinal');
-const Compra = require('../models/Compra');
+const Reserva = require('../models/Reserva');
 const User = require('../models/User');
 
-const models = [Carro, Oficina, Manutencao, Negociacao, Checklist, VendaFinal, Compra, User]
+const models = [Reserva, User]
 
 class Database {
     constructor() {

@@ -1,9 +1,9 @@
 const { where } = require('sequelize');
-const carro = require('../models/Carro');
+const reserva = require('../models/Reserva');
 const fs = require('fs').promises;
 const path = require('path');
 
-class carroController {
+class reservaController {
     async create(req, res) {
         try {
             const novoCarro = await carro.create({
@@ -106,14 +106,14 @@ class carroController {
         try {
             let id = req.params.id;
             const carroToDelete = await carro.findByPk(id);
-            if(carroToDelete.imagem != null){
+            if (carroToDelete.imagem != null) {
                 try {
                     const imagePath = path.join(__dirname, '..', carroToDelete.imagem);
                     await fs.unlink(imagePath);
                 } catch (error) {
-                    
+
                 }
-                
+
             }
             await carroToDelete.destroy();
             return res.status(200).json('Sucesso ao deletar o veiculos')
@@ -125,4 +125,4 @@ class carroController {
 
 }
 
-module.exports = new carroController()
+module.exports = new reservaController()
