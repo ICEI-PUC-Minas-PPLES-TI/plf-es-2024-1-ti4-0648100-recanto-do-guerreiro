@@ -6,78 +6,64 @@ const path = require('path');
 class reservaController {
     async create(req, res) {
         try {
-            const novoCarro = await carro.create({
-                imagem: req.file.path,
-                marca: req.body.marca,
-                modelo: req.body.modelo,
-                ano: req.body.ano,
-                preco: req.body.preco,
-                placa: req.body.placa,
-                chassi: req.body.chassi,
-                cor: req.body.cor,
-                motor: req.body.motor,
+            const novaReserva = await carro.create({
+                titulo: req.body.titulo,
+                descricao: req.body.descricao,
+                data: req.body.data,
+                hora: req.body.hora,
+                idCliente: req.body.idCliente,
+                adicionais: req.body.adicionais,
                 status: req.body.status
             })
-            return res.status(200).json(novoCarro)
+            return res.status(200).json(novaReserva)
         } catch (erro) {
-            return res.status(500).json('Veiculo não cadastrado ' + erro)
+            return res.status(500).json('Reserva não cadastrada' + erro)
         }
     }
 
     async filter(req, res) {
         try {
-            const { ano, status } = req.query
-            const carroFil = await carro.findAll({
+            const { data, status } = req.query
+            const reservaFil = await reserva.findAll({
                 where: {
-                    ano: ano,
+                    data: data,
                     status: status,
                 }
             })
-            console.log(carroFil)
-            return res.status(200).json(carroFil)
+            console.log(reservaFil)
+            return res.status(200).json(reservaFil)
         } catch (erro) {
-            return res.status(500).json('Erro ao encontrar o veiculo' + erro)
+            return res.status(500).json('Erro ao encontrar a reserva' + erro)
         }
     }
 
-    async filterIdCarro(req, res) {
+    async filterIdReserva(req, res) {
         try {
-            const carrosFil = await carro.findOne({
+            const reservasFil = await reserva.findOne({
                 where: { id: req.params.id }
             })
-            console.log(carrosFil)
-            return res.status(200).json(carrosFil)
+            console.log(reservasFil)
+            return res.status(200).json(reservasFil)
         } catch (erro) {
-            return res.status(500).json('Erro ao pegar os veiculos' + erro)
+            return res.status(500).json('Erro ao pegar as reservas' + erro)
         }
     }
 
     async index(req, res) {
         try {
-            const carrosImport = await carro.findAll()
-            return res.status(200).json(carrosImport)
+            const reservasImport = await reserva.findAll()
+            return res.status(200).json(reservasImport)
         } catch (erro) {
-            return res.status(500).json('Erro ao encontrar os veiculos' + erro)
-        }
-    }
-
-    async getNomeImg(req, res) {
-        try {
-            const carrosImport = await carro.findAll({
-                attributes: ['id', 'modelo', 'marca', 'placa', ] // Lista dos atributos que você quer selecionar
-            })
-            return res.status(200).json(carrosImport)
-        } catch (erro) {
-            return res.status(500).json('Erro ao encontrar os veiculos' + erro)
+            return res.status(500).json('Erro ao encontrar as reservas' + erro)
         }
     }
 
     async updateStatus(req, res) {
         try {
-            await carro.update({
+            await reserva.update({
                 status: req.body.status,
             }, { where: { id: req.params.id } })
-            return res.status(200).json('Sucesso ao atualizar o veiculo')
+            return res.status(200).json('Sucesso ao atualizar a reserva')
         } catch (erro) {
             return res.status(500).json('Erro ao atualizar' + erro)
         }
@@ -85,18 +71,16 @@ class reservaController {
 
     async update(req, res) {
         try {
-            await carro.update({
-                marca: req.body.marca,
-                modelo: req.body.modelo,
-                ano: req.body.ano,
-                preco: req.body.preco,
-                placa: req.body.placa,
-                chassi: req.body.chassi,
-                cor: req.body.cor,
-                motor: req.body.motor,
+            await reserva.update({
+                titulo: req.body.titulo,
+                descricao: req.body.descricao,
+                data: req.body.data,
+                hora: req.body.hora,
+                idCliente: req.body.idCliente,
+                adicionais: req.body.adicionais,
                 status: req.body.status,
             }, { where: { id: req.params.id } })
-            return res.status(200).json('Sucesso ao atualizar o veiculo')
+            return res.status(200).json('Sucesso ao atualizar a reserva')
         } catch (erro) {
             return res.status(500).json('Erro ao atualizar' + erro)
         }
@@ -104,24 +88,14 @@ class reservaController {
 
     async delete(req, res) {
         try {
-            let id = req.params.id;
-            const carroToDelete = await carro.findByPk(id);
-            if (carroToDelete.imagem != null) {
-                try {
-                    const imagePath = path.join(__dirname, '..', carroToDelete.imagem);
-                    await fs.unlink(imagePath);
-                } catch (error) {
-
-                }
-
-            }
-            await carroToDelete.destroy();
-            return res.status(200).json('Sucesso ao deletar o veiculos')
+            await reserva.destroy({
+                where: { id: req.params.id }
+            })
+            return res.status(200).json('Sucesso ao deletar')
         } catch (erro) {
             return res.status(500).json('Erro ao deletar' + erro)
         }
     }
-
 
 }
 

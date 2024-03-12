@@ -11,41 +11,53 @@ class Compra extends Model {
                     autoIncrement: true,
                 },
 
-                nome: {
+                titulo: {
                     type: Sequelize.STRING,
                     allowNull: true,
                 },
 
-                email: {
+                descricao: {
                     type: Sequelize.STRING,
                     allowNull: true,
                 },
 
-                telefone: {
+                data: {
+                    type: Sequelize.DATE,
+                    allowNull: true,
+                },
+
+                hora: {
                     type: Sequelize.STRING,
                     allowNull: true,
                 },
 
-                marcaCarro: {
+                idCliente: {
+                    type: Sequelize.INTEGER,
+                    allowNull: true,
+                    references: {
+                        model: 'cliente',
+                        key: 'id',
+                    },
+                    onUpdate: 'CASCADE',
+                    onDelete: 'SET NULL',
+                },
+
+                adicionais: {
                     type: Sequelize.STRING,
                     allowNull: true,
                 },
 
-                modeloCarro: {
+                status: {
                     type: Sequelize.STRING,
                     allowNull: true,
                 },
 
-                mensagem: {
-                    type: Sequelize.STRING,
-                    allowNull: true,
-                },
 
             },
 
             {
                 sequelize,
-                modelName: "Compra", //NOME TEM QUE SER MAIUSCULO
+                modelName: "Reserva", //NOME TEM QUE SER MAIUSCULO
                 freezeTableName: true,
             }
         );
