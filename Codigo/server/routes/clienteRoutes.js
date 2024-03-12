@@ -8,3 +8,5 @@ router.get("/oficina", verificacao, cliente.index);
 router.get("/clienteilterId/:id", verificacao, cliente.filterId)
 router.put("/clientePut/:id", verificacao, cliente.update);
 router.delete("/cliente/:id", verificacao, cliente.delete);
+
+module.exports = router
