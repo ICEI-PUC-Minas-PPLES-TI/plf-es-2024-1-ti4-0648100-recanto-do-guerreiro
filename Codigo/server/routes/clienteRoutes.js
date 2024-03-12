@@ -1,5 +1,5 @@
-const express = require("express");
-const router = express.Router();
+const { Router } = require('express')
+const router = new Router();
 const cliente = require("../controllers/clienteController");
 const verificacao = require('../requireAuth');
 
