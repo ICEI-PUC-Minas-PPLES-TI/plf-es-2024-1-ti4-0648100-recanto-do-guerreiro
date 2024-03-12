@@ -1,6 +1,6 @@
 const { Sequelize, Model } = require("sequelize");
 
-class Reserva extends Model {
+class Cliente extends Model {
     static init(sequelize) {
         //VERIFICAR ALOCACAO DE ESPACO BD PARA DEFINIR LIMITES DE CARACTERES (TA SEM)
         super.init({
@@ -11,57 +11,44 @@ class Reserva extends Model {
                     autoIncrement: true,
                 },
 
-                titulo: {
+                nome: {
                     type: Sequelize.STRING,
                     allowNull: true,
                 },
 
-                descricao: {
+                telefone: {
                     type: Sequelize.STRING,
                     allowNull: true,
                 },
 
-                data: {
-                    type: Sequelize.DATE,
-                    allowNull: true,
-                },
-
-                hora: {
+                email: {
                     type: Sequelize.STRING,
                     allowNull: true,
                 },
 
-                idCliente: {
-                    type: Sequelize.INTEGER,
-                    allowNull: true,
-                    references: {
-                        model: 'cliente',
-                        key: 'id',
-                    },
-                    onUpdate: 'CASCADE',
-                    onDelete: 'SET NULL',
-                },
-
-                adicionais: {
+                logradouro: {
                     type: Sequelize.STRING,
                     allowNull: true,
                 },
 
-                status: {
+                complemento: {
                     type: Sequelize.STRING,
                     allowNull: true,
                 },
 
-
+                bairro: {
+                    type: Sequelize.STRING,
+                    allowNull: true,
+                },
             },
 
             {
                 sequelize,
-                modelName: "Reserva", //NOME TEM QUE SER MAIUSCULO
+                modelName: "Cliente", //NOME TEM QUE SER MAIUSCULO
                 freezeTableName: true,
             }
         );
     }
 }
 
-module.exports = Reserva;
+module.exports = Cliente;

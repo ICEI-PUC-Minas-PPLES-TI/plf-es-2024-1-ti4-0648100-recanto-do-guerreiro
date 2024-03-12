@@ -6,7 +6,7 @@ const path = require('path');
 class reservaController {
     async create(req, res) {
         try {
-            const novaReserva = await carro.create({
+            const novaReserva = await reserva.create({
                 titulo: req.body.titulo,
                 descricao: req.body.descricao,
                 data: req.body.data,
