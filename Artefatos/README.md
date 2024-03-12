@@ -12,7 +12,7 @@ Este diretório mantém os artefatos do projeto.
 
 [Termo de Confidencialidade](Termo_de_Confidencialidade.pdf) - Termo de Confidencialidade
 
-[Diagrama caso de uso](DiagramaCasoUso_Recanto_do_Guerreiro.asta) - Diagrama caso de uso
+[Diagrama caso de uso](Diagrama_CasoUso_Recanto_do_Guerreiro.png) - Diagrama caso de uso
 
 
 Liste os artefatos produzidos, com suas localizações e descrição do conteúdo.
