@@ -25,8 +25,8 @@ module.exports = {
     dialect: 'mysql',
     host: 'localhost',
     username: 'root',
-    password: '',
-    database: 'airinfonew',
+    password: 'Phmcf#2003',
+    database: 'recantodoguerreiro',
     define: {
         timestamp: true,
     },
