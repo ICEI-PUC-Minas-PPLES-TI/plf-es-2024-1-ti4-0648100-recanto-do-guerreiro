@@ -1,16 +1,33 @@
-module.exports = {
+//BANCO DE DADOS EXTERNO
+
+/*module.exports = {
     dialect: 'mysql',
-    host: 'aws.connect.psdb.cloud',
-    username: 'r5urf9gcyysjsonrj0hd',
-    password: 'pscale_pw_d2FPyEx2w5M3InPXCGLbk3JDtftNBHNl1iRveF2dnxi',
+    host: 'mysqlserver.chnjkibcujou.sa-east-1.rds.amazonaws.com',
+    username: 'admin',
+    password: 'phmcf2003',
     database: 'recantodoguerreiro',
+    port: 3306,
     define: {
         timestamp: true,
     },
     dialectOptions: {
         ssl: {
+            ssl:'Amazon RDS'
             require: true,
             rejectUnauthorized: false
         }
+    },
+};*/
+
+//BANCO DE DADOS LOCAL
+
+module.exports = {
+    dialect: 'mysql',
+    host: 'localhost',
+    username: 'root',
+    password: '',
+    database: 'airinfonew',
+    define: {
+        timestamp: true,
     },
 };
