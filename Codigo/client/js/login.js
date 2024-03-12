@@ -1,4 +1,3 @@
-
 async function login(e) {
     e.preventDefault()
     try {
@@ -14,16 +13,14 @@ async function login(e) {
         });
         const dados = await response.json();
         console.log(dados)
-        sessionStorage.setItem('token', dados.token)//SALVA O TOKEN NO LOCAL STORAGE
+        sessionStorage.setItem('token', dados.token) //SALVA O TOKEN NO LOCAL STORAGE
 
         if (dados.token) {
-            window.location.href = './CrudVeiculo.html'
-        }
-        else {
+            window.location.href = './gestaoReservas.html'
+        } else {
             alert('Credenciais inválidas')
         }
     } catch (erro) {
         console.log(erro);
     }
 }
-
