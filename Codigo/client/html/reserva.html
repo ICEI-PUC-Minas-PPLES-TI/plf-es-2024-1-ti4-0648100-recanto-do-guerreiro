@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Eventos</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/reserva.css">
+    <!--
+  <script src="/Codigo/client/js/verifyLogin.js"></script>
+  <script src="/Codigo/client/js/gestaoReserva.js"></script>
+  <script src="/Codigo/client/js/masks.js"></script>
+  -->
+
+    <style>
+        /* Estilos personalizados */
+        .container {
+            max-width: 600px;
+            /* Limita a largura do conteúdo */
+            margin-top: 50px;
+            /* Adiciona espaço acima do conteúdo */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Botão de voltar -->
+        <a href="index.html" class="btn btn-secondary mb-3 btn-lg btn-voltar">Voltar</a>
+
+
+        <!-- Formulário de cadastro de eventos -->
+        <form>
+            <div class="mb-3">
+                <label for="titulo_reserva" class="form-label">Título da Reserva:</label>
+                <input type="text" class="form-control" id="titulo_reserva" name="titulo_reserva" required>
+            </div>
+            <div class="mb-3">
+                <label for="descricao_reserva" class="form-label">Descrição da Reserva:</label>
+                <textarea class="form-control" id="descricao_reserva" name="descricao_reserva" rows="3"
+                    required></textarea>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="data_reserva" class="form-label">Data da Reserva:</label>
+                    <input type="date" class="form-control" id="data_reserva" name="data_reserva" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="hora_reserva" class="form-label">Hora da Reserva:</label>
+                    <input type="time" class="form-control" id="hora_reserva" name="hora_reserva" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="id_cliente" class="form-label">ID do Cliente:</label>
+                <input type="number" class="form-control" id="id_cliente" name="id_cliente" required>
+            </div>
+            <div class="mb-3">
+                <label for="adicionais_reserva" class="form-label">Informações Adicionais:</label>
+                <input type="text" class="form-control" id="adicionais_reserva" name="adicionais_reserva" required>
+            </div>
+            <div class="mb-3">
+                <label for="status_reserva" class="form-label">Status da Reserva:</label>
+                <select class="form-select" id="status_reserva" name="status_reserva" required>
+                    <option value="1">Ativo</option>
+                    <option value="0">Inativo</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block btn-lg btn-salvar">Salvar</button>
+
+        </form>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/reserva.js"></script>
+
+</body>
+
+</html>
