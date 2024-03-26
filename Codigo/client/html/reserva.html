@@ -46,9 +46,56 @@
             </div>
             <div class="row">
                 <div class="col-md-6 mb-3">
-                    <label for="data_reserva" class="form-label">Data da Reserva:</label>
-                    <input type="date" class="form-control" id="data_reserva" name="data_reserva" required>
+                    <label class="form-label">Data da Reserva:</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="data_reserva" name="data_reserva" readonly>
+                        <button class="btn btn-primary" type="button" id="choose_date_btn">Escolher Data</button>
+                    </div>
                 </div>
+                <!-- Modal para a exibição de datas disponíveis -->
+                <div class="modal fade" id="availableDatesModal" tabindex="-1" aria-labelledby="availableDatesModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="availableDatesModalLabel">Escolha uma Data Disponível</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <ul id="availableDatesList" class="list-group">
+                                    <!-- As datas disponíveis serão geradas dinamicamente aqui -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Função para gerar e exibir datas disponíveis -->
+                <script>
+                    function showAvailableDates() {
+                        // Here you should implement the logic to fetch available dates dynamically
+                        // For demonstration purposes, let's assume availableDates is an array of available dates
+                        var availableDates = ["2024-03-27", "2024-03-28", "2024-03-29"];
+                
+                        // Limpar lista anterior
+                        var availableDatesList = document.getElementById("availableDatesList");
+                        availableDatesList.innerHTML = "";
+                
+                        // Preencha a lista com datas disponíveis
+                        availableDates.forEach(function(date) {
+                            var listItem = document.createElement("li");
+                            listItem.className = "list-group-item";
+                            listItem.textContent = date;
+                            availableDatesList.appendChild(listItem);
+                        });
+                
+                        // Mostrar o modal
+                        var modal = new bootstrap.Modal(document.getElementById('availableDatesModal'));
+                        modal.show();
+                    }
+                
+                    // Event listener for the choose date button
+                    document.getElementById("choose_date_btn").addEventListener("click", showAvailableDates);
+                </script>
+                
                 <div class="col-md-6 mb-3">
                     <label for="hora_reserva" class="form-label">Hora da Reserva:</label>
                     <input type="time" class="form-control" id="hora_reserva" name="hora_reserva" required>
