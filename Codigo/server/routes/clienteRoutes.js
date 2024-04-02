@@ -1,7 +1,7 @@
 const { Router } = require('express')
 const router = new Router();
 const cliente = require("../controllers/clienteController");
-//const verificacao = require('../requireAuth');
+const verificacao = require('../requireAuth');
 
 router.post("/cliente", verificacao, cliente.create);
 router.get("/oficina", verificacao, cliente.index);

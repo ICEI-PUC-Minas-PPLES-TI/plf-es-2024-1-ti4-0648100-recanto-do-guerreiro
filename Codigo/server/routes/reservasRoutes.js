@@ -1,7 +1,7 @@
 const { Router } = require('express')
 const router = new Router();
 const reserva = require('../controllers/reservaController')
-    //const verificacao = require('../requireAuth')
+const verificacao = require('../requireAuth')
 
 router.post('/reserva', verificacao, reserva.create)
 router.get('/reserva', reserva.index)
