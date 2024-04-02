@@ -22,7 +22,7 @@
 //BANCO DE DADOS LOCAL
 
 module.exports = {
-    dialect: 'mysql',
+    dialect: 'mysql', // Dialetos suportados: mssql, mariadb, mysql, oracle, postgres, db2 e sqlite
     host: 'localhost',
     username: 'root',
     password: 'Phmcf#2003',
