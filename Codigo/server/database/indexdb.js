@@ -1,7 +1,7 @@
 //importar modelos aqui
 //inicializa os modelos e conecta ao bd
-const config = require('../config/bd');
 const { Sequelize } = require('sequelize');
+const config = require('../config/bd');
 const Reserva = require('../models/Reserva');
 const Cliente = require('../models/Cliente');
 const User = require('../models/User');
