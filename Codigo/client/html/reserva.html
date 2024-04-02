@@ -17,6 +17,7 @@
 
     <style>
         /* Estilos personalizados */
+        
         .container {
             max-width: 600px;
             /* Limita a largura do conteúdo */
@@ -41,12 +42,11 @@
             </div>
             <div class="mb-3">
                 <label for="descricao_reserva" class="form-label">Descrição da Reserva:</label>
-                <textarea class="form-control" id="descricao_reserva" name="descricao_reserva" rows="3"
-                    required></textarea>
+                <textarea class="form-control" id="descricao_reserva" name="descricao_reserva" rows="3" required></textarea>
             </div>
             <div class="row">
                 <div class="col-md-6 mb-3">
-                    <label class="form-label">Data da Reserva:</label>
+                    <label for="data_reserva" class="form-label">Data da Reserva:</label>
                     <div class="input-group">
                         <input type="text" class="form-control" id="data_reserva" name="data_reserva" readonly>
                         <button class="btn btn-primary" type="button" id="choose_date_btn">Escolher Data</button>
@@ -71,7 +71,7 @@
                         <option value="12">Dezembro</option>
                     </select>
                 </div>
-                
+
                 <!-- Modal para exibição de datas disponíveis -->
                 <div class="modal fade" id="availableDatesModal" tabindex="-1" aria-labelledby="availableDatesModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
@@ -88,23 +88,34 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <script>
                     // Exemplos de datas disponíveis (concertar depois)
-                    var availableDates = [
-                        { date: "2024-03-27", month: 3 },
-                        { date: "2024-03-28", month: 3 },
-                        { date: "2024-04-01", month: 4 },
-                        { date: "2024-04-02", month: 4 },
-                        { date: "2024-05-01", month: 5 },
-                        { date: "2024-05-02", month: 5 }
-                    ];
-                
+                    var availableDates = [{
+                        date: "2024-03-27",
+                        month: 3
+                    }, {
+                        date: "2024-03-28",
+                        month: 3
+                    }, {
+                        date: "2024-04-01",
+                        month: 4
+                    }, {
+                        date: "2024-04-02",
+                        month: 4
+                    }, {
+                        date: "2024-05-01",
+                        month: 5
+                    }, {
+                        date: "2024-05-02",
+                        month: 5
+                    }];
+
                     // Função para preencher a lista de datas disponíveis com base no mês selecionado;
                     function populateAvailableDates(month) {
                         var availableDatesList = document.getElementById("availableDatesList");
                         availableDatesList.innerHTML = "";
-                
+
                         availableDates.forEach(function(item) {
                             if (item.month == month) {
                                 var listItem = document.createElement("li");
@@ -113,11 +124,11 @@
                                 availableDatesList.appendChild(listItem);
                             }
                         });
-                
+
                         var modal = new bootstrap.Modal(document.getElementById('availableDatesModal'));
                         modal.show();
                     }
-                
+
                     // Ouvinte de evento para o botão escolher data;
                     document.getElementById("choose_date_btn").addEventListener("click", function() {
                         var selectedMonth = document.getElementById("select_month").value;
@@ -128,7 +139,7 @@
                         }
                     });
                 </script>
-                  
+
                 <div class="col-md-6 mb-3">
                     <label for="hora_reserva" class="form-label">Hora da Reserva:</label>
                     <input type="time" class="form-control" id="hora_reserva" name="hora_reserva" required>
