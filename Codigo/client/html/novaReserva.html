@@ -124,17 +124,21 @@
                         });
 
                         if (datesAvailableForMonth.length === 0) {
-                            // Se não houver datas disponíveis para o mês selecionado, exibir mensagem
                             var listItem = document.createElement("li");
                             listItem.className = "list-group-item";
                             listItem.textContent = "Não há datas disponíveis para este mês.";
                             availableDatesList.appendChild(listItem);
                         } else {
-                            // Se houver datas disponíveis, preencher a lista normalmente
                             datesAvailableForMonth.forEach(function (item) {
                                 var listItem = document.createElement("li");
                                 listItem.className = "list-group-item";
                                 listItem.textContent = item.date;
+
+                                // ouvinte de evento para selecionar a data clicada
+                                listItem.addEventListener("click", function () {
+                                    document.getElementById("data_reserva").value = item.date;
+                                });
+
                                 availableDatesList.appendChild(listItem);
                             });
                         }
