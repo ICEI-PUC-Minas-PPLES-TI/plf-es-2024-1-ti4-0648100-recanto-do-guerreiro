@@ -17,7 +17,7 @@
 
     <style>
         /* Estilos personalizados */
-        
+
         .container {
             max-width: 600px;
             /* Limita a largura do conteúdo */
@@ -42,7 +42,8 @@
             </div>
             <div class="mb-3">
                 <label for="descricao_reserva" class="form-label">Descrição da Reserva:</label>
-                <textarea class="form-control" id="descricao_reserva" name="descricao_reserva" rows="3" required></textarea>
+                <textarea class="form-control" id="descricao_reserva" name="descricao_reserva" rows="3"
+                    required></textarea>
             </div>
             <div class="row">
                 <div class="col-md-6 mb-3">
@@ -73,12 +74,14 @@
                 </div>
 
                 <!-- Modal para exibição de datas disponíveis -->
-                <div class="modal fade" id="availableDatesModal" tabindex="-1" aria-labelledby="availableDatesModalLabel" aria-hidden="true">
+                <div class="modal fade" id="availableDatesModal" tabindex="-1"
+                    aria-labelledby="availableDatesModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="availableDatesModalLabel">Escolha uma Data Disponível</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
                                 <ul id="availableDatesList" class="list-group">
@@ -116,21 +119,32 @@
                         var availableDatesList = document.getElementById("availableDatesList");
                         availableDatesList.innerHTML = "";
 
-                        availableDates.forEach(function(item) {
-                            if (item.month == month) {
+                        var datesAvailableForMonth = availableDates.filter(function (item) {
+                            return item.month == month;
+                        });
+
+                        if (datesAvailableForMonth.length === 0) {
+                            // Se não houver datas disponíveis para o mês selecionado, exibir mensagem
+                            var listItem = document.createElement("li");
+                            listItem.className = "list-group-item";
+                            listItem.textContent = "Não há datas disponíveis para este mês.";
+                            availableDatesList.appendChild(listItem);
+                        } else {
+                            // Se houver datas disponíveis, preencher a lista normalmente
+                            datesAvailableForMonth.forEach(function (item) {
                                 var listItem = document.createElement("li");
                                 listItem.className = "list-group-item";
                                 listItem.textContent = item.date;
                                 availableDatesList.appendChild(listItem);
-                            }
-                        });
+                            });
+                        }
 
                         var modal = new bootstrap.Modal(document.getElementById('availableDatesModal'));
                         modal.show();
                     }
 
                     // Ouvinte de evento para o botão escolher data;
-                    document.getElementById("choose_date_btn").addEventListener("click", function() {
+                    document.getElementById("choose_date_btn").addEventListener("click", function () {
                         var selectedMonth = document.getElementById("select_month").value;
                         if (selectedMonth != "0") {
                             populateAvailableDates(parseInt(selectedMonth));
@@ -138,6 +152,7 @@
                             alert("Por favor, selecione um mês.");
                         }
                     });
+
                 </script>
 
                 <div class="col-md-6 mb-3">
