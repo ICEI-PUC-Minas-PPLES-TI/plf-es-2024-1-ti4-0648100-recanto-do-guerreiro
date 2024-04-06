@@ -8,11 +8,13 @@ $(document).ready(function() {
         // Solicitação AJAX para enviar dados do formulário ao servidor;
         $.ajax({
             type: 'POST',
-            url: '',
+            url: '/reserva',
             data: formData,
             success: function(response) {
                 // Resposta de sucesso;
                 console.log('Data saved successfully:', response);
+                // Redirecionar o usuário para outra página após o sucesso
+                window.location.href = 'index.html';
             },
             error: function(xhr, status, error) {
                 // Erro;
