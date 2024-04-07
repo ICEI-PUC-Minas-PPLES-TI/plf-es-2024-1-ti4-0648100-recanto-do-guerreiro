@@ -8,7 +8,7 @@ $(document).ready(function() {
         // Solicitação AJAX para enviar dados do formulário ao servidor;
         $.ajax({
             type: 'POST',
-            url: '/reserva',
+            url: 'http://localhost:8000/reserva',
             data: formData,
             success: function(response) {
                 // Resposta de sucesso;
