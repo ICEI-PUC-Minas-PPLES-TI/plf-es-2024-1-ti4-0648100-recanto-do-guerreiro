@@ -21,7 +21,7 @@
 
 //BANCO DE DADOS LOCAL
 
-const { Sequelize } = require('sequelize');
+/*const { Sequelize } = require('sequelize');
 
 // Configurações de conexão com o banco de dados
 const sequelize = new Sequelize({
@@ -42,7 +42,7 @@ async function createDatabase() {
 }
 
 // Chama a função para criar o banco de dados
-createDatabase();
+createDatabase();*/
 
 // Exporta as configurações
 module.exports = {
