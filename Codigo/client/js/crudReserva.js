@@ -24,7 +24,7 @@ async function addReserva(e) {
         const dados = await response.json();
         console.log(dados);
         window.alert("Reserva Cadastrada Com Sucesso!");
-        window.location.href = "/Codigo/client/crudReservas.html";
+        window.location.href = "/Codigo/client/crudReserva.html";
     } catch (erro) {
         console.log(erro);
     }
