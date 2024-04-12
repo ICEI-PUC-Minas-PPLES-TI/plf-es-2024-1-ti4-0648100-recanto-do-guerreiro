@@ -6,7 +6,7 @@ async function addReserva(e) {
     };
     e.preventDefault();
     try {
-        const response = await fetch('http://localhost:8080/reserva', {
+        const response = await fetch('http://localhost:8000/reserva', {
             method: 'POST',
             headers,
             body: JSON.stringify({
@@ -38,12 +38,12 @@ async function displayWorkshops() {
         'Content-Type': 'application/json',
         'Authorization': token,
     };
-    let dadoBruto = await fetch('http://localhost:8080/reserva', { headers });
+    let dadoBruto = await fetch('http://localhost:8000/reserva', { headers });
     let workshops = await dadoBruto.json();
 
     workshops.forEach(async(workshop) => {
         // Obter detalhes do cliente
-        let clienteResponse = await fetch(`http://localhost:8080/clienteFilterId/${workshop.idCliente}`, { headers });
+        let clienteResponse = await fetch(`http://localhost:8000/clienteFilterId/${workshop.idCliente}`, { headers });
         let cliente = await clienteResponse.json();
 
         const newRow = table.insertRow();
@@ -71,7 +71,7 @@ async function deletereserva(index) {
         'Authorization': token,
     };
 
-    const response = await fetch(`http://localhost:8080/reserva/${index}`, {
+    const response = await fetch(`http://localhost:8000/reserva/${index}`, {
         method: 'DELETE',
         headers
     });
