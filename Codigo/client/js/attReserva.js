@@ -29,8 +29,6 @@ window.onload = async function getReserva() {
     }
 }
 
-
-
 async function putReserva(e) {
     const token = sessionStorage.getItem('token'); //PEGA O TOKEM DO LOCAL STORAGE E JOGA NO HEADERS PARA VERIFICACAO
     const headers = {
