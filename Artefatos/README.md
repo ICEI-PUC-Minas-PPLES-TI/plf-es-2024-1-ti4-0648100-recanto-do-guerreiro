@@ -16,6 +16,8 @@ Este diretório mantém os artefatos do projeto.
 
 [Diagrama ER](Diagrama_ER_Novo.png) - Diagrama ER
 
+[Diagrama de Classes](Diagrama_Classes.png) - Diagrama de Classes
+
 Liste os artefatos produzidos, com suas localizações e descrição do conteúdo.
 
 Por exemplo, pode-se criar um diretório "atas", que seria descrito da seguinte forma:
