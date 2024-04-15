@@ -12,15 +12,13 @@ async function addReserva(e) {
             method: 'POST',
             headers,
             body: JSON.stringify({
-                nome: e.target.nome.value,
-                logradouro: e.target.logradouro.value,
-                numero: e.target.numero.value,
-                complemento: e.target.complemento.value,
-                cep: e.target.cep.value,
+                titulo: e.target.titulo.value,
                 descricao: e.target.descricao.value,
-                especialidade: e.target.especialidade.value,
-                telefone: e.target.telefone.value,
-
+                data: e.target.data.value,
+                hora: e.target.hora.value,
+                idCliente: e.target.idCliente.value,
+                adicionais: e.target.adicionais.value,
+                status: e.target.status.value,
             })
         });
         const dados = await response.json();
