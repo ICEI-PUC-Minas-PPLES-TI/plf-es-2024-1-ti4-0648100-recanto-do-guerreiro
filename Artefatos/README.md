@@ -8,9 +8,11 @@ Este diretório mantém os artefatos do projeto.
 
 [Apresentação sprint 1](ApresentacaoTIS4-Sprint1.pdf) - Apresentação sprint 1.
 
+[Termo de Confidencialidade](Termo_de_Confidencialidade.pdf) - Termo de Confidencialidade
+
 [Requisitos](TIS4-TemplateRequistos.pdf) - Requisitos
 
-[Termo de Confidencialidade](Termo_de_Confidencialidade.pdf) - Termo de Confidencialidade
+[Telas](Telas/) - Prototipo telas
 
 [Diagrama caso de uso](Diagrama_CasoUso_Recanto_do_Guerreiro.png) - Diagrama caso de uso
 
