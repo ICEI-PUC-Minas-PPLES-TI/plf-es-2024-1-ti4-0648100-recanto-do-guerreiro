@@ -28,7 +28,7 @@ const sequelize = new Sequelize({
     dialect: 'mysql',
     host: 'localhost',
     username: 'root',
-    password: 'Phmcf#2003',
+    password: 'RootTis4#',
 });
 
 // Função para criar o banco de dados se não existir

@@ -15,7 +15,7 @@ async function addCliente(e) {
                 nome: e.target.nome.value,
                 telefone: e.target.telefone.value,
                 email: e.target.email.value,
-                logradouro: e.target.logradouro.value,
+                logradouro: e.target.querySelector('#logradouro').value,
                 complemento: e.target.complemento.value,
                 bairro: e.target.bairro.value,
             })
@@ -28,6 +28,7 @@ async function addCliente(e) {
         console.log(erro);
     }
 }
+
 
 async function displayWorkshops() {
     const table = document.getElementById("displayClientes");

@@ -67,6 +67,9 @@ input[type="text"] {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+select#status {
+    margin-bottom: 20px;
+}
 
 button {
     padding: 10px 20px;

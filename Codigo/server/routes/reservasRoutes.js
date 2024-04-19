@@ -2,7 +2,10 @@ const { Router } = require('express')
 const router = new Router();
 const reserva = require('../controllers/reservaController')
 const verificacao = require('../requireAuth')
-
+// Defina suas rotas
+router.get("/", (req, res) => {
+    res.send("Bem-vindo ao Recanto do Guerreiro!");
+  });
 router.post('/reserva', verificacao, reserva.create)
 router.get('/reserva', reserva.index)
 router.get('/filterIdReserva/:id', reserva.filterIdReserva)

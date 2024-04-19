@@ -4,6 +4,10 @@ const router = express.Router();
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
 
+// Defina suas rotas
+router.get("/", (req, res) => {
+  res.send("Bem-vindo ao Recanto do Guerreiro!");
+});
 router.post('/login', async (req, res) => {
   const { email, senha } = req.body;
   try {
