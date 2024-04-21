@@ -8,7 +8,7 @@ window.onload = async function getCliente() {
     try {
         const urlParams = new URLSearchParams(window.location.search);
         const id = urlParams.get('id');
-        const dadosBrutos = await fetch(`http://localhost:8000/clienteilterId/${id}`, { headers });
+        const dadosBrutos = await fetch(`http://localhost:8000/clienteFilterId/${id}`, { headers });
         const cliente = await dadosBrutos.json();
 
         document.getElementById('idCliente').value = cliente.id;
@@ -62,7 +62,7 @@ async function putCliente(e) {
         console.log(dados);
 
         alert = "Cliente atualizado com sucesso";
-        window.location.href = "/Codigo/client/crudCliente.html";
+        window.location.href = "/Codigo/client/html/crudCliente.html";
 
     } catch (erro) {
         console.log(erro);

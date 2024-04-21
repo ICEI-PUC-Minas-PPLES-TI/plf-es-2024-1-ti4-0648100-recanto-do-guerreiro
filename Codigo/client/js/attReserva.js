@@ -18,7 +18,7 @@ window.onload = async function getReserva() {
         document.getElementById('hora').value = reserva.hora;
 
         // Obter detalhes do cliente
-        const clienteResponse = await fetch(`http://localhost:8080/clienteilterId/${reserva.idCliente}`, { headers });
+        const clienteResponse = await fetch(`http://localhost:8080/clienteFilterId/${reserva.idCliente}`, { headers });
         const cliente = await clienteResponse.json();
         document.getElementById('idCliente').value = cliente.nome;
 
@@ -68,7 +68,7 @@ async function putReserva(e) {
         console.log(dados);
 
         alert = "Reserva atualizada com sucesso";
-        window.location.href = "/Codigo/client/crudReserva.html";
+        window.location.href = "/Codigo/client/html/crudReserva.html";
 
     } catch (erro) {
         console.log(erro);

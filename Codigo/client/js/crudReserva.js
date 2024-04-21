@@ -24,7 +24,7 @@ async function addReserva(e) {
         const dados = await response.json();
         console.log(dados);
         window.alert("Reserva Cadastrada Com Sucesso!");
-        window.location.href = "/Codigo/client/crudReserva.html";
+        window.location.href = "/Codigo/client/html/crudReserva.html";
     } catch (erro) {
         console.log(erro);
     }
@@ -56,7 +56,7 @@ async function displayWorkshops() {
             <td>${workshop.adicionais}</td>
             <td>${workshop.status}</td>
             <td>
-            <a class="btn btn-primary" href="/Codigo/client/attReserva.html?id=${workshop.id}">Editar →</a>
+            <a class="btn btn-primary" href="/Codigo/client/html/attReserva.html?id=${workshop.id}">Editar →</a>
             <button onclick="deletereserva(${workshop.id})">Excluir</button>
             </td>
         `;

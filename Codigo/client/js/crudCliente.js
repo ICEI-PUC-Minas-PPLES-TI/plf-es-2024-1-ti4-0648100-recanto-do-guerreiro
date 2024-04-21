@@ -23,7 +23,7 @@ async function addCliente(e) {
         const dados = await response.json();
         console.log(dados);
         window.alert("Cliente Cadastrado Com Sucesso!");
-        window.location.href = "/Codigo/client/crudCliente.html";
+        window.location.href = "/Codigo/client/html/crudCliente.html";
     } catch (erro) {
         console.log(erro);
     }
@@ -51,7 +51,7 @@ async function displayWorkshops() {
             <td>${workshop.complemento}</td> 
             <td>${workshop.bairro}</td>
             <td>
-            <a class="btn btn-primary" href="/Codigo/client/attCliente.html?id=${workshop.id}">Editar →</a>
+            <a class="btn btn-primary" href="/Codigo/client/html/attCliente.html?id=${workshop.id}">Editar →</a>
             <button onclick="deletecliente(${workshop.id})">Excluir</button>
             </td>
         `;
