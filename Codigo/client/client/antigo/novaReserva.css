@@ -1,0 +1,34 @@
+/* Estilos personalizados */
+
+body {
+    font-size: 24px;
+    /* Define o tamanho da fonte para todo o corpo do documento */
+    font-family: 'Poppins', sans-serif;
+    /* Define a fonte para todo o corpo do documento */
+}
+
+/* Botões*/
+.btn-voltar {
+    position: relative;
+    /* Habilita o posicionamento relativo */
+    top: -20px;
+    /* Move o botão "Voltar" 20 pixels para cima */
+    padding: 0.5rem 2rem;
+    /* Adiciona padding horizontal */
+}
+
+.btn-salvar {
+    padding: 0.5rem 2rem; /* Adiciona padding horizontal */
+    margin-top: 30px; /* Adiciona margem superior */
+    margin-bottom: 30px; /* Adiciona margem inferior */
+}
+
+/* Formulario */
+.container {
+    max-width: 600px;
+    /* Limita a largura do conteúdo */
+    margin-top: 50px;
+    /* Adiciona espaço acima do conteúdo */
+}
+
+

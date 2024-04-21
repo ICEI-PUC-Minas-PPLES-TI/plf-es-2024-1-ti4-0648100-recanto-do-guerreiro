@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recanto do Guerreiro</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <h1 class="mt-4 text-center">Recanto do Guerreiro</h1>
+        <div class="text-center mt-4">
+            <button class="btn btn-primary" data-filter="all">Todas as Reservas</button>
+            <button class="btn btn-primary" data-filter="futuros">Resevas Ativas</button>
+            <button class="btn btn-primary" data-filter="passados">Reservas Inativas</button>
+            <div class="input-group mt-2">
+                <input type="text" class="form-control" id="eventIdInput" placeholder="Digite o ID do evento">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="button" id="searchButton">Pesquisar</button> <!-- Botão de pesquisa -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container d-flex flex-column justify-content-end align-items-center fixed-bottom pb-4">
+        <a href="novaReserva.html" class="btn custom-button"><span class="plus">+</span></a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../js/index.js"></script>
+</body>
+</html>

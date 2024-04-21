@@ -1,0 +1,18 @@
+.custom-button {
+    height: 70px;
+    width: 70px;
+    background-color: green;
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 50px;
+    padding: 10px; /* Adicionando um preenchimento interno ao botão */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.plus {
+    line-height: 1;
+    margin-top: -3px;
+}

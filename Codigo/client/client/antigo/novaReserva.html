@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Eventos</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/novaReserva.css">
+    <!--
+  <script src="/Codigo/client/js/verifyLogin.js"></script>
+  <script src="/Codigo/client/js/gestaoReserva.js"></script>
+  <script src="/Codigo/client/js/masks.js"></script>
+  -->
+
+    <style>
+        /* Estilos personalizados */
+        .container {
+            max-width: 600px;
+            /* Limita a largura do conteúdo */
+            margin-top: 50px;
+            /* Adiciona espaço acima do conteúdo */
+        }
+        /* style para a lista de datas disponíveis */
+        .list-group-item:hover,
+        .list-group-item.active {
+            background-color: #ccc;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Botão de voltar -->
+        <a href="index.html" class="btn btn-secondary mb-3 btn-lg btn-voltar">Voltar</a>
+
+
+        <!-- Formulário de cadastro de eventos -->
+        <form>
+            <div class="mb-3">
+                <label for="titulo_reserva" class="form-label">Título da Reserva:</label>
+                <input type="text" class="form-control" id="titulo_reserva" name="titulo_reserva" required>
+            </div>
+            <div class="mb-3">
+                <label for="descricao_reserva" class="form-label">Descrição da Reserva:</label>
+                <textarea class="form-control" id="descricao_reserva" name="descricao_reserva" rows="3"
+                    required></textarea>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="data_reserva" class="form-label">Data da Reserva:</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="data_reserva" name="data_reserva" readonly required>
+                        <button class="btn btn-primary" type="button" id="choose_date_btn">Escolher Data</button>
+                    </div>
+                </div>
+                <!-- Menu suspenso para selecionar o mês -->
+                <div class="col-md-6 mb-3">
+                    <label for="select_month" class="form-label">Selecione o Mês:</label>
+                    <select class="form-select" id="select_month">
+                        <option value="0">Selecione...</option>
+                        <option value="1">Janeiro</option>
+                        <option value="2">Fevereiro</option>
+                        <option value="3">Março</option>
+                        <option value="4">Abril</option>
+                        <option value="5">Maio</option>
+                        <option value="6">Junho</option>
+                        <option value="7">Julho</option>
+                        <option value="8">Agosto</option>
+                        <option value="9">Setembro</option>
+                        <option value="10">Outubro</option>
+                        <option value="11">Novembro</option>
+                        <option value="12">Dezembro</option>
+                    </select>
+                </div>
+
+                <!-- Modal para exibição de datas disponíveis -->
+                <div class="modal fade" id="availableDatesModal" tabindex="-1"
+                    aria-labelledby="availableDatesModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="availableDatesModalLabel">Escolha uma Data Disponível</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <ul id="availableDatesList" class="list-group">
+                                    <!-- As datas disponíveis serão geradas dinamicamente aqui -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    // Função para buscar reservas existentes;
+                    async function fetchExistingReservations() {
+                        const token = sessionStorage.getItem('token');
+                        const headers = {
+                            'Content-Type': 'application/json',
+                            'Authorization': token,
+                        };
+                
+                        try {
+                            const response = await fetch('http://localhost:8000/reserva', { headers });
+                            const reservations = await response.json();
+                            return reservations.map(reserva => new Date(reserva.data));
+                        } catch (error) {
+                            console.error('Error fetching existing reservations:', error);
+                            return [];
+                        }
+                    }
+                
+                    // Função para verificar se duas datas são o mesmo dia;
+                    function isSameDay(date1, date2) {
+                        return date1.getFullYear() === date2.getFullYear() &&
+                            date1.getMonth() === date2.getMonth() &&
+                            date1.getDate() === date2.getDate();
+                    }
+                
+                    // Função para achar as datas disponíveis e preencher a lista;
+                    async function populateAvailableDates(month) {
+                        // Obtenha o ano atual;
+                        const currentYear = new Date().getFullYear();
+                        const currentMonth = new Date().getMonth() + 1;
+                
+                        // Verifique se o mês selecionado já passou;
+                        if (month < currentMonth) {
+                            alert("Mês inválido.");
+                            return;
+                        }
+                
+                        // Gere uma matriz de todas as datas do mês selecionado;
+                        const startDate = new Date(currentYear, month - 1, 1);
+                        const endDate = new Date(currentYear, month, 0);
+                        const allDatesOfMonth = [];
+                        for (let date = startDate; date <= endDate; date.setDate(date.getDate() + 1)) {
+                            allDatesOfMonth.push(new Date(date));
+                        }
+                
+                        // Buscar reservas existentes;
+                        const existingReservations = await fetchExistingReservations();
+                
+                        // Filtre fins de semana reservados e datas já reservadas;
+                        const availableDates = allDatesOfMonth.filter(date => {
+                            // Verifique se a data é sábado ou domingo e não está reservada;
+                            return date.getDay() === 6 || date.getDay() === 0 // 6: Sábado, 0: Domingo;
+                                && !existingReservations.some(reservationDate => isSameDay(reservationDate, date));
+                        });
+                
+                        // Preencha a lista de datas disponíveis;
+                        const availableDatesList = document.getElementById("availableDatesList");
+                        availableDatesList.innerHTML = "";
+                
+                        if (availableDates.length === 0) {
+                            const listItem = document.createElement("li");
+                            listItem.className = "list-group-item";
+                            listItem.textContent = "Não há datas disponíveis para este mês.";
+                            availableDatesList.appendChild(listItem);
+                        } else {
+                            availableDates.forEach(date => {
+                                const listItem = document.createElement("li");
+                                listItem.className = "list-group-item";
+                                listItem.textContent = `${date.getDate().toString().padStart(2, '0')}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date.getFullYear()}`;
+                                listItem.addEventListener("click", function () {
+                                    document.getElementById("data_reserva").value = `${date.getDate().toString().padStart(2, '0')}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date.getFullYear()}`;
+                                });
+                                availableDatesList.appendChild(listItem);
+                            });
+                        }
+                
+                        // Mostrar o modal;
+                        const modal = new bootstrap.Modal(document.getElementById('availableDatesModal'));
+                        modal.show();
+                    }
+                
+                    document.getElementById("choose_date_btn").addEventListener("click", function () {
+                        const selectedMonth = document.getElementById("select_month").value;
+                        if (selectedMonth != "0") {
+                            populateAvailableDates(parseInt(selectedMonth));
+                        } else {
+                            alert("Por favor, selecione um mês.");
+                        }
+                    });
+                </script>
+                
+                <div class="col-md-6 mb-3">
+                    <label for="hora_reserva" class="form-label">Hora da Reserva:</label>
+                    <input type="time" class="form-control" id="hora_reserva" name="hora_reserva" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="id_cliente" class="form-label">ID do Cliente:</label>
+                <input type="number" class="form-control" id="id_cliente" name="id_cliente" required>
+            </div>
+            <div class="mb-3">
+                <label for="adicionais_reserva" class="form-label">Informações Adicionais:</label>
+                <input type="text" class="form-control" id="adicionais_reserva" name="adicionais_reserva" required>
+            </div>
+            <div class="mb-3">
+                <label for="status_reserva" class="form-label">Status da Reserva:</label>
+                <select class="form-select" id="status_reserva" name="status_reserva" required>
+                    <option value="1">Ativo</option>
+                    <option value="0">Inativo</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block btn-lg btn-salvar">Salvar</button>
+        </form>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/novaReserva.js"></script>
+
+</body>
+</html>
