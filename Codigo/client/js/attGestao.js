@@ -63,7 +63,7 @@ async function putGestao(e) {
         console.log(dados);
 
         alert = "Gestão atualizada com sucesso";
-        window.location.href = "/Codigo/client/html/crudGestao.html";
+        window.location.href = "../html/crudGestao.html";
 
     } catch (erro) {
         console.log(erro);

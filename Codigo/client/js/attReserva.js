@@ -68,7 +68,7 @@ async function putReserva(e) {
         console.log(dados);
 
         alert = "Reserva atualizada com sucesso";
-        window.location.href = "/Codigo/client/html/crudReserva.html";
+        window.location.href = "../html/crudReserva.html";
 
     } catch (erro) {
         console.log(erro);

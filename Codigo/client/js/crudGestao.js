@@ -21,7 +21,7 @@ async function addGestao(e) {
         const dados = await response.json();
         console.log(dados);
         window.alert("Gestão Cadastrada Com Sucesso!");
-        window.location.href = "/Codigo/client/html/crudGestao.html";
+        window.location.href = "../html/crudGestao.html";
     } catch (erro) {
         console.log(erro);
     }
@@ -54,7 +54,7 @@ async function displayWorkshops() {
             <td>${workshop.custos}</td>
             <td>${workshop.descricao}</td>
             <td>
-            <a class="btn btn-primary" href="/Codigo/client/html/attGestao.html?id=${workshop.id}">Editar →</a>
+            <a class="btn btn-primary" href="../html/attGestao.html?id=${workshop.id}">Editar →</a>
             <button onclick="deletegestao(${workshop.id})">Excluir</button>
             </td>
         `;

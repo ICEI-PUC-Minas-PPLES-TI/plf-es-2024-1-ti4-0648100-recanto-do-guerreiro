@@ -69,7 +69,7 @@ async function putCliente(e) {
     console.log(dados);
 
     alert = "Cliente atualizado com sucesso";
-    window.location.href = "/Codigo/client/html/crudCliente.html";
+    window.location.href = "../html/crudCliente.html";
   } catch (erro) {
     console.log(erro);
   }
