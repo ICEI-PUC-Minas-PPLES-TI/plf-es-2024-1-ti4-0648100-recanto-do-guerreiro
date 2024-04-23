@@ -33,8 +33,8 @@ async function putCliente(e) {
     Authorization: token,
   };
   e.preventDefault();
-  //const reservaid = document.getElementById("idCliente").value
-  const id = urlParams.get("id");
+  const reservaid = document.getElementById("idCliente").value;
+
   try {
     const body = {};
 
@@ -57,11 +57,14 @@ async function putCliente(e) {
       body.bairro = e.target.bairro.value;
     }
 
-    const response = await fetch(`http://localhost:8000/clientePut/${id}`, {
-      method: "PUT",
-      headers,
-      body: JSON.stringify(body),
-    });
+    const response = await fetch(
+      `http://localhost:8000/clientePut/${reservaid}`,
+      {
+        method: "PUT",
+        headers,
+        body: JSON.stringify(body),
+      }
+    );
     const dados = await response.json();
     console.log(dados);
 
