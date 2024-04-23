@@ -7,6 +7,10 @@
     align-items: center;
 }
 
+h1{
+    font-weight: bold;
+}
+
 .big-image {
     max-width: 80%; /* Define a largura máxima da imagem */
     margin-bottom: 20px; /* Adiciona espaço abaixo da imagem */
