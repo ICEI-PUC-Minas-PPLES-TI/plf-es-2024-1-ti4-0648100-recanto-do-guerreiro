@@ -16,7 +16,7 @@ async function login(e) {
     sessionStorage.setItem("token", dados.token); //SALVA O TOKEN NO LOCAL STORAGE
 
     if (dados.token) {
-      window.location.href = "../html/crudReserva.html";
+      window.location.href = "../html/crudCliente.html";
     } else {
       alert("Credenciais inválidas");
     }
