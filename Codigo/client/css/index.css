@@ -1,18 +1,26 @@
-.custom-button {
-    height: 70px;
-    width: 70px;
-    background-color: green;
-    color: #ffffff;
-    border-radius: 50%;
-    font-size: 50px;
-    padding: 10px; /* Adicionando um preenchimento interno ao botão */
+ /* Estilos personalizados */
+ .container-fluid {
+    height: 100vh; /* Define a altura total da tela */
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
 }
 
-.plus {
-    line-height: 1;
-    margin-top: -3px;
+.big-image {
+    max-width: 80%; /* Define a largura máxima da imagem */
+    margin-bottom: 20px; /* Adiciona espaço abaixo da imagem */
+}
+
+.custom-button {
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #007bff; /* Cor de fundo azul */
+    color: white; /* Cor do texto branca */
+    text-decoration: none; /* Remove sublinhado do link */
+}
+
+.custom-button:hover {
+    background-color: #0056b3; /* Altera a cor de fundo ao passar o mouse */
 }
