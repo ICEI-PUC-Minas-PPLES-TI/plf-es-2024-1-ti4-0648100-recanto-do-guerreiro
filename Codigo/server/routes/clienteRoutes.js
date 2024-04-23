@@ -10,7 +10,7 @@ router.get("/", (req, res) => {
 
 router.post("/cliente", verificacao, cliente.create);
 router.get("/cliente", verificacao, cliente.index);
-router.get("/clienteilterId/:id", verificacao, cliente.filterIdCliente);
+router.get("/clienteFilterId/:id", verificacao, cliente.filterIdCliente);
 router.put("/clientePut/:id", verificacao, cliente.update);
 router.delete("/cliente/:id", verificacao, cliente.delete);
 

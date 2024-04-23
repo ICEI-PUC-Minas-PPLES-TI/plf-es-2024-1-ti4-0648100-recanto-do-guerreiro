@@ -8,6 +8,7 @@ router.get("/", (req, res) => {
 });
 router.post("/gestao", verificacao, gestao.create);
 router.get("/gestao", verificacao, gestao.index);
+router.get("/filterIdGestao/:id", verificacao, gestao.filterIdGestao);
 router.put("/gestaoPut/:id", verificacao, gestao.update);
 router.delete("/gestao/:id", verificacao, gestao.delete);
 
