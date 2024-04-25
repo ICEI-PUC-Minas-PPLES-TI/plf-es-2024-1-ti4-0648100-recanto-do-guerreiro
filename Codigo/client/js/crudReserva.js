@@ -44,7 +44,7 @@ async function displayWorkshops() {
   workshops.forEach(async (workshop) => {
     // Obter detalhes do cliente
     let clienteResponse = await fetch(
-      `http://localhost:8000/clienteFilterId/${workshop.idCliente}`,
+      `http://localhost:8000/filterIdCliente/${workshop.idCliente}`,
       { headers }
     );
     let cliente = await clienteResponse.json();

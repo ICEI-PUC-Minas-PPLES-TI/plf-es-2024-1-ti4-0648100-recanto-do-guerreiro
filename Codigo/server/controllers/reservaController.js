@@ -37,6 +37,15 @@ class reservaController {
         }
     }
 
+    async index(req, res) {
+        try {
+            const reservasImport = await reserva.findAll()
+            return res.status(200).json(reservasImport)
+        } catch (erro) {
+            return res.status(500).json('Erro ao encontrar as reservas' + erro)
+        }
+    }
+    
     async filterIdReserva(req, res) {
         try {
             const reservasFil = await reserva.findOne({
@@ -46,15 +55,6 @@ class reservaController {
             return res.status(200).json(reservasFil)
         } catch (erro) {
             return res.status(500).json('Erro ao pegar as reservas' + erro)
-        }
-    }
-
-    async index(req, res) {
-        try {
-            const reservasImport = await reserva.findAll()
-            return res.status(200).json(reservasImport)
-        } catch (erro) {
-            return res.status(500).json('Erro ao encontrar as reservas' + erro)
         }
     }
 

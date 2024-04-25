@@ -40,11 +40,11 @@ async function displayWorkshops() {
 
     workshops.forEach(async(workshop) => {
         // Obter detalhes do cliente;
-        let clienteResponse = await fetch(`http://localhost:8000/clienteFilterId/${workshop.idCliente}`, { headers });
+        let clienteResponse = await fetch(`http://localhost:8000/filterIdCliente/${workshop.idCliente}`, { headers });
         let cliente = await clienteResponse.json();
 
         // Obter detalhes da Reserva;
-        let reservaResponse = await fetch(`http://localhost:8000/reservaFilterId/${workshop.idReserva}`, { headers });
+        let reservaResponse = await fetch(`http://localhost:8000/filterIdReserva/${workshop.idReserva}`, { headers });
         let reserva = await reservaResponse.json();
 
         const newRow = table.insertRow();

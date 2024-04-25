@@ -9,7 +9,7 @@ window.onload = async function getCliente() {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get("id");
     const dadosBrutos = await fetch(
-      `http://localhost:8000/clienteFilterId/${id}`,
+      `http://localhost:8000/filterIdCliente/${id}`,
       { headers }
     );
     const cliente = await dadosBrutos.json();
