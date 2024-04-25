@@ -1,20 +1,23 @@
 window.addEventListener("load", displayWorkshops());
 
 async function addReserva(e) {
-  const token = sessionStorage.getItem("token"); //PEGA O TOKEM DO LOCAL STORAGE E JOGA NO HEADERS PARA VERIFICACAO
+  const token = sessionStorage.getItem("token");
   const headers = {
     "Content-Type": "application/json",
     Authorization: token,
   };
   e.preventDefault();
   try {
+    const data = e.target.data.value; // Obtém a data do formulário
+    const dataFormatada = data.split("-").reverse().join("/"); // Formata para "dd/mm/aaaa"
+
     const response = await fetch("http://localhost:8000/reserva", {
       method: "POST",
       headers,
       body: JSON.stringify({
         titulo: e.target.titulo.value,
         descricao: e.target.descricao.value,
-        data: e.target.data.value,
+        data: dataFormatada, // Salva a data formatada
         hora: e.target.hora.value,
         idCliente: e.target.idCliente.value,
         adicionais: e.target.adicionais.value,
