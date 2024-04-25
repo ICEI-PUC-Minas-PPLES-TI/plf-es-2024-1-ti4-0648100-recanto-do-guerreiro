@@ -1,50 +1,34 @@
 window.addEventListener("load", displayWorkshops());
 
 async function addReserva(e) {
+  e.preventDefault();
   const token = sessionStorage.getItem("token");
   const headers = {
     "Content-Type": "application/json",
     Authorization: token,
   };
-  e.preventDefault();
+
   try {
-    // Verifica se os campos obrigatórios estão preenchidos
-    if (
-      !e.target.titulo.value ||
-      !e.target.descricao.value ||
-      !e.target.data.value ||
-      !e.target.hora.value ||
-      !e.target.idCliente.value ||
-      !e.target.adicionais.value ||
-      !e.target.status.value
-    ) {
-      alert("Por favor, preencha todos os campos.");
-      return;
-    }
-
-    // Formata a data para o formato esperado pelo servidor (aaaa-mm-dd)
-    const dataFormatada = e.target.data.value.split("/").reverse().join("-");
-
     const response = await fetch("http://localhost:8000/reserva", {
       method: "POST",
       headers,
       body: JSON.stringify({
         titulo: e.target.titulo.value,
         descricao: e.target.descricao.value,
-        data: dataFormatada,
+        data: e.target.data.value,
         hora: e.target.hora.value,
         idCliente: e.target.idCliente.value,
         adicionais: e.target.adicionais.value,
         status: e.target.status.value,
       }),
     });
+
     const dados = await response.json();
     console.log(dados);
     window.alert("Reserva Cadastrada Com Sucesso!");
     window.location.href = "../html/crudReserva.html";
-  } catch (erro) {
-    console.log(erro);
-    alert("Ocorreu um erro ao salvar a reserva. Por favor, tente novamente.");
+  } catch (error) {
+    console.log("Error adding reserva:", error);
   }
 }
 
@@ -56,35 +40,46 @@ async function displayWorkshops() {
     "Content-Type": "application/json",
     Authorization: token,
   };
-  let dadoBruto = await fetch("http://localhost:8000/reserva", { headers });
-  let workshops = await dadoBruto.json();
 
-  workshops.forEach(async (workshop) => {
-    // Obter detalhes do cliente
-    let clienteResponse = await fetch(
-      `http://localhost:8000/filterIdCliente/${workshop.idCliente}`,
-      { headers }
-    );
-    let cliente = await clienteResponse.json();
+  try {
+    const response = await fetch("http://localhost:8000/reserva", { headers });
+    const workshops = await response.json();
 
-    // Formatar a data para o formato "dd/mm/aaaa"
-    const dataFormatada = workshop.data.split("-").reverse().join("/");
+    workshops.forEach(async (workshop) => {
+      // Obter detalhes do cliente
+      const clienteResponse = await fetch(
+        `http://localhost:8000/filterIdCliente/${workshop.idCliente}`,
+        { headers }
+      );
+      const cliente = await clienteResponse.json();
 
-    const newRow = table.insertRow();
-    newRow.innerHTML = `
-            <td>${workshop.titulo}</td>
-            <td>${workshop.descricao}</td>
-            <td>${dataFormatada}</td> <!-- Utiliza a data formatada -->
-            <td>${workshop.hora}</td>
-            <td>${cliente.nome}</td> 
-            <td>${workshop.adicionais}</td>
-            <td>${workshop.status}</td>
-            <td>
-            <a class="btn btn-primary" href="../html/attReserva.html?id=${workshop.id}">Editar →</a>
-            <button onclick="deletereserva(${workshop.id})">Excluir</button>
-            </td>
-        `;
-  });
+      // Extrair dia, mês e ano da data
+      const data = new Date(workshop.data);
+      const dia = String(data.getUTCDate()).padStart(2, "0");
+      const mes = String(data.getUTCMonth() + 1).padStart(2, "0"); // Mês começa do zero
+      const ano = data.getUTCFullYear();
+
+      // Formatando a data manualmente para "dd/mm/aaaa"
+      const dataFormatada = `${dia}/${mes}/${ano}`;
+
+      const newRow = table.insertRow();
+      newRow.innerHTML = `
+        <td>${workshop.titulo}</td>
+        <td>${workshop.descricao}</td>
+        <td>${dataFormatada}</td> <!-- Utiliza a data formatada -->
+        <td>${workshop.hora}</td>
+        <td>${cliente.nome}</td> 
+        <td>${workshop.adicionais}</td>
+        <td>${workshop.status}</td>
+        <td>
+          <a class="btn btn-primary" href="../html/attReserva.html?id=${workshop.id}">Editar →</a>
+          <button onclick="deletereserva(${workshop.id})">Excluir</button>
+        </td>
+      `;
+    });
+  } catch (error) {
+    console.error("Error fetching workshops:", error);
+  }
 }
 
 // Função para buscar Clientes cadastrados e preencher a lista suspensa;

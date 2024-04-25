@@ -18,18 +18,15 @@ window.onload = async function getReserva() {
     document.getElementById("idReserva").value = reserva.id;
     document.getElementById("titulo").value = reserva.titulo;
     document.getElementById("descricao").value = reserva.descricao;
-    // Formatando a data para o formato esperado pelo input type="date"
+
+    // Formatando a data para o formato "aaaa-mm-dd"
     const dataFormatada = reserva.data.split("/").reverse().join("-");
     document.getElementById("data").value = dataFormatada;
+
     document.getElementById("hora").value = reserva.hora;
 
-    // Obter detalhes do cliente
-    const clienteResponse = await fetch(
-      `http://localhost:8080/filterIdCliente/${reserva.idCliente}`,
-      { headers }
-    );
-    const cliente = await clienteResponse.json();
-    document.getElementById("idCliente").value = cliente.nome;
+    // Preenchendo o campo idCliente com o ID do cliente
+    document.getElementById("idCliente").value = reserva.idCliente;
 
     document.getElementById("adicionais").value = reserva.adicionais;
     document.getElementById("status").value = reserva.status;
