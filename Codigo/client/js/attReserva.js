@@ -1,4 +1,3 @@
-// Função para obter os detalhes de uma reserva e preencher o formulário de atualização
 window.onload = async function getReserva() {
   const token = sessionStorage.getItem("token");
   const headers = {
@@ -20,7 +19,7 @@ window.onload = async function getReserva() {
     document.getElementById("descricao").value = reserva.descricao;
 
     // Formatando a data para o formato "aaaa-mm-dd"
-    const dataFormatada = reserva.data.split("/").reverse().join("-");
+    const dataFormatada = new Date(reserva.data).toISOString().split("T")[0];
     document.getElementById("data").value = dataFormatada;
 
     document.getElementById("hora").value = reserva.hora;
@@ -53,8 +52,7 @@ async function putReserva(e) {
       body.descricao = e.target.descricao.value;
     }
     if (e.target.data.value) {
-      // Formata a data para o formato esperado pelo servidor (aaaa-mm-dd)
-      body.data = e.target.data.value.split("/").reverse().join("-");
+      body.data = e.target.data.value;
     }
     if (e.target.idCliente.value) {
       body.idCliente = e.target.idCliente.value;
