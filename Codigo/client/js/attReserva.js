@@ -18,7 +18,7 @@ window.onload = async function getReserva() {
         document.getElementById('hora').value = reserva.hora;
 
         // Obter detalhes do cliente
-        const clienteResponse = await fetch(`http://localhost:8080/clienteFilterId/${reserva.idCliente}`, { headers });
+        const clienteResponse = await fetch(`http://localhost:8080/filterIdCliente/${reserva.idCliente}`, { headers });
         const cliente = await clienteResponse.json();
         document.getElementById('idCliente').value = cliente.nome;
 

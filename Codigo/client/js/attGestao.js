@@ -14,12 +14,12 @@ window.onload = async function getGestao() {
         document.getElementById('idGestao').value = gestao.id;
 
         // Obter detalhes do cliente;
-        const clienteResponse = await fetch(`http://localhost:8080/clienteFilterId/${gestao.idCliente}`, { headers });
+        const clienteResponse = await fetch(`http://localhost:8080/filterIdCliente/${gestao.idCliente}`, { headers });
         const cliente = await clienteResponse.json();
         document.getElementById('idCliente').value = cliente.nome;
   
         // Obter detalhes da reserva;
-        const reservaResponse = await fetch(`http://localhost:8080/reservaFilterId/${gestao.idReserva}`, { headers });
+        const reservaResponse = await fetch(`http://localhost:8080/filterIdReserva/${gestao.idReserva}`, { headers });
         const reserva = await reservaResponse.json();
         document.getElementById('idReserva').value = reserva.titulo;
 

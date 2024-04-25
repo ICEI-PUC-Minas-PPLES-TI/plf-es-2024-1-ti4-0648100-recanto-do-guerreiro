@@ -12,8 +12,6 @@ class App {
         this.middlewares();
         this.routes();
     }
-    
-
     middlewares() {
         this.server.use(express.json());
         this.server.use(express.static('tmp'))
@@ -27,7 +25,6 @@ class App {
             saveUninitialized: true,
         }))
     }
-
     routes() {
         this.server.use(routes);
     }

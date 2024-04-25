@@ -17,10 +17,10 @@
             <div class="logo">Recanto do Guerreiro</div>
             <ul class="menu">
                 <li>
-                    <a href="crudCliente.html">Clientes </a>
+                    <a href="crudCliente.html">Clientes</a>
                 </li>
                 <li>
-                    <a href="crudReserva.html"> Reservas </a>
+                    <a href="crudReserva.html">Reservas</a>
                 </li>
                 <li>
                     <a href="crudGestao.html">Gestão de reserva</a>
@@ -37,25 +37,25 @@
         <!-- <form id="add-workshop-form" onsubmit="Oficina(event)"> -->
         <form id="add-workshop-form" onsubmit="putCliente(event)">
 
-            <label for="idCliente" class="form-label">ID do Cliente: </label>
+            <label for="idCliente" class="form-label">ID do Cliente:</label>
             <input type="text" class="form-control" id="idCliente" name="idCliente" required disabled>
 
-            <label for="nome" class="form-label">Nome do cliente: </label>
+            <label for="nome" class="form-label">Nome do cliente:</label>
             <input type="text" class="form-control" id="nome" name="nome" required>
 
-            <label for="telefone" class="form-label">Telefone do cliente: </label>
+            <label for="telefone" class="form-label">Telefone do cliente:</label>
             <input type="text" class="form-control" id="telefone" name="telefone" required>
 
-            <label for="email" class="form-label">Email do cliente: </label>
+            <label for="email" class="form-label">Email do cliente:</label>
             <input type="text" class="form-control" id="email" name="email" required>
 
-            <label for="logradouro" class="form-label">Logradouro do cliente: </label>
+            <label for="logradouro" class="form-label">Logradouro do cliente:</label>
             <input type="text" class="form-control" id="logradouro" name="logradouro" readonly>
 
-            <label for="complemento" class="form-label">Complemento: </label>
+            <label for="complemento" class="form-label">Complemento:</label>
             <input type="text" class="form-control" id="complemento" name="complemento" required>
 
-            <label for="bairro" class="form-label">Bairro: </label>
+            <label for="bairro" class="form-label">Bairro:</label>
             <input type="text" class="form-control" id="bairro" name="bairro" required>
 
             <button type="submit" id="btn_submit">Atualizar cliente</button>
@@ -67,6 +67,7 @@
 
         </div>
     </footer>
+
     <script>
         // Função de logout
 function logout() {
@@ -83,8 +84,8 @@ function logout() {
   // Se preferir redirecionar para a página inicial após o logout
   window.location.href = "./index.html";
 }
-
     </script>
+
     <script src="../js/verifyLogin.js"></script>
     <script src="../js/attCliente.js"></script>
     <script src="../js/masks.js"></script>

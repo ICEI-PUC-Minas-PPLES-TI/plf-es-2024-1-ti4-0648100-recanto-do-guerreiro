@@ -20,6 +20,15 @@ class clienteController {
         }
     }
 
+    async index(req, res) {
+        try {
+            const clientesImport = await cliente.findAll()
+            return res.status(200).json(clientesImport)
+        } catch (erro) {
+            return res.status(500).json('Erro ao encontrar os clientes' + erro)
+        }
+    }
+    
     async filterIdCliente(req, res) {
         try {
             const clientesFil = await cliente.findOne({
@@ -29,15 +38,6 @@ class clienteController {
             return res.status(200).json(clientesFil)
         } catch (erro) {
             return res.status(500).json('Erro ao pegar os clientes' + erro)
-        }
-    }
-
-    async index(req, res) {
-        try {
-            const clientesImport = await cliente.findAll()
-            return res.status(200).json(clientesImport)
-        } catch (erro) {
-            return res.status(500).json('Erro ao encontrar os clientes' + erro)
         }
     }
 
