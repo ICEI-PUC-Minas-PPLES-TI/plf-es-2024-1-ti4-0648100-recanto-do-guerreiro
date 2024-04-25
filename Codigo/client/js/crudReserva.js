@@ -8,8 +8,22 @@ async function addReserva(e) {
   };
   e.preventDefault();
   try {
-    const data = e.target.data.value; // Obtém a data do formulário
-    const dataFormatada = data.split("-").reverse().join("/"); // Formata para "dd/mm/aaaa"
+    // Verifica se os campos obrigatórios estão preenchidos
+    if (
+      !e.target.titulo.value ||
+      !e.target.descricao.value ||
+      !e.target.data.value ||
+      !e.target.hora.value ||
+      !e.target.idCliente.value ||
+      !e.target.adicionais.value ||
+      !e.target.status.value
+    ) {
+      alert("Por favor, preencha todos os campos.");
+      return;
+    }
+
+    // Formata a data para o formato esperado pelo servidor (aaaa-mm-dd)
+    const dataFormatada = e.target.data.value.split("/").reverse().join("-");
 
     const response = await fetch("http://localhost:8000/reserva", {
       method: "POST",
@@ -17,7 +31,7 @@ async function addReserva(e) {
       body: JSON.stringify({
         titulo: e.target.titulo.value,
         descricao: e.target.descricao.value,
-        data: dataFormatada, // Salva a data formatada
+        data: dataFormatada,
         hora: e.target.hora.value,
         idCliente: e.target.idCliente.value,
         adicionais: e.target.adicionais.value,
@@ -30,6 +44,7 @@ async function addReserva(e) {
     window.location.href = "../html/crudReserva.html";
   } catch (erro) {
     console.log(erro);
+    alert("Ocorreu um erro ao salvar a reserva. Por favor, tente novamente.");
   }
 }
 
@@ -52,11 +67,14 @@ async function displayWorkshops() {
     );
     let cliente = await clienteResponse.json();
 
+    // Formatar a data para o formato "dd/mm/aaaa"
+    const dataFormatada = workshop.data.split("-").reverse().join("/");
+
     const newRow = table.insertRow();
     newRow.innerHTML = `
             <td>${workshop.titulo}</td>
             <td>${workshop.descricao}</td>
-            <td>${workshop.data}</td>
+            <td>${dataFormatada}</td> <!-- Utiliza a data formatada -->
             <td>${workshop.hora}</td>
             <td>${cliente.nome}</td> 
             <td>${workshop.adicionais}</td>
@@ -112,5 +130,4 @@ async function deletereserva(index) {
 // Preencher as listas suspensas quando a página for carregada;
 window.addEventListener("load", () => {
   populateClienteSelect();
-  populateReservaSelect();
 });

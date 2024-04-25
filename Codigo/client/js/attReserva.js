@@ -1,3 +1,4 @@
+// Função para obter os detalhes de uma reserva e preencher o formulário de atualização
 window.onload = async function getReserva() {
   const token = sessionStorage.getItem("token");
   const headers = {
@@ -55,9 +56,8 @@ async function putReserva(e) {
       body.descricao = e.target.descricao.value;
     }
     if (e.target.data.value) {
-      // Formatando a data para o formato esperado pelo backend
-      const dataFormatada = e.target.data.value.split("-").reverse().join("/");
-      body.data = dataFormatada;
+      // Formata a data para o formato esperado pelo servidor (aaaa-mm-dd)
+      body.data = e.target.data.value.split("/").reverse().join("-");
     }
     if (e.target.idCliente.value) {
       body.idCliente = e.target.idCliente.value;
@@ -80,7 +80,7 @@ async function putReserva(e) {
     const dados = await response.json();
     console.log(dados);
 
-    alert("Reserva atualizada com sucesso");
+    alert = "Reserva atualizada com sucesso";
     window.location.href = "../html/crudReserva.html";
   } catch (erro) {
     console.log(erro);
