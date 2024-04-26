@@ -23,6 +23,7 @@ async function addReserva(e) {
   };
 
   try {
+    // Se não existir reserva para a data, inserir a nova reserva
     const response = await fetch("http://localhost:8000/reserva", {
       method: "POST",
       headers,
@@ -45,7 +46,6 @@ async function addReserva(e) {
     console.log("Error adding reserva:", error);
   }
 }
-
 async function displayWorkshops() {
   const table = document.getElementById("displayReservas");
   table.innerHTML = "";

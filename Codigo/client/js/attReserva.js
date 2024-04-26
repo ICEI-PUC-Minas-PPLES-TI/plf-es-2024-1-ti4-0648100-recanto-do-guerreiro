@@ -34,6 +34,7 @@ window.onload = async function getReserva() {
   }
 };
 
+// Função para atualizar reserva
 async function putReserva(e) {
   const token = sessionStorage.getItem("token");
   const headers = {
@@ -42,6 +43,7 @@ async function putReserva(e) {
   };
   e.preventDefault();
   const reservaid = document.getElementById("idReserva").value;
+
   try {
     const body = {};
 
@@ -64,14 +66,17 @@ async function putReserva(e) {
       body.status = e.target.status.value;
     }
 
-    const response = await fetch(
-      `http://localhost:8000/reservaPut/${reservaid}`,
-      {
-        method: "PUT",
-        headers,
-        body: JSON.stringify(body),
-      }
-    );
+    const response = await fetch(`http://localhost:8000/reserva/${reservaid}`, {
+      method: "PUT",
+      headers,
+      body: JSON.stringify(body),
+    });
+
+    if (response.status === 400) {
+      window.alert(await response.text());
+      return;
+    }
+
     const dados = await response.json();
     console.log(dados);
 
