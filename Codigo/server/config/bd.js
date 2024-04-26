@@ -1,5 +1,4 @@
-//BANCO DE DADOS EXTERNO
-
+//BANCO DE DADOS EXTERNO;
 /*module.exports = {
     dialect: 'mysql',
     host: 'mysqlserver.chnjkibcujou.sa-east-1.rds.amazonaws.com',
@@ -19,25 +18,25 @@
     },
 };*/
 
-//BANCO DE DADOS LOCAL
-
+//BANCO DE DADOS LOCAL;
 const { Sequelize } = require("sequelize");
 
-// Configurações de conexão com o banco de dados
-const sequelize = new Sequelize({
+// Configurações de conexão com o banco de dados;
+/*const sequelize = new Sequelize({
   dialect: "mysql",
   host: "localhost",
   username: "root",
   password: "Phmcf#2003",
-});
-// const sequelize = new Sequelize({
-//     dialect: 'mysql',
-//     host: 'localhost',
-//     username: 'root',
-//     password: 'cacau69#Deus',
-// });
+});*/
 
-// Função para criar o banco de dados se não existir
+const sequelize = new Sequelize({
+  dialect: 'mysql',
+  host: 'localhost',
+  username: 'root',
+  password: 'cacau69#Deus',
+});
+
+// Função para criar o banco de dados se não existir;
 async function createDatabase() {
   try {
     await sequelize.query(`CREATE DATABASE IF NOT EXISTS recantodoguerreiro;`);
@@ -47,11 +46,11 @@ async function createDatabase() {
   }
 }
 
-// Chama a função para criar o banco de dados
+// Chama a função para criar o banco de dados;
 createDatabase();
 
-// Exporta as configurações
-module.exports = {
+// Exporta as configurações;
+/*module.exports = {
   dialect: "mysql",
   host: "localhost",
   username: "root",
@@ -60,13 +59,15 @@ module.exports = {
   define: {
     timestamp: true,
   },
-  // module.exports = {
-  //     dialect: 'mysql',
-  //     host: 'localhost',
-  //     username: 'root',
-  //     password: 'cacau69#Deus',
-  //     database: 'recantodoguerreiro',
-  //     define: {
-  //         timestamp: true,
-  //     },
+};*/
+
+module.exports = {
+  dialect: 'mysql',
+  host: 'localhost',
+  username: 'root',
+  password: 'cacau69#Deus',
+  database: 'recantodoguerreiro',
+  define: {
+    timestamp: true,
+  },
 };

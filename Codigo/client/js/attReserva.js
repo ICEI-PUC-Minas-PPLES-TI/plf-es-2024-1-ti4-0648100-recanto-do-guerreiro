@@ -104,6 +104,6 @@ function logout() {
   // Exemplo de mensagem de logout;
   console.log("Usuário saiu");
   window.alert("Usuario saiu");
-  // Se preferir redirecionar para a página inicial após o logout
+  // Se preferir redirecionar para a página inicial após o logout;
   window.location.href = "./index.html";
 }
