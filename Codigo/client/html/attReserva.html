@@ -34,7 +34,6 @@
     <div class="container">
         <h1>Sistema Recanto do Guerreiro - Atualizar Reservas</h1>
         <h2>Atualizar Reserva</h2>
-        <!-- <form id="add-workshop-form" onsubmit="Oficina(event)"> -->
         <form id="add-workshop-form" onsubmit="putReserva(event)">
 
             <label for="idReserva" class="form-label">ID da Reserva:</label>
@@ -47,7 +46,7 @@
             <textarea class="form-control" id="descricao" name="descricao" rows="3" required></textarea>
 
             <label for="data" class="form-label">Data da Reserva:</label>
-            <input type="date" class="form-control" id="data" name="data" required>
+            <input type="date" class="form-control" id="data" name="data" required onchange="checkWeekend(this)">
 
             <label for="hora" class="form-label">Hora da Reserva:</label>
             <input type="time" class="form-control" id="hora" name="hora" required>
@@ -60,9 +59,9 @@
 
             <label for="status" class="form-label">Status da Reserva:</label>
             <select class="form-select" id="status" name="status" required>
-                        <option value="Ativo">Ativo</option>
-                        <option value="Inativo">Inativo</option>
-                    </select>
+                <option value="Ativo">Ativo</option>
+                <option value="Inativo">Inativo</option>
+            </select>
 
             <button type="submit" id="btn_submit">Atualizar Reserva</button>
 
@@ -88,6 +87,8 @@
         }
     </script>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="../js/verifyLogin.js"></script>
     <script src="../js/attReserva.js"></script>
     <script src="../js/masks.js"></script>

@@ -13,6 +13,7 @@ function logout() {
   window.location.href = "./index.html";
 }
 
+// Função para adicionar reserva
 async function addReserva(e) {
   e.preventDefault();
   const token = sessionStorage.getItem("token");
@@ -133,6 +134,18 @@ async function deletereserva(index) {
   });
 
   displayWorkshops();
+}
+// Verificar se a data selecionada é um sábado ou domingo
+function checkWeekend(input) {
+  const selectedDate = new Date(input.value);
+  const day = selectedDate.getDay();
+  if (day === 5 || day === 6) {
+    input.setCustomValidity("");
+  } else {
+    input.setCustomValidity(
+      "Por favor, selecione uma data de sábado ou domingo."
+    );
+  }
 }
 
 // Preencher as listas suspensas quando a página for carregada;
