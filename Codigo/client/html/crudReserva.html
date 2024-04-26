@@ -50,6 +50,7 @@
             <tbody id="displayReservas">
             </tbody>
         </table>
+        <br>
         <h2>Adicionar Nova Reserva</h2>
         <form id="add-workshop-form" onsubmit="addReserva(event)">
             <label for="titulo" class="form-label">Título da Reserva:</label>
@@ -59,7 +60,7 @@
             <textarea class="form-control" id="descricao" name="descricao" rows="3" required></textarea>
 
             <label for="data" class="form-label">Data da Reserva:</label>
-            <input type="date" class="form-control" id="data" name="data" required onchange="checkWeekend(this)">>
+            <input type="date" class="form-control" id="data" name="data" required onchange="checkWeekend(this)">
 
             <label for="hora" class="form-label">Hora da Reserva:</label>
             <input type="time" class="form-control" id="hora" name="hora" required>
@@ -77,6 +78,7 @@
                 <option value="Ativo">Ativo</option>
                 <option value="Inativo">Inativo</option>
             </select>
+            <br>
 
             <button type="submit" id="btn_submit">Cadastrar Reserva</button>
 

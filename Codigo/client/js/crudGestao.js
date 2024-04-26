@@ -74,7 +74,9 @@ async function displayWorkshops() {
             <td>${workshop.descricao}</td>
             <td>
             <a class="btn btn-primary" href="../html/attGestao.html?id=${workshop.id}">Editar →</a>
-            <button onclick="deletegestao(${workshop.id})">Excluir</button>
+            <button onclick="deletegestao(${workshop.id})">
+            <img src="../img/botao.jpg" alt="Excluir" width="30" height="30">
+        </button>
             </td>
         `;
   });

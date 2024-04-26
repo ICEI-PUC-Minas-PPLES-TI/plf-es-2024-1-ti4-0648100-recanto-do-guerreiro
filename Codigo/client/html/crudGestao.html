@@ -46,6 +46,7 @@
             <tbody id="displayGestoes">
             </tbody>
         </table>
+        <br>
         <h2>Adicionar Nova Gestão</h2>
         <!-- <form id="add-workshop-form" onsubmit="Oficina(event)"> -->
         <form id="add-workshop-form" onsubmit="addGestao(event)">
@@ -57,13 +58,14 @@
             <label for="idReserva" class="form-label">ID da Reserva:</label>
             <select class="form-control" id="idReserva" name="idReserva" required>
                 <!-- Os titulos das reservas serão gerados dinamicamente -->
-            </select>            
+            </select>
 
             <label for="custos" class="form-label">Custos:</label>
             <input type="number" class="form-control" id="custos" name="custos" required>
 
             <label for="descricao" class="form-label">Descrição:</label>
             <textarea class="form-control" id="descricao" name="descricao" rows="3" required></textarea>
+            <br>
 
             <button type="submit" id="btn_submit">Cadastrar Gestão</button>
 
@@ -75,22 +77,6 @@
         <div class="footer-content">
         </div>
     </footer>
-
-    <script>
-        // Função de logout;
-        function logout() {
-            // Limpar os dados de sessão, se necessário;
-            localStorage.removeItem("token");
-            // Redirecionar o usuário para a página de login ou qualquer outra página desejada após o logout;
-            // Exemplo: window.location.href = 'pagina_de_login.html';
-            // Exemplo de mensagem de logout;
-            console.log("Usuário saiu");
-            window.alert("Usuario saiu");
-            // Se preferir redirecionar para a página inicial após o logout;
-            window.location.href = "./index.html";
-        }
-    </script>
-
     <script src="../js/verifyLogin.js"></script>
     <script src="../js/crudGestao.js"></script>
     <script src="../js/masks.js"></script>

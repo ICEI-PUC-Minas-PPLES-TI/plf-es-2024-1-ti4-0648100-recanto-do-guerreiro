@@ -87,7 +87,12 @@ async function displayWorkshops() {
         <td>${workshop.status}</td>
         <td>
           <a class="btn btn-primary" href="../html/attReserva.html?id=${workshop.id}">Editar →</a>
-          <button onclick="deletereserva(${workshop.id})">Excluir</button>
+          <br>
+          <br>
+          <button onclick="deletereserva(${workshop.id})">
+    <img src="../img/botao.jpg" alt="Excluir" width="30" height="30">
+</button>
+
         </td>
       `;
     });
