@@ -34,7 +34,6 @@ window.onload = async function getReserva() {
   }
 };
 
-// Função para atualizar reserva
 async function putReserva(e) {
   const token = sessionStorage.getItem("token");
   const headers = {
@@ -64,6 +63,29 @@ async function putReserva(e) {
     }
     if (e.target.status.value) {
       body.status = e.target.status.value;
+    }
+
+    // Verificar se a data já existe
+    const responseCheck = await fetch(
+      `http://localhost:8000/reserva/data/${body.data}`,
+      {
+        method: "GET",
+        headers,
+      }
+    );
+
+    if (!responseCheck.ok) {
+      const error = await responseCheck.json();
+      window.alert(error.error);
+      return;
+    }
+
+    const dadosCheck = await responseCheck.json();
+
+    // Se a data já existir e não for a mesma reserva, exibir mensagem e retornar
+    if (dadosCheck.length > 0 && dadosCheck[0].id !== reservaid) {
+      window.alert("Data já reservada. Por favor, selecione outra data.");
+      return;
     }
 
     const response = await fetch(`http://localhost:8000/reserva/${reservaid}`, {

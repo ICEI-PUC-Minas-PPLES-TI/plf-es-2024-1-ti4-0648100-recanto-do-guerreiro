@@ -13,7 +13,6 @@ function logout() {
   window.location.href = "../index.html";
 }
 
-// Função para adicionar reserva
 async function addReserva(e) {
   e.preventDefault();
   const token = sessionStorage.getItem("token");
@@ -22,14 +21,41 @@ async function addReserva(e) {
     Authorization: token,
   };
 
+  // Data da reserva que será verificada
+  const dataReserva = e.target.data.value;
+
   try {
+    // Verificar se a data já existe
+    const responseCheck = await fetch(
+      `http://localhost:8000/reserva/data/${dataReserva}`,
+      {
+        method: "GET",
+        headers,
+      }
+    );
+
+    if (!responseCheck.ok) {
+      const error = await responseCheck.json();
+      window.alert(error.error);
+      return;
+    }
+
+    const dadosCheck = await responseCheck.json();
+
+    // Se a data já existir, exibir mensagem e retornar
+    if (dadosCheck.length > 0) {
+      window.alert("Data já reservada. Por favor, selecione outra data.");
+      return;
+    }
+
+    // Se a data não existir, prosseguir com a criação da reserva
     const response = await fetch("http://localhost:8000/reserva", {
       method: "POST",
       headers,
       body: JSON.stringify({
         titulo: e.target.titulo.value,
         descricao: e.target.descricao.value,
-        data: e.target.data.value,
+        data: dataReserva,
         hora: e.target.hora.value,
         idCliente: e.target.idCliente.value,
         adicionais: e.target.adicionais.value,
