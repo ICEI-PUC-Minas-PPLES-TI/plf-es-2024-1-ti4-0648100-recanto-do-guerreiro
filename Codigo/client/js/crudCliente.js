@@ -64,6 +64,8 @@ async function displayWorkshops() {
             <td>${workshop.bairro}</td>
             <td>
             <a class="btn btn-primary" href="../html/attCliente.html?id=${workshop.id}">Editar →</a>
+            <br>
+            <br>
             <button onclick="deletecliente(${workshop.id})">
             <img src="../img/botao.jpg" alt="Excluir" width="30" height="30">
         </button>
