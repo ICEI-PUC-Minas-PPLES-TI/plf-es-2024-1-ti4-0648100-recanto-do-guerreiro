@@ -16,9 +16,9 @@ Este diretório mantém os artefatos do projeto.
 
 [Diagrama caso de uso](Diagrama_CasoUso_Recanto_do_Guerreiro.png) - Diagrama caso de uso
 
-[Diagrama ER](Diagrama_Classes_Recanto_Guerreiro.png) - Diagrama ER
+[Diagrama ER](Diagrama_ER_Novo.png) - Diagrama ER
 
-[Diagrama de Classes](Diagrama_Classes.png) - Diagrama de Classes
+[Diagrama de Classes](Diagrama_Classes_Recanto_Guerreiro.png) - Diagrama de Classes
 
 Liste os artefatos produzidos, com suas localizações e descrição do conteúdo.
 
