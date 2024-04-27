@@ -72,8 +72,9 @@ async function putReserva(e) {
       body: JSON.stringify(body),
     });
 
-    if (response.status === 400) {
-      window.alert(await response.text());
+    if (!response.ok) {
+      const error = await response.json();
+      window.alert(error.error);
       return;
     }
 

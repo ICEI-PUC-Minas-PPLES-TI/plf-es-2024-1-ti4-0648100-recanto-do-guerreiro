@@ -16,21 +16,8 @@ window.onload = async function getGestao() {
 
     document.getElementById("idGestao").value = gestao.id;
 
-    // Obter detalhes do cliente;
-    const clienteResponse = await fetch(
-      `http://localhost:8080/filterIdCliente/${gestao.idCliente}`,
-      { headers }
-    );
-    const cliente = await clienteResponse.json();
-    document.getElementById("idCliente").value = cliente.nome;
-
-    // Obter detalhes da reserva;
-    const reservaResponse = await fetch(
-      `http://localhost:8080/filterIdReserva/${gestao.idReserva}`,
-      { headers }
-    );
-    const reserva = await reservaResponse.json();
-    document.getElementById("idReserva").value = reserva.titulo;
+    document.getElementById("idCliente").value = gestao.idCliente;
+    document.getElementById("idReserva").value = gestao.idReserva;
 
     document.getElementById("custos").value = gestao.custos;
     document.getElementById("descricao").value = gestao.descricao;
@@ -73,8 +60,7 @@ async function putGestao(e) {
     );
     const dados = await response.json();
     console.log(dados);
-
-    alert = "Gestão atualizada com sucesso";
+    window.alert = "Gestão atualizada com sucesso";
     window.location.href = "../html/crudGestao.html";
   } catch (erro) {
     console.log(erro);
