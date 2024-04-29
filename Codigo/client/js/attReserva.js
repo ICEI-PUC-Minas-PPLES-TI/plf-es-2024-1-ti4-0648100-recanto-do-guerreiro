@@ -53,14 +53,7 @@ async function putReserva(e) {
       body.descricao = e.target.descricao.value;
     }
     if (e.target.data.value) {
-      // Verificar se a nova data já está reservada
-      const novaData = e.target.data.value;
-      const dataJaReservada = await verificarDataExistente(novaData, reservaid);
-      if (dataJaReservada) {
-        window.alert("Essa data já foi reservada.");
-        return;
-      }
-      body.data = novaData;
+      body.data = e.target.data.value;
     }
     if (e.target.idCliente.value) {
       body.idCliente = e.target.idCliente.value;
@@ -81,11 +74,6 @@ async function putReserva(e) {
       }
     );
 
-    // Verifique se a resposta da requisição está OK
-    if (!response.ok) {
-      throw new Error("Erro ao atualizar a reserva.");
-    }
-
     const dados = await response.json();
     console.log(dados);
 
@@ -93,20 +81,6 @@ async function putReserva(e) {
     window.location.href = "../html/crudReserva.html";
   } catch (erro) {
     console.log(erro);
-    window.alert("Ocorreu um erro ao atualizar a reserva.");
-  }
-}
-
-async function verificarDataExistente(data, reservaid) {
-  try {
-    const response = await fetch(
-      `http://localhost:8000/verificarData?data=${data}&reservaid=${reservaid}`
-    );
-    const dados = await response.json();
-    return dados.existe;
-  } catch (error) {
-    console.error("Erro ao verificar a existência da data da reserva:", error);
-    return false;
   }
 }
 

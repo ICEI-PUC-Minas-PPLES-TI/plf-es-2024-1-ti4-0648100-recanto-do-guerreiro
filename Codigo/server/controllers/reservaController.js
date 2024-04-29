@@ -102,46 +102,6 @@ class reservaController {
       return res.status(500).json("Erro ao deletar" + erro);
     }
   }
-
-  async verificarData(req, res) {
-    try {
-      const { data, reservaid } = req.query;
-      let query = { data };
-      if (reservaid) {
-        query._id = { $ne: reservaid };
-      }
-      const reservaExistente = await Reserva.findOne(query);
-
-      if (reservaExistente) {
-        return res.json({ existe: true });
-      }
-
-      return res.json({ existe: false });
-    } catch (error) {
-      console.error(
-        "Erro ao verificar a existência da data da reserva:",
-        error
-      );
-      return res.status(500).json({ mensagem: "Erro interno do servidor" });
-    }
-  }
-
-  async verificarDataExistente(data, reservaid = null) {
-    try {
-      let query = { data };
-      if (reservaid) {
-        query.id = { $ne: reservaid };
-      }
-      const reservaExistente = await reserva.findOne({ where: query });
-      return !!reservaExistente; // Retorna verdadeiro se a reserva existir, falso caso contrário
-    } catch (error) {
-      console.error(
-        "Erro ao verificar a existência da data da reserva:",
-        error
-      );
-      throw new Error("Erro interno do servidor");
-    }
-  }
 }
 
 module.exports = new reservaController();
