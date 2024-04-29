@@ -1,102 +1,147 @@
-const { where } = require('sequelize');
-const reserva = require('../models/Reserva');
-const fs = require('fs').promises;
-const path = require('path');
+const { where } = require("sequelize");
+const reserva = require("../models/Reserva");
+const fs = require("fs").promises;
+const path = require("path");
 
 class reservaController {
-    async create(req, res) {
-        try {
-            const novaReserva = await reserva.create({
-                titulo: req.body.titulo,
-                descricao: req.body.descricao,
-                data: req.body.data,
-                hora: req.body.hora,
-                idCliente: req.body.idCliente,
-                adicionais: req.body.adicionais,
-                status: req.body.status
-            })
-            return res.status(200).json(novaReserva)
-        } catch (erro) {
-            return res.status(500).json('Reserva não cadastrada' + erro)
-        }
+  async create(req, res) {
+    try {
+      const novaReserva = await reserva.create({
+        titulo: req.body.titulo,
+        descricao: req.body.descricao,
+        data: req.body.data,
+        hora: req.body.hora,
+        idCliente: req.body.idCliente,
+        adicionais: req.body.adicionais,
+        status: req.body.status,
+      });
+      return res.status(200).json(novaReserva);
+    } catch (erro) {
+      return res.status(500).json("Reserva não cadastrada" + erro);
     }
+  }
 
-    async filter(req, res) {
-        try {
-            const { data, status } = req.query
-            const reservaFil = await reserva.findAll({
-                where: {
-                    data: data,
-                    status: status,
-                }
-            })
-            console.log(reservaFil)
-            return res.status(200).json(reservaFil)
-        } catch (erro) {
-            return res.status(500).json('Erro ao encontrar a reserva' + erro)
-        }
+  async filter(req, res) {
+    try {
+      const { data, status } = req.query;
+      const reservaFil = await reserva.findAll({
+        where: {
+          data: data,
+          status: status,
+        },
+      });
+      console.log(reservaFil);
+      return res.status(200).json(reservaFil);
+    } catch (erro) {
+      return res.status(500).json("Erro ao encontrar a reserva" + erro);
     }
+  }
 
-    async index(req, res) {
-        try {
-            const reservasImport = await reserva.findAll()
-            return res.status(200).json(reservasImport)
-        } catch (erro) {
-            return res.status(500).json('Erro ao encontrar as reservas' + erro)
-        }
+  async index(req, res) {
+    try {
+      const reservasImport = await reserva.findAll();
+      return res.status(200).json(reservasImport);
+    } catch (erro) {
+      return res.status(500).json("Erro ao encontrar as reservas" + erro);
     }
-    
-    async filterIdReserva(req, res) {
-        try {
-            const reservasFil = await reserva.findOne({
-                where: { id: req.params.id }
-            })
-            console.log(reservasFil)
-            return res.status(200).json(reservasFil)
-        } catch (erro) {
-            return res.status(500).json('Erro ao pegar as reservas' + erro)
-        }
-    }
+  }
 
-    async updateStatus(req, res) {
-        try {
-            await reserva.update({
-                status: req.body.status,
-            }, { where: { id: req.params.id } })
-            return res.status(200).json('Sucesso ao atualizar a reserva')
-        } catch (erro) {
-            return res.status(500).json('Erro ao atualizar' + erro)
-        }
+  async filterIdReserva(req, res) {
+    try {
+      const reservasFil = await reserva.findOne({
+        where: { id: req.params.id },
+      });
+      console.log(reservasFil);
+      return res.status(200).json(reservasFil);
+    } catch (erro) {
+      return res.status(500).json("Erro ao pegar as reservas" + erro);
     }
+  }
 
-    async update(req, res) {
-        try {
-            await reserva.update({
-                titulo: req.body.titulo,
-                descricao: req.body.descricao,
-                data: req.body.data,
-                hora: req.body.hora,
-                idCliente: req.body.idCliente,
-                adicionais: req.body.adicionais,
-                status: req.body.status,
-            }, { where: { id: req.params.id } })
-            return res.status(200).json('Sucesso ao atualizar a reserva')
-        } catch (erro) {
-            return res.status(500).json('Erro ao atualizar' + erro)
-        }
+  async updateStatus(req, res) {
+    try {
+      await reserva.update(
+        {
+          status: req.body.status,
+        },
+        { where: { id: req.params.id } }
+      );
+      return res.status(200).json("Sucesso ao atualizar a reserva");
+    } catch (erro) {
+      return res.status(500).json("Erro ao atualizar" + erro);
     }
+  }
 
-    async delete(req, res) {
-        try {
-            await reserva.destroy({
-                where: { id: req.params.id }
-            })
-            return res.status(200).json('Sucesso ao deletar')
-        } catch (erro) {
-            return res.status(500).json('Erro ao deletar' + erro)
-        }
+  async update(req, res) {
+    try {
+      await reserva.update(
+        {
+          titulo: req.body.titulo,
+          descricao: req.body.descricao,
+          data: req.body.data,
+          hora: req.body.hora,
+          idCliente: req.body.idCliente,
+          adicionais: req.body.adicionais,
+          status: req.body.status,
+        },
+        { where: { id: req.params.id } }
+      );
+      return res.status(200).json("Sucesso ao atualizar a reserva");
+    } catch (erro) {
+      return res.status(500).json("Erro ao atualizar" + erro);
     }
+  }
 
+  async delete(req, res) {
+    try {
+      await reserva.destroy({
+        where: { id: req.params.id },
+      });
+      return res.status(200).json("Sucesso ao deletar");
+    } catch (erro) {
+      return res.status(500).json("Erro ao deletar" + erro);
+    }
+  }
+
+  async verificarData(req, res) {
+    try {
+      const { data, reservaid } = req.query;
+      let query = { data };
+      if (reservaid) {
+        query._id = { $ne: reservaid };
+      }
+      const reservaExistente = await Reserva.findOne(query);
+
+      if (reservaExistente) {
+        return res.json({ existe: true });
+      }
+
+      return res.json({ existe: false });
+    } catch (error) {
+      console.error(
+        "Erro ao verificar a existência da data da reserva:",
+        error
+      );
+      return res.status(500).json({ mensagem: "Erro interno do servidor" });
+    }
+  }
+
+  async verificarDataExistente(data, reservaid = null) {
+    try {
+      let query = { data };
+      if (reservaid) {
+        query.id = { $ne: reservaid };
+      }
+      const reservaExistente = await reserva.findOne({ where: query });
+      return !!reservaExistente; // Retorna verdadeiro se a reserva existir, falso caso contrário
+    } catch (error) {
+      console.error(
+        "Erro ao verificar a existência da data da reserva:",
+        error
+      );
+      throw new Error("Erro interno do servidor");
+    }
+  }
 }
 
-module.exports = new reservaController()
+module.exports = new reservaController();
