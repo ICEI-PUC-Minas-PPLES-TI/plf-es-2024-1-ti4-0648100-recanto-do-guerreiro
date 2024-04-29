@@ -15,14 +15,11 @@ class reservaController {
                 adicionais: req.body.adicionais,
                 status: req.body.status,
             });
-
             return res.status(200).json(novaReserva);
-
         } catch (erro) {
-            return res.status(500).json("Erro ao cadastrar a reserva: " + erro);
+            return res.status(500).json("Reserva não cadastrada" + erro);
         }
     }
-
     async filter(req, res) {
         try {
             const { data, status } = req.query;
@@ -70,7 +67,6 @@ class reservaController {
             return res.status(500).json("Erro ao atualizar" + erro);
         }
     }
-
     async update(req, res) {
         try {
             await reserva.update({
@@ -82,11 +78,9 @@ class reservaController {
                 adicionais: req.body.adicionais,
                 status: req.body.status,
             }, { where: { id: req.params.id } });
-
-            return res.status(200).json("Reserva atualizada com sucesso.");
-
+            return res.status(200).json("Sucesso ao atualizar a reserva");
         } catch (erro) {
-            return res.status(500).json("Erro ao atualizar a reserva: " + erro);
+            return res.status(500).json("Erro ao atualizar" + erro);
         }
     }
 
