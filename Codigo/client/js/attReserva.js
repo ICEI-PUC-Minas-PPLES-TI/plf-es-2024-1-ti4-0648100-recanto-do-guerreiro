@@ -35,7 +35,7 @@ window.onload = async function getReserva() {
 };
 
 async function putReserva(e) {
-  const token = sessionStorage.getItem("token");
+  const token = sessionStorage.getItem("token"); //PEGA O TOKEM DO LOCAL STORAGE E JOGA NO HEADERS PARA VERIFICACAO
   const headers = {
     "Content-Type": "application/json",
     Authorization: token,
@@ -65,41 +65,14 @@ async function putReserva(e) {
       body.status = e.target.status.value;
     }
 
-    // Verificar se a data já existe
-    const responseCheck = await fetch(
-      `http://localhost:8000/reserva/data/${body.data}`,
+    const response = await fetch(
+      `http://localhost:8000/reservaPut/${reservaid}`,
       {
-        method: "GET",
+        method: "PUT",
         headers,
+        body: JSON.stringify(body),
       }
     );
-
-    if (!responseCheck.ok) {
-      const error = await responseCheck.json();
-      window.alert(error.error);
-      return;
-    }
-
-    const dadosCheck = await responseCheck.json();
-
-    // Se a data já existir e não for a mesma reserva, exibir mensagem e retornar
-    if (dadosCheck.length > 0 && dadosCheck[0].id !== reservaid) {
-      window.alert("Data já reservada. Por favor, selecione outra data.");
-      return;
-    }
-
-    const response = await fetch(`http://localhost:8000/reserva/${reservaid}`, {
-      method: "PUT",
-      headers,
-      body: JSON.stringify(body),
-    });
-
-    if (!response.ok) {
-      const error = await response.json();
-      window.alert(error.error);
-      return;
-    }
-
     const dados = await response.json();
     console.log(dados);
 
@@ -109,7 +82,6 @@ async function putReserva(e) {
     console.log(erro);
   }
 }
-
 // Verificar se a data selecionada é um sábado ou domingo
 function checkWeekend(input) {
   const selectedDate = new Date(input.value);

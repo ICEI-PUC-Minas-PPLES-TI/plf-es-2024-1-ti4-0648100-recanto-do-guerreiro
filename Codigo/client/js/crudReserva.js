@@ -21,62 +21,27 @@ async function addReserva(e) {
     Authorization: token,
   };
 
-  // Data da reserva que será verificada
-  const dataReserva = e.target.data.value;
+  // Se a data não existir, prosseguir com a criação da reserva
+  const response = await fetch("http://localhost:8000/reserva", {
+    method: "POST",
+    headers,
+    body: JSON.stringify({
+      titulo: e.target.titulo.value,
+      descricao: e.target.descricao.value,
+      data: e.target.data.value,
+      hora: e.target.hora.value,
+      idCliente: e.target.idCliente.value,
+      adicionais: e.target.adicionais.value,
+      status: e.target.status.value,
+    }),
+  });
 
-  try {
-    // Verificar se a data já existe
-    const responseCheck = await fetch(
-      `http://localhost:8000/reserva/data/${dataReserva}`,
-      {
-        method: "GET",
-        headers,
-      }
-    );
-
-    if (!responseCheck.ok) {
-      const error = await responseCheck.json();
-      window.alert(error.error);
-      return;
-    }
-
-    const dadosCheck = await responseCheck.json();
-
-    // Se a data já existir, exibir mensagem e retornar
-    if (dadosCheck.length > 0) {
-      window.alert("Data já reservada. Por favor, selecione outra data.");
-      return;
-    }
-
-    // Se a data não existir, prosseguir com a criação da reserva
-    const response = await fetch("http://localhost:8000/reserva", {
-      method: "POST",
-      headers,
-      body: JSON.stringify({
-        titulo: e.target.titulo.value,
-        descricao: e.target.descricao.value,
-        data: dataReserva,
-        hora: e.target.hora.value,
-        idCliente: e.target.idCliente.value,
-        adicionais: e.target.adicionais.value,
-        status: e.target.status.value,
-      }),
-    });
-
-    if (!response.ok) {
-      const error = await response.json();
-      window.alert(error.error);
-      return;
-    }
-
-    const dados = await response.json();
-    console.log(dados);
-    window.alert("Reserva Cadastrada Com Sucesso!");
-    window.location.href = "../html/crudReserva.html";
-  } catch (error) {
-    console.log("Error adding reserva:", error);
-  }
+  const dados = await response.json();
+  console.log(dados);
+  window.alert("Reserva Cadastrada Com Sucesso!");
+  window.location.href = "../html/crudReserva.html";
 }
+
 async function displayWorkshops() {
   const table = document.getElementById("displayReservas");
   table.innerHTML = "";

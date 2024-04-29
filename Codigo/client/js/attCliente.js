@@ -33,7 +33,7 @@ async function putCliente(e) {
     Authorization: token,
   };
   e.preventDefault();
-  const reservaid = document.getElementById("idCliente").value;
+  const clienteid = document.getElementById("idCliente").value;
 
   try {
     const body = {};
@@ -58,7 +58,7 @@ async function putCliente(e) {
     }
 
     const response = await fetch(
-      `http://localhost:8000/clientePut/${reservaid}`,
+      `http://localhost:8000/clientePut/${clienteid}`,
       {
         method: "PUT",
         headers,
