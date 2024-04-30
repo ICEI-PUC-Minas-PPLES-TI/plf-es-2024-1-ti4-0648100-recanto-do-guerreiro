@@ -1,7 +1,4 @@
 window.onload = async function getCliente() {
-    if (!token) {
-        window.location.href = "../index.html";
-    }
     const token = sessionStorage.getItem("token");
     const headers = {
         "Content-Type": "application/json",

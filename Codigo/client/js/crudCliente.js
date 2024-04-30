@@ -30,9 +30,6 @@ async function addCliente(e) {
 }
 
 async function displayWorkshops() {
-    if (!token) {
-        window.location.href = "../index.html";
-    }
     const table = document.getElementById("displayClientes");
     table.innerHTML = "";
     const token = sessionStorage.getItem("token");

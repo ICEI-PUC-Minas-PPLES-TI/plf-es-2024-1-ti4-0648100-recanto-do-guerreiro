@@ -28,9 +28,6 @@ async function addGestao(e) {
 }
 
 async function displayWorkshops() {
-    if (!token) {
-        window.location.href = "../index.html";
-    }
     const table = document.getElementById("displayGestoes");
     table.innerHTML = "";
     const token = sessionStorage.getItem("token");

@@ -33,9 +33,6 @@ async function addReserva(e) {
 }
 
 async function displayWorkshops() {
-    if (!token) {
-        window.location.href = "../index.html";
-    }
     const table = document.getElementById("displayReservas");
     table.innerHTML = "";
     const token = sessionStorage.getItem("token");
