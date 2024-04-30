@@ -28,7 +28,7 @@ Este diretório mantém os artefatos do projeto.
 
 [Diagrama de Classes](Diagrama_Classes_Recanto_Guerreiro.png) - Diagrama de Classes
 
-[Diagrama de Classes](./Documentacao/Recanto_do_Guerreiro_Overleaf.pdf) - Documento latex(Overleaf)
+[Documento Overleaf](../Documentacao/Recanto_do_Guerreiro_Overleaf.pdf) - Documento latex(Overleaf)
 
 [Apresentação Final](apresentacaoFinal.pdf) - Apresentação final
 
