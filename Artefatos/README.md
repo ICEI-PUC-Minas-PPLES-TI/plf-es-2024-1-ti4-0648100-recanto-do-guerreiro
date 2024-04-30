@@ -4,7 +4,15 @@ Este diretório mantém os artefatos do projeto.
 
 [Ata acordo com cliente](atas/Ata_Acordo_Cliente.pdf) - Ata acordo com cliente
 
-[Ata reunião dia 01/03/2024](atas/Ata_Reuniao_Dia01_03_2024.pdf) - Ata reunião dia 01/03/2024
+[Ata reunião 1](atas/Ata_Reuniao_Dia01_03_2024.pdf) - Ata reunião 1
+
+[Ata reunião 2](atas/Ata_Reuniao_2.pdf) - Ata reunião 2
+
+[Ata reunião 3](atas/Ata_Reuniao_3.pdf) - Ata reunião 3
+
+[Ata reunião 4](atas/Ata_Reuniao_4.pdf) - Ata reunião 4
+
+[Ata reunião 5](atas/Ata_Reuniao_5.pdf) - Ata reunião 5
 
 [Apresentação sprint 1](ApresentacaoTIS4-Sprint1.pdf) - Apresentação sprint 1.
 
@@ -19,6 +27,10 @@ Este diretório mantém os artefatos do projeto.
 [Diagrama ER](Diagrama_ER_Novo.png) - Diagrama ER
 
 [Diagrama de Classes](Diagrama_Classes_Recanto_Guerreiro.png) - Diagrama de Classes
+
+[Apresentação Final](apresentacaoFinal.pdf) - Apresentação final
+
+[Video](video.mp4) - Video apresetação
 
 Liste os artefatos produzidos, com suas localizações e descrição do conteúdo.
 
