@@ -30,9 +30,9 @@ Este diretório mantém os artefatos do projeto.
 
 [Documento Overleaf](../Documentacao/Recanto_do_Guerreiro_Overleaf.pdf) - Documento latex(Overleaf)
 
-[Apresentação Final](apresentacaoFinal.pdf) - Apresentação final
+[Apresentação Final](../Divulgacao/Apresentacao/apresentacaoFinal.pdf) - Apresentação final
 
-[Video](video.mp4) - Video apresetação
+[Video](../Divulgacao/Video/video.mp4) - Video apresetação
 
 Liste os artefatos produzidos, com suas localizações e descrição do conteúdo.
 
