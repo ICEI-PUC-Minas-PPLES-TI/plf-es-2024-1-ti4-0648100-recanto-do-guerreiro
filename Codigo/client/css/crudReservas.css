@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f4f4f4;
@@ -15,12 +16,13 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-h1{
+h1 {
     margin-bottom: 25px;
     text-align: center;
-    color: #555555 ;
+    color: #555555;
     font-weight: bold;
 }
+
 h2 {
     text-align: center;
     color: #555555;
@@ -55,6 +57,7 @@ tr:nth-child(even) {
 form {
     margin-top: 20px;
 }
+
 
 label,
 input,
@@ -148,17 +151,24 @@ nav {
 }
 
 .logout-button button {
-    background-color: #6c757d; /* Cor de fundo diferente */
-    color: #fff; /* Cor do texto */
+    background-color: #6c757d;
+    /* Cor de fundo diferente */
+    color: #fff;
+    /* Cor do texto */
     width: 100px;
-    border: none; /* Remove a borda */
-    border-radius: 5px; /* Adiciona bordas arredondadas */
-    padding: 10px 20px; /* Ajusta o preenchimento */
-    transition: background-color 0.3s; /* Adiciona transição suave */
+    border: none;
+    /* Remove a borda */
+    border-radius: 5px;
+    /* Adiciona bordas arredondadas */
+    padding: 10px 20px;
+    /* Ajusta o preenchimento */
+    transition: background-color 0.3s;
+    /* Adiciona transição suave */
 }
 
 .logout-button button:hover {
-    background-color: #c82333; /* Altera a cor de fundo ao passar o mouse */
+    background-color: #c82333;
+    /* Altera a cor de fundo ao passar o mouse */
 }
 
 
@@ -227,18 +237,24 @@ footer {
         align-items: center;
         text-align: center;
     }
+
     .menu {
-        flex-direction: row; /* Altera a direção dos itens do menu para linha */
+        flex-direction: row;
+        /* Altera a direção dos itens do menu para linha */
         margin-top: 20px;
 
     }
+
     .menu li {
-        margin-right: 15px; /* Ajusta a margem entre os itens do menu */
+        margin-right: 15px;
+        /* Ajusta a margem entre os itens do menu */
     }
-    .logout-button{
+
+    .logout-button {
         margin-top: 20px;
-        
+
     }
+
     .login-button {
         text-align: center;
         margin-top: 20px;
