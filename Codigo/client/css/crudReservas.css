@@ -58,6 +58,14 @@ form {
     margin-top: 20px;
 }
 
+form label,
+form input,
+form select,
+form textarea {
+    margin-bottom: 10px;
+    /* Adiciona uma margem uniforme na parte inferior de cada elemento */
+}
+
 
 label,
 input,
