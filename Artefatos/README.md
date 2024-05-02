@@ -26,6 +26,8 @@ Este diretório mantém os artefatos do projeto.
 
 [Diagrama ER](Diagrama_ER_Novo.png) - Diagrama ER
 
+[Diagrama Logico](Diagrama_Logico.png) - Diagrama Logico
+
 [Diagrama de Classes](Diagrama_Classes_Recanto_Guerreiro.png) - Diagrama de Classes
 
 [Documento Overleaf](../Documentacao/Recanto_do_Guerreiro_Overleaf.pdf) - Documento latex(Overleaf)
