@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
@@ -14,10 +16,11 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-h1,
-h2 {
+h1 {
     text-align: center;
-    color: #007bff;
+    color: #555555;
+    font-weight: bold;
+    margin-bottom: 40px;
 }
 
 table {
@@ -110,10 +113,12 @@ nav {
     margin: 0 auto;
 }
 
-.logo {
-    font-size: 24px;
-    font-weight: bold;
+.logo img {
+    width: 150px;
+    height: 90px;
+    margin-right: 20px;
 }
+
 
 .menu {
     list-style-type: none;
@@ -125,7 +130,7 @@ nav {
 
 .menu li {
     display: inline;
-    margin-right: 20px;
+    margin-right: 30px;
 }
 
 .menu a {
@@ -138,6 +143,22 @@ nav {
 
 .menu a:hover {
     text-decoration: underline;
+}
+
+.logout-button button {
+    background-color: #191970;
+    /* Cor de fundo diferente */
+    color: #fff;
+    /* Cor do texto */
+    width: 100px;
+    border: none;
+    /* Remove a borda */
+    border-radius: 5px;
+    /* Adiciona bordas arredondadas */
+    padding: 10px 20px;
+    /* Ajusta o preenchimento */
+    transition: background-color 0.3s;
+    /* Adiciona transição suave */
 }
 
 .login-button {
@@ -206,12 +227,14 @@ footer {
         text-align: center;
     }
     .menu {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row;
+        margin-top: 20px;
     }
     .menu li {
-        display: block;
-        margin: 10px 0;
+        margin-right: 15px;
+    }
+    .logout-button{
+        margin-top: 20px;
     }
     .login-button {
         text-align: center;
