@@ -99,10 +99,16 @@ button:hover {
 .delete-button {
     background-color: #dc3545;
 }
+.linha-separadora {
+    width: 460px;
+    margin: 20px auto;
+    border-top: 2px solid black;
+}
+
 .btn-visualizar{
     display: block;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 30px;
     margin-bottom: 15px;
     text-align: center;
 }
