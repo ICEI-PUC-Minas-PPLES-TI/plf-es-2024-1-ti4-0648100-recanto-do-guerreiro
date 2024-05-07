@@ -104,6 +104,13 @@ button:hover {
     background-color: #dc3545;
 }
 
+.btn-visualizar{
+    display: block;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 15px;
+    text-align: center;
+}
 nav {
     background-color: #007bff;
     color: #fff;
