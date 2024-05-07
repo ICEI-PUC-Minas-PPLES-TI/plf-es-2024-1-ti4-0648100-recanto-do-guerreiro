@@ -142,3 +142,40 @@ function checkWeekend(input) {
 window.addEventListener("load", () => {
     populateClienteSelect();
 });
+
+async function visualizarReservas() {
+    try {
+        const token = sessionStorage.getItem("token");
+        const headers = {
+            "Content-Type": "application/json",
+            Authorization: token,
+        }
+
+        const response = await fetch("http://localhost:8000/cliente", { headers, });
+        if (!response.ok) {
+            throw new Error("Erro ao obter Reservas");
+        }
+        displayWorkshops();
+        document.getElementById('tabelaReservas').style.display = 'block';
+    } catch (error) {
+        console.log("erro ao visualizar Reservas", error);
+    }
+}
+
+async function alternarLista() {
+    try {
+        const botaoVisualizar = document.getElementById('btn_Visualizar');
+        const tabelaReservas = document.getElementById('tabelaReservas');
+
+        if (tabelaReservas.style.display === 'none') {
+            await visualizarReservas();
+            tabelaReservas.style.display = 'block';
+            botaoVisualizar.textContent = 'Minimizar Lista';
+        } else {
+            tabelaReservas.style.display = 'none';
+            botaoVisualizar.textContent = 'Visualizar Reservas';
+        }
+    } catch (error) {
+        console.error("Erro ao alternar lista de Reservas:", error);
+    }
+}
