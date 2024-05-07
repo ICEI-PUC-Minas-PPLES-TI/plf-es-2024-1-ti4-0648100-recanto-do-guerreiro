@@ -40,7 +40,7 @@ async function displayWorkshops() {
     let dadoBruto = await fetch("http://localhost:8000/cliente", { headers });
     let workshops = await dadoBruto.json();
 
-    workshops.forEach(async(workshop) => {
+    workshops.forEach(async (workshop) => {
         const newRow = table.insertRow();
         newRow.innerHTML = `
             <td>${workshop.nome}</td>
@@ -75,3 +75,41 @@ async function deletecliente(index) {
 
     displayWorkshops();
 }
+
+async function visualizarClientes() {
+    try {
+        const token = sessionStorage.getItem("token");
+        const headers = {
+            "Content-Type": "application/json",
+            Authorization: token,
+        }
+
+        const response = await fetch("http://localhost:8000/cliente", { headers, });
+        if (!response.ok) {
+            throw new Error("Erro ao obter clientes");
+        }
+        displayWorkshops();
+        document.getElementById('tabelaClientes').style.display = 'block';
+    } catch (error) {
+        console.log("erro ao visualizar clientes", error);
+    }
+}
+
+async function alternarLista() {
+    try {
+        const botaoVisualizar = document.getElementById('btn_Visualizar');
+        const tabelaClientes = document.getElementById('tabelaClientes');
+
+        if (tabelaClientes.style.display === 'none') {
+            await visualizarClientes();
+            tabelaClientes.style.display = 'block';
+            botaoVisualizar.textContent = 'Minimizar Lista';
+        } else {
+            tabelaClientes.style.display = 'none';
+            botaoVisualizar.textContent = 'Visualizar Clientes';
+        }
+    } catch (error) {
+        console.error("Erro ao alternar lista de clientes:", error);
+    }
+}
+

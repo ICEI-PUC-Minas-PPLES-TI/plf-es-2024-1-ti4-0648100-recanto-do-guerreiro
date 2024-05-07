@@ -10,3 +10,5 @@ router.get("/user", user.index);
 router.get("/filterIdUser/:id", user.filterIdUser);
 
 module.exports = router;
+
+// http://localhost:8000/user
