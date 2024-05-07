@@ -100,10 +100,12 @@ button:hover {
     background-color: #dc3545;
 }
 .linha-separadora {
-    width: 460px;
+    width: 700px; 
     margin: 20px auto;
-    border-top: 2px solid black;
+    border-radius: 10px; 
+    border-top: 4px solid black; 
 }
+
 
 .btn-visualizar{
     display: block;
@@ -128,7 +130,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 50px auto;
 }
 
 .logo img {
@@ -147,7 +149,8 @@ nav {
 
 .menu li {
     display: inline;
-    margin-right: 30px;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 .menu a {
@@ -156,11 +159,21 @@ nav {
     font-weight: bold;
     font-size: 18px;
     transition: text-decoration 0.3s;
+    
 }
 
 .menu a:hover {
     text-decoration: underline;
 }
+.linha-vertical {
+    width: 2px; /* Define a largura da linha vertical */
+    height: 50px; /* Define a altura da linha vertical */
+    background-color: #ccc; /* Define a cor de fundo da linha vertical */
+    display: inline-block; /* Permite que a linha vertical seja exibida como um elemento inline */
+    vertical-align: middle;
+    margin: 0 20px; /* Define a margem entre os elementos */
+}
+
 
 .logout-button button {
     background-color: #191970;
@@ -255,11 +268,26 @@ footer {
     }
 
     .menu li {
-        margin-right: 15px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .linha-vertical {
+        width: 2px; 
+        height: 50px; 
+        background-color: #ccc; 
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 10px; /* Define a margem entre os elementos */
+    }
+    .linha-separadora {
+        width: 400px; 
+        margin: 20px auto;
+        border-radius: 10px; 
+        border-top: 4px solid black; 
     }
 
     .logout-button {
-        margin-top: 20px;
+        margin-top: 50px;
     }
 
     .login-button {
