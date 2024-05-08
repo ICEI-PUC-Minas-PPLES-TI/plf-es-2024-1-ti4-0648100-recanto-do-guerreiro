@@ -28,139 +28,7 @@ h2 {
     color: #555555;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-table,
-th,
-td {
-    border: 1px solid #ddd;
-}
-
-th,
-td {
-    padding: 10px;
-    text-align: center;
-    align-items: center;
-    width: 10%;
-}
-
-.th-especial {
-    width: 30%;
-}
-
-.td-especial {
-    width: 100%;
-    display: flex;
-}
-
-th {
-    background-color: #f2f2f2;
-}
-
-td {
-    height: 100px;
-}
-
-tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-form label,
-form input,
-form select,
-form textarea {
-    margin-bottom: 10px;
-    /* Adiciona uma margem uniforme na parte inferior de cada elemento */
-}
-
-label,
-input,
-button {
-    display: block;
-    margin-bottom: 10px;
-}
-
-label {
-    font-weight: bold;
-}
-
-input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-a {
-    text-align: center;
-}
-
-.btn-editar,
-.btn-excluir,
-button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    text-align: center;
-}
-
-.btn-editar,
-.btn-excluir {
-    padding: 10%;
-    align-items: center;
-    text-align: center;
-    width: 45%;
-    height: 90%;
-    margin: auto;
-    font-weight: bold;
-}
-
-.btn-excluir {
-    background-color: #c82333;
-}
-
-.btn-editar:hover,
-button:hover {
-    background-color: #0056b3;
-    /* Cor de destaque ao passar o mouse */
-}
-
-.btn-excluir:hover {
-    background-color: #c82333;
-}
-
-.edit-button,
-.delete-button {
-    background-color: #28a745;
-}
-
-.delete-button {
-    background-color: #dc3545;
-}
-
-.linha-separadora {
-    width: 700px;
-    margin: 20px auto;
-    border-radius: 10px;
-    border-top: 4px solid black;
-}
-
-.btn-visualizar {
-    display: block;
-    margin: auto;
-    margin-top: 30px;
-    margin-bottom: 15px;
-    text-align: center;
-}
-
+/*NAVBAR ------------------*/
 nav {
     background-color: #007bff;
     color: #fff;
@@ -184,7 +52,6 @@ nav {
     height: 90px;
     margin-right: 20px;
 }
-
 
 .menu {
     list-style-type: none;
@@ -247,7 +114,6 @@ nav {
     /* Altera a cor de fundo ao passar o mouse */
 }
 
-
 .login-button {
     text-align: right;
 }
@@ -259,6 +125,150 @@ nav {
     font-size: 18px;
 }
 
+
+
+/*FORMULARIO ------------------*/
+form label,
+form input,
+form select,
+form textarea {
+    margin-bottom: 10px;
+    /* Adiciona uma margem uniforme na parte inferior de cada elemento */
+}
+
+label,
+input,
+button {
+    display: block;
+    margin-bottom: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+a {
+    text-align: center;
+}
+
+.btn-editar,
+.btn-excluir,
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.btn-excluir {
+    background-color: #c82333;
+}
+
+.btn-editar:hover,
+button:hover {
+    background-color: #0056b3;
+    /* Cor de destaque ao passar o mouse */
+}
+
+.btn-excluir:hover {
+    background-color: #c82333;
+}
+
+.edit-button,
+.delete-button {
+    background-color: #28a745;
+}
+
+.delete-button {
+    background-color: #dc3545;
+}
+
+.linha-separadora {
+    width: 700px;
+    margin: 20px auto;
+    border-radius: 10px;
+    border-top: 4px solid black;
+}
+
+.btn-visualizar {
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+
+/*TABELA ------------------*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+table,
+th,
+td {
+    border: 1px solid #ddd;
+}
+
+th,
+td {
+    padding: 5px;
+    text-align: center;
+    align-items: center;
+    width: 10%;
+    height: 10%;
+}
+
+.th-especial {
+    width: 30%;
+}
+
+.td-especial {
+    width: 100%;
+    display: flex;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+td {
+    height: 100px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+.btn-editar,
+.btn-excluir {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 45%;
+    height: 40px;
+    margin: auto;
+    font-weight: bold;
+}
+
+
+/*FOOTER ------------------*/
 footer {
     background-color: #007bff;
     padding: 20px 0;

@@ -45,7 +45,7 @@ async function displayWorkshops() {
         const response = await fetch("http://localhost:8000/reserva", { headers });
         const workshops = await response.json();
 
-        workshops.forEach(async(workshop) => {
+        workshops.forEach(async (workshop) => {
             // Obter detalhes do cliente
             const clienteResponse = await fetch(
                 `http://localhost:8000/filterIdCliente/${workshop.idCliente}`, { headers }
@@ -62,8 +62,7 @@ async function displayWorkshops() {
             const dataFormatada = `${dia}/${mes}/${ano}`;
 
             const newRow = table.insertRow();
-            newRow.innerHTML = `
-        <td>${workshop.titulo}</td>
+            newRow.innerHTML = `<td>${workshop.titulo}</td>
         <!--<td>${workshop.descricao}</td>-->
         <td>${dataFormatada}</td> <!-- Utiliza a data formatada -->
         <td>${workshop.hora}</td>
@@ -76,8 +75,7 @@ async function displayWorkshops() {
           <br>
           <button class = "btn btn-excluir" "onclick="deletereserva(${workshop.id})">Excluir</button>
 
-        </td>
-      `;
+        </td>`;
         });
     } catch (error) {
         console.error("Error fetching workshops:", error);
