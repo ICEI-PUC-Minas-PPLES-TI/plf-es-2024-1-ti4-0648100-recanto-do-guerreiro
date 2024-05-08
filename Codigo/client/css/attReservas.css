@@ -74,6 +74,7 @@ input[type="text"] {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+
 select#status {
     margin-bottom: 20px;
 }
@@ -140,6 +141,7 @@ nav {
     margin-left: 15px;
     margin-right: 15px;
 }
+
 .menu a {
     text-decoration: none;
     color: #fff;
@@ -151,11 +153,12 @@ nav {
 .menu a:hover {
     text-decoration: underline;
 }
-.linha-vertical{
-    width: 2px; 
-    height: 50px; 
-    background-color: #ccc; 
-    display: inline-block; 
+
+.linha-vertical {
+    width: 2px;
+    height: 50px;
+    background-color: #ccc;
+    display: inline-block;
     vertical-align: middle;
     margin: 0 20px;
 }
@@ -246,24 +249,30 @@ footer {
         align-items: center;
         text-align: center;
     }
+
     .menu {
         flex-direction: row;
         margin-top: 20px;
     }
+
     .menu li {
         margin-right: 15px;
     }
+
     .linha-vertical {
-        width: 2px; 
-        height: 50px; 
-        background-color: #ccc; 
+        width: 2px;
+        height: 50px;
+        background-color: #ccc;
         display: inline-block;
         vertical-align: middle;
-        margin: 0 10px; /* Define a margem entre os elementos */
+        margin: 0 10px;
+        /* Define a margem entre os elementos */
     }
-    .logout-button{
+
+    .logout-button {
         margin-top: 20px;
     }
+
     .login-button {
         text-align: center;
         margin-top: 20px;

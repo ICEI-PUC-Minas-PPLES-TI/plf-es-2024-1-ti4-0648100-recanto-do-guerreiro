@@ -145,11 +145,12 @@ nav {
 .menu a:hover {
     text-decoration: underline;
 }
-.linha-vertical{
-    width: 2px; 
-    height: 50px; 
-    background-color: #ccc; 
-    display: inline-block; 
+
+.linha-vertical {
+    width: 2px;
+    height: 50px;
+    background-color: #ccc;
+    display: inline-block;
     vertical-align: middle;
     margin: 0 20px;
 }
@@ -240,16 +241,30 @@ footer {
         align-items: center;
         text-align: center;
     }
+
     .menu {
         flex-direction: row;
         margin-top: 20px;
     }
+
     .menu li {
         margin-right: 15px;
     }
-    .logout-button{
+
+    .linha-vertical {
+        width: 2px;
+        height: 50px;
+        background-color: #ccc;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 10px;
+        /* Define a margem entre os elementos */
+    }
+
+    .logout-button {
         margin-top: 20px;
     }
+
     .login-button {
         text-align: center;
         margin-top: 20px;
