@@ -43,11 +43,26 @@ td {
 th,
 td {
     padding: 10px;
-    text-align: left;
+    text-align: center;
+    align-items: center;
+    width: 10%;
+}
+
+.th-especial {
+    width: 30%;
+}
+
+.td-especial {
+    width: 100%;
+    display: flex;
 }
 
 th {
     background-color: #f2f2f2;
+}
+
+td {
+    height: 100px;
 }
 
 tr:nth-child(even) {
@@ -80,6 +95,12 @@ input[type="text"] {
     border-radius: 5px;
 }
 
+a {
+    text-align: center;
+}
+
+.btn-editar,
+.btn-excluir,
 button {
     padding: 10px 20px;
     background-color: #007bff;
@@ -88,11 +109,32 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    text-align: center;
 }
 
+.btn-editar,
+.btn-excluir {
+    padding: 10%;
+    align-items: center;
+    text-align: center;
+    width: 45%;
+    height: 90%;
+    margin: auto;
+    font-weight: bold;
+}
+
+.btn-excluir {
+    background-color: #c82333;
+}
+
+.btn-editar:hover,
 button:hover {
     background-color: #0056b3;
     /* Cor de destaque ao passar o mouse */
+}
+
+.btn-excluir:hover {
+    background-color: #c82333;
 }
 
 .edit-button,
@@ -103,19 +145,22 @@ button:hover {
 .delete-button {
     background-color: #dc3545;
 }
+
 .linha-separadora {
-    width: 700px; 
+    width: 700px;
     margin: 20px auto;
-    border-radius: 10px; 
-    border-top: 4px solid black; 
+    border-radius: 10px;
+    border-top: 4px solid black;
 }
-.btn-visualizar{
+
+.btn-visualizar {
     display: block;
     margin: auto;
     margin-top: 30px;
     margin-bottom: 15px;
     text-align: center;
 }
+
 nav {
     background-color: #007bff;
     color: #fff;
@@ -167,14 +212,20 @@ nav {
     text-decoration: underline;
 }
 
-.linha-vertical{
-    width: 2px; /* Define a largura da linha vertical */
-    height: 50px; /* Define a altura da linha vertical */
-    background-color: #ccc; /* Define a cor de fundo da linha vertical */
-    display: inline-block; /* Permite que a linha vertical seja exibida como um elemento inline */
+.linha-vertical {
+    width: 2px;
+    /* Define a largura da linha vertical */
+    height: 50px;
+    /* Define a altura da linha vertical */
+    background-color: #ccc;
+    /* Define a cor de fundo da linha vertical */
+    display: inline-block;
+    /* Permite que a linha vertical seja exibida como um elemento inline */
     vertical-align: middle;
-    margin: 0 20px; /* Define a margem entre os elementos */
+    margin: 0 20px;
+    /* Define a margem entre os elementos */
 }
+
 .logout-button button {
     background-color: #191970;
     /* Cor de fundo diferente */
@@ -273,19 +324,22 @@ footer {
         margin-right: 15px;
         /* Ajusta a margem entre os itens do menu */
     }
+
     .linha-vertical {
-        width: 2px; 
-        height: 50px; 
-        background-color: #ccc; 
+        width: 2px;
+        height: 50px;
+        background-color: #ccc;
         display: inline-block;
         vertical-align: middle;
-        margin: 0 10px; /* Define a margem entre os elementos */
+        margin: 0 10px;
+        /* Define a margem entre os elementos */
     }
+
     .linha-separadora {
-        width: 400px; 
+        width: 400px;
         margin: 20px auto;
-        border-radius: 10px; 
-        border-top: 4px solid black; 
+        border-radius: 10px;
+        border-top: 4px solid black;
     }
 
     .logout-button {

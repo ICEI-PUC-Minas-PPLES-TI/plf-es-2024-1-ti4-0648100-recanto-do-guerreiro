@@ -64,19 +64,17 @@ async function displayWorkshops() {
             const newRow = table.insertRow();
             newRow.innerHTML = `
         <td>${workshop.titulo}</td>
-        <td>${workshop.descricao}</td>
+        <!--<td>${workshop.descricao}</td>-->
         <td>${dataFormatada}</td> <!-- Utiliza a data formatada -->
         <td>${workshop.hora}</td>
         <td>${cliente.nome}</td> 
-        <td>${workshop.adicionais}</td>
+        <!--<td>${workshop.adicionais}</td>-->
         <td>${workshop.status}</td>
-        <td>
-          <a class="btn btn-primary" href="../html/attReserva.html?id=${workshop.id}">Editar →</a>
+        <td class = "td-especial">
+          <a class="btn btn-editar" href="../html/attReserva.html?id=${workshop.id}">Editar</a>
           <br>
           <br>
-          <button onclick="deletereserva(${workshop.id})">
-    <img src="../img/botao.jpg" alt="Excluir" width="30" height="30">
-</button>
+          <button class = "btn btn-excluir" "onclick="deletereserva(${workshop.id})">Excluir</button>
 
         </td>
       `;
