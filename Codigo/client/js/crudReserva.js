@@ -45,7 +45,7 @@ async function displayWorkshops() {
         const response = await fetch("http://localhost:8000/reserva", { headers });
         const workshops = await response.json();
 
-        workshops.forEach(async (workshop) => {
+        workshops.forEach(async(workshop) => {
             // Obter detalhes do cliente
             const clienteResponse = await fetch(
                 `http://localhost:8000/filterIdCliente/${workshop.idCliente}`, { headers }
