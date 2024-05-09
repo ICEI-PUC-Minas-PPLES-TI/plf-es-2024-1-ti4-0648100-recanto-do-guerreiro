@@ -25,7 +25,7 @@ h1 {
 
 /*NAVBAR ------------------*/
 nav {
-    background-color: #007bff;
+    background-color: #FFE3D5;
     color: #fff;
     padding: 10px 0;
 }
@@ -44,7 +44,7 @@ nav {
 
 .logo img {
     width: 150px;
-    height: 90px;
+    height: 70px;
     margin-right: 20px;
 }
 
@@ -65,7 +65,7 @@ nav {
 
 .menu a {
     text-decoration: none;
-    color: #fff;
+    color: #000;
     font-weight: bold;
     font-size: 18px;
     transition: text-decoration 0.3s;
@@ -142,7 +142,7 @@ input[type="text"] {
 
 button {
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #191970;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -167,7 +167,7 @@ button:hover {
 
 /*FOOTER ------------------*/
 footer {
-    background-color: #007bff;
+    background-color: #FFE3D5;
     color: #fff;
     padding: 20px 0;
 }
