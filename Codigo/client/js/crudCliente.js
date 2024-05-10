@@ -95,7 +95,7 @@ async function visualizarClientes() {
 
 async function alternarLista() {
     try {
-        const botaoVisualizar = document.getElementById('btn_Visualizar');
+        const botaoVisualizar = document.getElementById('btn_visualizar');
         const tabelaClientes = document.getElementById('tabelaClientes');
 
         if (tabelaClientes.style.display === 'none') {

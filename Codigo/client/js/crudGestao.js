@@ -139,3 +139,40 @@ window.addEventListener("load", () => {
     populateClienteSelect();
     populateReservaSelect();
 });
+
+async function visualizarGestao() {
+    try {
+        const token = sessionStorage.getItem("token");
+        const headers = {
+            "Content-Type": "application/json",
+            Authorization: token,
+        }
+
+        const response = await fetch("http://localhost:8000/gestao", { headers, });
+        if (!response.ok) {
+            throw new Error("Erro ao obter gestões");
+        }
+        displayWorkshops();
+        document.getElementById('tabelaGestao').style.display = 'block';
+    } catch (error) {
+        console.log("erro ao visualizar gestões", error);
+    }
+}
+
+async function alternarLista() {
+    try {
+        const botaoVisualizarGestao = document.getElementById('btn_visualizar');
+        const tabelaGestao = document.getElementById('tabelaGestao');
+
+        if (tabelaGestao.style.display === 'none') {
+            await visualizarClientes();
+            tabelaGestao.style.display = 'block';
+            botaoVisualizarGestao.textContent = 'Minimizar Lista';
+        } else {
+            tabelaGestao.style.display = 'none';
+            botaoVisualizarGestao.textContent = 'Visualizar Gestões';
+        }
+    } catch (error) {
+        console.error("Erro ao alternar lista de gestões:", error);
+    }
+}
