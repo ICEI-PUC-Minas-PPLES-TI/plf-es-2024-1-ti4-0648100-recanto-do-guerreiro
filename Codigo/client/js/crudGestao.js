@@ -58,7 +58,7 @@ async function displayWorkshops() {
             <td>${workshop.custos}</td>
             <td>${workshop.descricao}</td>
             <td>
-            <a class="btn btn-primary" href="../html/attGestao.html?id=${workshop.id}">Editar</a>
+            <a class="btn btn-editar" href="../html/attGestao.html?id=${workshop.id}">Editar</a>
             <br>
             <br>
             <button class = "btn btn-excluir "onclick="deletegestao(${workshop.id})">Excluir</button>
@@ -163,7 +163,7 @@ async function alternarLista() {
         const tabelaGestao = document.getElementById('tabelaGestao');
 
         if (tabelaGestao.style.display === 'none') {
-            await visualizarClientes();
+            await visualizarGestao();
             tabelaGestao.style.display = 'block';
             botaoVisualizarGestao.textContent = 'Minimizar Lista';
         } else {
