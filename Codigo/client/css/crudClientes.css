@@ -74,19 +74,25 @@ nav {
     font-weight: bold;
     font-size: 18px;
     transition: text-decoration 0.3s;
-    
+
 }
 
 .menu a:hover {
     text-decoration: underline;
 }
+
 .linha-vertical {
-    width: 2px; /* Define a largura da linha vertical */
-    height: 50px; /* Define a altura da linha vertical */
-    background-color: #ccc; /* Define a cor de fundo da linha vertical */
-    display: inline-block; /* Permite que a linha vertical seja exibida como um elemento inline */
+    width: 2px;
+    /* Define a largura da linha vertical */
+    height: 50px;
+    /* Define a altura da linha vertical */
+    background-color: #ccc;
+    /* Define a cor de fundo da linha vertical */
+    display: inline-block;
+    /* Permite que a linha vertical seja exibida como um elemento inline */
     vertical-align: middle;
-    margin: 0 20px; /* Define a margem entre os elementos */
+    margin: 0 20px;
+    /* Define a margem entre os elementos */
 }
 
 
@@ -182,14 +188,15 @@ button:hover {
 .delete-button {
     background-color: #dc3545;
 }
+
 .linha-separadora {
-    width: 700px; 
+    width: 700px;
     margin: 20px auto;
-    border-radius: 10px; 
-    border-top: 4px solid black; 
+    border-radius: 10px;
+    border-top: 4px solid black;
 }
 
-.btn-visualizar{
+.btn-visualizar {
     display: block;
     margin: auto;
     margin-top: 30px;
@@ -241,6 +248,7 @@ td {
 tr:nth-child(even) {
     background-color: #f2f2f2;
 }
+
 .btn-editar,
 .btn-excluir {
     padding: 10px;
@@ -252,10 +260,12 @@ tr:nth-child(even) {
     height: 40px;
     font-weight: bold;
 }
-.btn-editar{
+
+.btn-editar {
     margin-top: 15px;
 }
-.btn-excluir{
+
+.btn-excluir {
     margin-bottom: 15px;
 }
 
@@ -264,6 +274,7 @@ footer {
     background-color: #FFE3D5;
     color: #fff;
     padding: 20px 0;
+    margin-top: 50px;
 }
 
 .footer-content {
@@ -324,19 +335,22 @@ footer {
         margin-left: 10px;
         margin-right: 10px;
     }
+
     .linha-vertical {
-        width: 2px; 
-        height: 50px; 
-        background-color: #ccc; 
+        width: 2px;
+        height: 50px;
+        background-color: #ccc;
         display: inline-block;
         vertical-align: middle;
-        margin: 0 10px; /* Define a margem entre os elementos */
+        margin: 0 10px;
+        /* Define a margem entre os elementos */
     }
+
     .linha-separadora {
-        width: 400px; 
+        width: 400px;
         margin: 20px auto;
-        border-radius: 10px; 
-        border-top: 4px solid black; 
+        border-radius: 10px;
+        border-top: 4px solid black;
     }
 
     .logout-button {
@@ -347,4 +361,45 @@ footer {
         text-align: center;
         margin-top: 20px;
     }
+
+
+    table {
+        width: 100%;
+        height: 10px;
+    }
+
+    th,
+    td {
+        padding: 0px;
+    }
+
+    /* Esconder o cabeçalho das células que você não quer mostrar */
+
+    th:nth-child(3),
+    th:nth-child(4),
+    th:nth-child(5),
+    th:nth-child(6) {
+        display: none;
+    }
+
+    /* Esconder as células das linhas que você não quer mostrar */
+
+    td:nth-child(3),
+    td:nth-child(4),
+    td:nth-child(5),
+    td:nth-child(6) {
+        display: none;
+    }
+
+    .btn-editar,
+    .btn-excluir {
+        padding: 10px;
+        width: 80%;
+        height: 40px;
+    }
+
+    footer {
+        margin-top: 150px;
+    }
+
 }
