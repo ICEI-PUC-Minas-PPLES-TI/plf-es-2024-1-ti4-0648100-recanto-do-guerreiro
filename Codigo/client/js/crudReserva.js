@@ -63,11 +63,11 @@ async function displayWorkshops() {
 
             const newRow = table.insertRow();
             newRow.innerHTML = `<td>${workshop.titulo}</td>
-        <!--<td>${workshop.descricao}</td>-->
+        <td>${workshop.descricao}</td>
         <td>${dataFormatada}</td> <!-- Utiliza a data formatada -->
         <td>${workshop.hora}</td>
         <td>${cliente.nome}</td> 
-        <!--<td>${workshop.adicionais}</td>-->
+        <td>${workshop.adicionais}</td>
         <td>${workshop.status}</td>
         <td class = "td-especial">
           <a class="btn btn-editar" href="../html/attReserva.html?id=${workshop.id}">Editar</a>

@@ -249,13 +249,27 @@ td {
     height: 100px;
 }
 
+    /* Esconder as células das linhas que você não quer mostrar */
+    th:nth-child(2),
+    th:nth-child(5),
+    th:nth-child(6) {
+        display: none;
+    }
+    /* Esconder as células das linhas que você não quer mostrar */
+    td:nth-child(2),
+    td:nth-child(5),
+    td:nth-child(6) {
+        display: none;
+    }
+
 tr:nth-child(even) {
     background-color: #f2f2f2;
 }
+
 .btn-editar,
 .btn-excluir {
     padding: 10px;
-    display: flex;
+    display: inline-block;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -358,5 +372,28 @@ footer {
     .login-button {
         text-align: center;
         margin-top: 20px;
+    }
+
+    /* Esconder as células das linhas que você não quer mostrar */
+    th:nth-child(3),
+    th:nth-child(4),
+    th:nth-child(5),
+    th:nth-child(6) {
+        display: none;
+    }
+
+    /* Esconder as células das linhas que você não quer mostrar */
+    td:nth-child(3),
+    td:nth-child(4),
+    td:nth-child(5),
+    td:nth-child(6) {
+        display: none;
+    }
+
+    .btn-editar,
+    .btn-excluir {
+        padding: 10px;
+        width: 80%;
+        height: 40px;
     }
 }
