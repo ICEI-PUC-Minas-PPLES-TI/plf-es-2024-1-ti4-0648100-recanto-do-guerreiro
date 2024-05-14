@@ -147,7 +147,7 @@ async function visualizarReservas() {
             Authorization: token,
         }
 
-        const response = await fetch("http://localhost:8000/cliente", { headers, });
+        const response = await fetch("http://localhost:8000/reserva", { headers, });
         if (!response.ok) {
             throw new Error("Erro ao obter Reservas");
         }
