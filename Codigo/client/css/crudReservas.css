@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
-
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f4f4f4;
@@ -28,7 +27,9 @@ h2 {
     color: #555555;
 }
 
+
 /*NAVBAR ------------------*/
+
 nav {
     background-color: #FFE3D5;
     color: #fff;
@@ -125,7 +126,9 @@ nav {
     font-size: 18px;
 }
 
+
 /*FORMULARIO ------------------*/
+
 form label,
 form input,
 form select,
@@ -208,8 +211,8 @@ button:hover {
 }
 
 
-
 /*TABELA ------------------*/
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -249,14 +252,18 @@ td {
     height: 100px;
 }
 
+
 /* Esconder as células das linhas que você não quer mostrar */
+
 th:nth-child(2),
 th:nth-child(5),
 th:nth-child(6) {
     display: none;
 }
 
+
 /* Esconder as células das linhas que você não quer mostrar */
+
 td:nth-child(2),
 td:nth-child(5),
 td:nth-child(6) {
@@ -280,6 +287,7 @@ tr:nth-child(even) {
 
 
 /*FOOTER ------------------*/
+
 footer {
     background-color: #FFE3D5;
     padding: 20px 0;
@@ -333,19 +341,15 @@ footer {
         align-items: center;
         text-align: center;
     }
-
     .menu {
         flex-direction: row;
         /* Altera a direção dos itens do menu para linha */
         margin-top: 20px;
-
     }
-
     .menu li {
         margin-right: 15px;
         /* Ajusta a margem entre os itens do menu */
     }
-
     .linha-vertical {
         width: 2px;
         height: 50px;
@@ -355,24 +359,19 @@ footer {
         margin: 0 10px;
         /* Define a margem entre os elementos */
     }
-
     .linha-separadora {
         width: 400px;
         margin: 20px auto;
         border-radius: 10px;
         border-top: 4px solid black;
     }
-
     .logout-button {
         margin-top: 20px;
-
     }
-
     .login-button {
         text-align: center;
         margin-top: 20px;
     }
-
     .btn-editar,
     .btn-excluir {
         padding: 10px;

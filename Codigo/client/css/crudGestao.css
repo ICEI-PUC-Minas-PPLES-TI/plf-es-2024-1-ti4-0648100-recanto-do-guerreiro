@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
-
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f4f4f4;
@@ -30,6 +29,7 @@ h2 {
 
 
 /*NAVBAR ------------------*/
+
 nav {
     background-color: #FFE3D5;
     color: #fff;
@@ -74,7 +74,6 @@ nav {
     font-weight: bold;
     font-size: 18px;
     transition: text-decoration 0.3s;
-
 }
 
 .menu a:hover {
@@ -94,7 +93,6 @@ nav {
     margin: 0 20px;
     /* Define a margem entre os elementos */
 }
-
 
 .logout-button button {
     background-color: #191970;
@@ -130,6 +128,7 @@ nav {
 
 
 /*FORMULARIO ------------------*/
+
 form {
     margin-top: 20px;
 }
@@ -179,7 +178,6 @@ button:hover {
     background-color: #c82333;
 }
 
-
 .edit-button,
 .delete-button {
     background-color: #28a745;
@@ -206,6 +204,7 @@ button:hover {
 
 
 /*TABELA ------------------*/
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -244,8 +243,9 @@ th {
 td {
     height: 100px;
 }
+
 th:nth-child(4),
-td:nth-child(4){
+td:nth-child(4) {
     display: none;
 }
 
@@ -273,7 +273,9 @@ tr:nth-child(even) {
     margin-bottom: 15px;
 }
 
+
 /*FOOTER ------------------*/
+
 footer {
     background-color: #FFE3D5;
     color: #fff;
@@ -328,17 +330,14 @@ footer {
         align-items: center;
         text-align: center;
     }
-
     .menu {
         flex-direction: row;
         margin-top: 20px;
     }
-
     .menu li {
         margin-left: 10px;
         margin-right: 10px;
     }
-
     .linha-vertical {
         width: 2px;
         height: 50px;
@@ -348,41 +347,32 @@ footer {
         margin: 0 10px;
         /* Define a margem entre os elementos */
     }
-
     .linha-separadora {
         width: 400px;
         margin: 20px auto;
         border-radius: 10px;
         border-top: 4px solid black;
     }
-
     .logout-button {
         margin-top: 50px;
     }
-
     .login-button {
         text-align: center;
         margin-top: 20px;
     }
-
     th,
     td {
         padding: 0px;
     }
-
-
     th:nth-child(2),
     th:nth-child(4) {
         display: none;
     }
-
     /* Esconder as células das linhas que você não quer mostrar */
-
     td:nth-child(2),
     td:nth-child(4) {
         display: none;
     }
-
     .btn-editar,
     .btn-excluir {
         padding: 10px;
