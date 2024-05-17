@@ -7,7 +7,7 @@ Atualmente, toda a gestão administrativo do local é realizado através de uma 
 ## Alunos integrantes da equipe
 
 * Pedro Henrique Moreira Caixeta Ferreira
-* Gabriel Galindo
+* Gabriel Alejandro Figueiro Galindo
 * João Gabriel Perez Monteiro
 
 ## Professores responsáveis
