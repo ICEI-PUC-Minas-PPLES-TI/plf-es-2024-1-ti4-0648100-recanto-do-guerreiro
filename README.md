@@ -9,7 +9,6 @@ Atualmente, toda a gestão administrativo do local é realizado através de uma 
 * Pedro Henrique Moreira Caixeta Ferreira
 * Gabriel Galindo
 * João Gabriel Perez Monteiro
-* Marcus Viniccius
 
 ## Professores responsáveis
 
