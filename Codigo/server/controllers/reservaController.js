@@ -6,6 +6,16 @@ const path = require("path");
 class reservaController {
     async create(req, res) {
         try {
+            // Check for existing date before creating a new entry
+            const existingDate = await reserva.findOne({
+                where: { data: req.body.data }
+            });
+
+            if (existingDate) {
+                window.alert("Data ja cadastrada.");
+                return res.status(400).json('Data já cadastrada.');
+            }
+
             const novaReserva = await reserva.create({
                 titulo: req.body.titulo,
                 descricao: req.body.descricao,
@@ -69,6 +79,16 @@ class reservaController {
     }
     async update(req, res) {
         try {
+            // Check for existing date before updating
+            const existingDate = await reserva.findOne({
+                where: { data: req.body.data, id: {
+                        [Op.ne]: req.params.id } }
+            });
+
+            if (existingDate) {
+                return res.status(400).json('Data já cadastrada.');
+            }
+
             await reserva.update({
                 titulo: req.body.titulo,
                 descricao: req.body.descricao,
