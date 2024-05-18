@@ -221,7 +221,7 @@ footer {
 
 @media screen and (min-width: 769px) {
     .menu {
-        padding-left: 190px; /* Add padding for larger screens */
+        padding-left: 190px;
     }
 }
 
