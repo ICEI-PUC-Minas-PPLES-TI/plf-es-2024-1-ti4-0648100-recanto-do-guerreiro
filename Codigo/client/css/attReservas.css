@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f4f4f4;
@@ -21,36 +23,64 @@ h1 {
     margin-bottom: 40px;
 }
 
-/*NAVBAR ------------------*/
+/* NAVBAR ------------------ */
 nav {
     background-color: #FFE3D5;
     color: #fff;
     padding: 10px 0;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .navbar {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 800px;
-    margin: 50px auto;
+    width: 100%;
+    max-width: 1000px;
+    padding: 0 20px;
+    position: relative;
+}
+
+.logout-button {
+    order: 3;
+}
+
+.logout-button button {
+    background-color: #191970;
+    color: #fff;
+    width: auto;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+}
+
+.logout-button button:hover {
+    background-color: #c82333;
+    /* Altera a cor de fundo ao passar o mouse */
+}
+
+.logo {
+    order: 1;
 }
 
 .logo img {
-    width: 150px;
-    height: 70px;
-    margin-right: 20px;
+    width: auto;
+    max-width: 150px;
+    height: auto;
 }
 
 .menu {
+    order: 2;
     list-style-type: none;
     margin: 0;
     padding: 0;
-    text-align: center;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     flex: 1;
 }
 
@@ -66,6 +96,7 @@ nav {
     font-weight: bold;
     font-size: 18px;
     transition: text-decoration 0.3s;
+    padding: 10px 0;
 }
 
 .menu a:hover {
@@ -81,27 +112,6 @@ nav {
     margin: 0 10px;
 }
 
-.logout-button button {
-    background-color: #191970;
-    /* Cor de fundo diferente */
-    color: #fff;
-    /* Cor do texto */
-    width: 100px;
-    border: none;
-    /* Remove a borda */
-    border-radius: 5px;
-    /* Adiciona bordas arredondadas */
-    padding: 10px 20px;
-    /* Ajusta o preenchimento */
-    transition: background-color 0.3s;
-    /* Adiciona transição suave */
-}
-
-.logout-button button:hover {
-    background-color: #c82333;
-    /* Altera a cor de fundo ao passar o mouse */
-}
-
 .login-button {
     text-align: right;
 }
@@ -113,7 +123,7 @@ nav {
     font-size: 18px;
 }
 
-/*FORMULARIO ------------------*/
+/* FORMULARIO ------------------ */
 form label,
 form input,
 form select,
@@ -169,7 +179,7 @@ button:hover {
     background-color: #dc3545;
 }
 
-/*FOOTER ------------------*/
+/* FOOTER ------------------ */
 footer {
     background-color: #FFE3D5;
     color: #fff;
@@ -218,38 +228,46 @@ footer {
     text-decoration: underline;
 }
 
+@media screen and (min-width: 769px) {
+    .menu {
+        padding-left: 190px;
+    }
+}
+
 @media screen and (max-width: 768px) {
+    nav {
+        height: auto;
+    }
+
     .navbar {
         flex-direction: column;
         align-items: center;
-        text-align: center;
+        padding: 10px;
     }
 
-    .menu {
-        flex-direction: row;
-        margin-top: 20px;
-    }
-
-    .menu li {
-        margin-right: 15px;
-    }
-
-    .linha-vertical {
-        width: 2px;
-        height: 50px;
-        background-color: #ccc;
-        display: inline-block;
-        vertical-align: middle;
-        margin: 0 10px;
-        /* Define a margem entre os elementos */
+    .logo {
+        order: 1;
+        margin-top: 10px;
     }
 
     .logout-button {
-        margin-top: 20px;
+        order: 3;
+        margin-top: 10px;
     }
 
-    .login-button {
-        text-align: center;
-        margin-top: 20px;
+    .menu {
+        order: 2;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .menu li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .linha-vertical {
+        display: none;
     }
 }
