@@ -6,14 +6,16 @@ const path = require("path");
 class reservaController {
     async create(req, res) {
         try {
-            // Check for existing date before creating a new entry
+            // Combine data and hora for uniqueness check
+            const combinedDateTime = req.body.data + " " + req.body.hora;
+
+            // Check for existing date and time
             const existingDate = await reserva.findOne({
-                where: { data: req.body.data }
+                where: { combinedDateTime }
             });
 
             if (existingDate) {
-                window.alert("Data ja cadastrada.");
-                return res.status(400).json('Data já cadastrada.');
+                return res.status(400).json('Data e hora ja cadastradas.');
             }
 
             const novaReserva = await reserva.create({
@@ -79,14 +81,21 @@ class reservaController {
     }
     async update(req, res) {
         try {
-            // Check for existing date before updating
+            // Combine data and hora for uniqueness check
+            const combinedDateTime = req.body.data + " " + req.body.hora;
+
+            // Check for existing date and time (excluding current reservation)
             const existingDate = await reserva.findOne({
-                where: { data: req.body.data, id: {
-                        [Op.ne]: req.params.id } }
+                where: {
+                    combinedDateTime,
+                    id: {
+                        [Op.ne]: req.params.id
+                    }
+                }
             });
 
             if (existingDate) {
-                return res.status(400).json('Data já cadastrada.');
+                return res.status(400).json('Data e hora ja cadastradas.');
             }
 
             await reserva.update({
