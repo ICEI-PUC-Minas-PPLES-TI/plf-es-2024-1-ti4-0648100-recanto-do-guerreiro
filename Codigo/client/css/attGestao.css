@@ -10,9 +10,9 @@ body {
 .container {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 1.25rem;
     background-color: #fff;
-    border-radius: 5px;
+    border-radius: 0.3125rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -20,15 +20,15 @@ h1 {
     text-align: center;
     color: #555555;
     font-weight: bold;
-    margin-bottom: 40px;
+    margin-bottom: 2.5rem;
 }
 
 /* NAVBAR ------------------ */
 nav {
     background-color: #FFE3D5;
     color: #fff;
-    padding: 10px 0;
-    height: 90px;
+    padding: 0.625rem 0;
+    height: 5.625rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,7 +40,7 @@ nav {
     align-items: center;
     width: 100%;
     max-width: 1000px;
-    padding: 0 20px;
+    padding: 0 1.25rem;
     position: relative;
 }
 
@@ -53,8 +53,8 @@ nav {
     color: #fff;
     width: auto;
     border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
+    border-radius: 0.3125rem;
+    padding: 0.625rem 1.25rem;
     transition: background-color 0.3s;
 }
 
@@ -82,21 +82,22 @@ nav {
     justify-content: flex-start;
     align-items: center;
     flex: 1;
+    padding-left: 20%;
 }
 
 .menu li {
     display: inline;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 0.3125rem;
+    margin-right: 0.3125rem;
 }
 
 .menu a {
     text-decoration: none;
     color: #000;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 1.125rem;
     transition: text-decoration 0.3s;
-    padding: 10px 0;
+    padding: 0.625rem 0;
 }
 
 .menu a:hover {
@@ -105,11 +106,11 @@ nav {
 
 .linha-vertical {
     width: 2px;
-    height: 50px;
+    height: 3.125rem;
     background-color: #ccc;
     display: inline-block;
     vertical-align: middle;
-    margin: 0 10px;
+    margin: 0 0.625rem;
 }
 
 .login-button {
@@ -120,19 +121,19 @@ nav {
     text-decoration: none;
     color: #fff;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 1.125rem;
 }
 
 /* FORMULARIO ------------------ */
 form {
-    margin-top: 20px;
+    margin-top: 1.25rem;
 }
 
 label,
 input,
 button {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
 }
 
 label {
@@ -141,17 +142,17 @@ label {
 
 input[type="text"] {
     width: 100%;
-    padding: 10px;
+    padding: 0.625rem;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 0.3125rem;
 }
 
 button {
-    padding: 10px 20px;
+    padding: 0.625rem 1.25rem;
     background-color: #191970;
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 0.3125rem;
     cursor: pointer;
     transition: background-color 0.3s;
 }
@@ -177,7 +178,7 @@ button:hover {
 footer {
     background-color: #FFE3D5;
     color: #fff;
-    padding: 20px 0;
+    padding: 1.25rem 0;
 }
 
 .footer-content {
@@ -193,21 +194,21 @@ footer {
 }
 
 .footer-logo p {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: 0.625rem;
 }
 
 .footer-address,
 .footer-contact {
     flex: 1;
-    margin-right: 20px;
+    margin-right: 1.25rem;
 }
 
 .footer-address h3,
 .footer-contact h3,
 .footer-social h3 {
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: bold;
 }
 
@@ -215,7 +216,7 @@ footer {
     display: block;
     text-decoration: none;
     color: #fff;
-    margin-top: 5px;
+    margin-top: 0.3125rem;
 }
 
 .footer-social a:hover {
@@ -224,7 +225,7 @@ footer {
 
 @media screen and (min-width: 769px) {
     .menu {
-        padding-left: 190px;
+        padding-left: 20%;
     }
 }
 
@@ -236,29 +237,30 @@ footer {
     .navbar {
         flex-direction: column;
         align-items: center;
-        padding: 10px;
+        padding: 0.625rem;
     }
 
     .logo {
         order: 1;
-        margin-top: 10px;
+        margin-top: 0.625rem;
     }
 
     .logout-button {
         order: 3;
-        margin-top: 10px;
+        margin-top: 0.625rem;
     }
 
     .menu {
         order: 2;
         flex-direction: column;
         align-items: center;
-        margin-top: 10px;
+        margin-top: 0.625rem;
+        padding-left: 0;
     }
 
     .menu li {
         margin-right: 0;
-        margin-bottom: 10px;
+        margin-bottom: 0.625rem;
     }
 
     .linha-vertical {
