@@ -56,7 +56,6 @@ nav {
 .logout-button button {
     background-color: #191970;
     color: #fff;
-    width: auto;
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
@@ -65,7 +64,6 @@ nav {
 
 .logout-button button:hover {
     background-color: #c82333;
-    /* Altera a cor de fundo ao passar o mouse */
 }
 
 .logo {
@@ -73,7 +71,6 @@ nav {
 }
 
 .logo img {
-    width: auto;
     max-width: 150px;
     height: auto;
 }
@@ -87,12 +84,11 @@ nav {
     justify-content: flex-start;
     align-items: center;
     flex: 1;
+    padding-left: 20%;
 }
 
 .menu li {
-    display: inline;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin: 0 5px;
 }
 
 .menu a {
@@ -112,8 +108,6 @@ nav {
     width: 2px;
     height: 50px;
     background-color: #ccc;
-    display: inline-block;
-    vertical-align: middle;
     margin: 0 10px;
 }
 
@@ -128,7 +122,7 @@ nav {
     font-size: 18px;
 }
 
-/*FORMULARIO ------------------*/
+/* FORMULARIO ------------------ */
 form {
     margin-top: 20px;
 }
@@ -151,9 +145,9 @@ input[type="text"] {
     border-radius: 5px;
 }
 
+button,
 .btn-editar,
-.btn-excluir,
-button {
+.btn-excluir {
     padding: 10px 20px;
     background-color: #191970;
     color: #fff;
@@ -168,27 +162,18 @@ button {
     background-color: #c82333;
 }
 
-.btn-editar:hover,
-button:hover {
+button:hover,
+.btn-editar:hover {
     background-color: #0056b3;
-    /* Cor de destaque ao passar o mouse */
 }
 
 .btn-excluir:hover {
-    background-color: #c82333;
-}
-
-.edit-button,
-.delete-button {
-    background-color: #28a745;
-}
-
-.delete-button {
-    background-color: #dc3545;
+    background-color: #a71d2a;
 }
 
 .linha-separadora {
-    width: 700px;
+    width: 90%; /* Responsive width */
+    max-width: 700px; /* Maximum width */
     margin: 20px auto;
     border-radius: 10px;
     border-top: 4px solid black;
@@ -196,13 +181,11 @@ button:hover {
 
 .btn-visualizar {
     display: block;
-    margin: auto;
-    margin-top: 30px;
-    margin-bottom: 20px;
+    margin: 30px auto 20px;
     text-align: center;
 }
 
-/*TABELA ------------------*/
+/* TABELA */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -220,26 +203,10 @@ th,
 td {
     padding: 5px;
     text-align: center;
-    align-items: center;
-    width: 10%;
-    height: 10%;
-}
-
-.th-especial {
-    width: 30%;
-}
-
-.td-especial {
-    width: 100%;
-    display: flex;
 }
 
 th {
     background-color: #f2f2f2;
-}
-
-td {
-    height: 100px;
 }
 
 tr:nth-child(even) {
@@ -249,27 +216,16 @@ tr:nth-child(even) {
 .btn-editar,
 .btn-excluir {
     padding: 10px;
-    display: inline-block;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
     width: 80%;
-    height: 40px;
     font-weight: bold;
+    margin: 15px auto;
 }
 
-.btn-editar {
-    margin-top: 15px;
+#mensagemSemItens {
+    text-align: center;
 }
 
-.btn-excluir {
-    margin-bottom: 15px;
-}
-#mensagemSemItens{
-    justify-content: center;
-}
-
-/*FOOTER ------------------*/
+/* FOOTER ------------------ */
 footer {
     background-color: #FFE3D5;
     color: #fff;
@@ -286,7 +242,6 @@ footer {
 
 .footer-logo img {
     max-width: 100px;
-    height: auto;
 }
 
 .footer-logo p {
@@ -309,7 +264,6 @@ footer {
 }
 
 .footer-social a {
-    display: block;
     text-decoration: none;
     color: #fff;
     margin-top: 5px;
@@ -319,14 +273,8 @@ footer {
     text-decoration: underline;
 }
 
-@media screen and (min-width: 769px) {
-    .menu {
-        padding-left: 190px;
-    }
-}
-
+/* RESPONSIVE DESIGN */
 @media screen and (max-width: 768px) {
-
     nav {
         height: auto;
     }
@@ -338,24 +286,21 @@ footer {
     }
 
     .logo {
-        order: 1;
         margin-top: 10px;
     }
 
     .logout-button {
-        order: 3;
         margin-top: 10px;
     }
 
     .menu {
-        order: 2;
         flex-direction: column;
         align-items: center;
         margin-top: 10px;
+        padding-left: 0;
     }
 
     .menu li {
-        margin-right: 0;
         margin-bottom: 10px;
     }
 
@@ -364,28 +309,15 @@ footer {
     }
 
     .linha-separadora {
-        width: 400px;
+        width: 90%; /* Adjusted to be responsive */
+        max-width: 400px; /* Maximum width for smaller screens */
         margin: 20px auto;
-        border-radius: 10px;
-        border-top: 4px solid black;
     }
-
-    th,
-    td {
-        padding: 0px;
-    }
-
-    /* Esconder o cabeçalho das células que você não quer mostrar */
 
     th:nth-child(3),
     th:nth-child(4),
     th:nth-child(5),
-    th:nth-child(6) {
-        display: none;
-    }
-
-    /* Esconder as células das linhas que você não quer mostrar */
-
+    th:nth-child(6),
     td:nth-child(3),
     td:nth-child(4),
     td:nth-child(5),
@@ -395,7 +327,6 @@ footer {
 
     .btn-editar,
     .btn-excluir {
-        padding: 10px;
         width: 80%;
         height: 40px;
     }
@@ -403,5 +334,4 @@ footer {
     footer {
         margin-top: 150px;
     }
-
 }
