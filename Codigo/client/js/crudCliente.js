@@ -40,6 +40,9 @@ async function displayWorkshops() {
     let dadoBruto = await fetch("http://localhost:8000/cliente", { headers });
     let workshops = await dadoBruto.json();
 
+    if (workshops.length === 0) {
+        return false;
+    }
     workshops.forEach(async (workshop) => {
         const newRow = table.insertRow();
         newRow.innerHTML = `
@@ -57,6 +60,7 @@ async function displayWorkshops() {
             </td>
         `;
     });
+    return true;
 }
 
 async function deletecliente(index) {
@@ -98,17 +102,21 @@ async function alternarLista() {
         const botaoVisualizar = document.getElementById('btn_visualizar');
         const tabelaClientes = document.getElementById('tabelaClientes');
         const mensagemSemItens = document.getElementById('mensagemSemItens');
+
         if (tabelaClientes.style.display === 'none') {
-            const temClientes = await visualizarClientes();
+            const temClientes = await displayWorkshops();
             if (temClientes) {
-                tabelaClientes.style.display = 'block';
+                tabelaClientes.style.display = 'table';
+                mensagemSemItens.style.display = 'none';
                 botaoVisualizar.textContent = 'Minimizar Lista';
             } else {
                 tabelaClientes.style.display = 'none';
                 mensagemSemItens.style.display = 'flex';
+                botaoVisualizar.textContent = 'Minimizar Lista';
             }
         } else {
             tabelaClientes.style.display = 'none';
+            mensagemSemItens.style.display = 'none';
             botaoVisualizar.textContent = 'Visualizar Clientes';
         }
     } catch (error) {
