@@ -271,6 +271,10 @@ tr:nth-child(even) {
     margin-bottom: 15px;
 }
 
+#mensagemSemItens{
+    justify-content: center;
+}
+
 /*FOOTER ------------------*/
 footer {
     background-color: #FFE3D5;

@@ -43,6 +43,7 @@ async function displayWorkshops() {
     if (workshops.length === 0) {
         return false;
     }
+    
     workshops.forEach(async (workshop) => {
         const newRow = table.insertRow();
         newRow.innerHTML = `

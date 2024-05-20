@@ -278,6 +278,10 @@ tr:nth-child(even) {
     display: block;
 }
 
+#mensagemSemItens{
+    justify-content: center;
+}
+
 /*FOOTER ------------------*/
 footer {
     background-color: #FFE3D5;

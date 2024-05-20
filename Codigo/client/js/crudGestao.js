@@ -38,6 +38,10 @@ async function displayWorkshops() {
     let dadoBruto = await fetch("http://localhost:8000/gestao", { headers });
     let workshops = await dadoBruto.json();
 
+    if (workshops.length === 0) {
+        return false;
+    }
+
     workshops.forEach(async(workshop) => {
         // Obter detalhes do cliente;
         let clienteResponse = await fetch(
@@ -65,6 +69,7 @@ async function displayWorkshops() {
             </td>
         `;
     });
+    return true;
 }
 
 async function deletegestao(index) {
@@ -161,13 +166,22 @@ async function alternarLista() {
     try {
         const botaoVisualizarGestao = document.getElementById('btn_visualizar');
         const tabelaGestao = document.getElementById('tabelaGestao');
+        const mensagemSemItens = document.getElementById('mensagemSemItens');
 
-        if (tabelaGestao.style.display === 'none') {
-            await visualizarGestao();
-            tabelaGestao.style.display = 'block';
-            botaoVisualizarGestao.textContent = 'Minimizar Lista';
+if (tabelaGestao.style.display === 'none') {
+            const temGestoes = await visualizarGestao();
+            if (temGestoes) {
+                tabelaGestao.style.display = 'table';
+                mensagemSemItens.style.display = 'none';
+                botaoVisualizarGestao.textContent = 'Minimizar Lista';
+            } else {
+                tabelaGestao.style.display = 'none';
+                mensagemSemItens.style.display = 'flex';
+                botaoVisualizarGestao.textContent = 'Visualizar Gestões';
+            }
         } else {
             tabelaGestao.style.display = 'none';
+            mensagemSemItensGestao.style.display = 'none';
             botaoVisualizarGestao.textContent = 'Visualizar Gestões';
         }
     } catch (error) {
