@@ -97,11 +97,16 @@ async function alternarLista() {
     try {
         const botaoVisualizar = document.getElementById('btn_visualizar');
         const tabelaClientes = document.getElementById('tabelaClientes');
-
+        const mensagemSemItens = document.getElementById('mensagemSemItens');
         if (tabelaClientes.style.display === 'none') {
-            await visualizarClientes();
-            tabelaClientes.style.display = 'block';
-            botaoVisualizar.textContent = 'Minimizar Lista';
+            const temClientes = await visualizarClientes();
+            if (temClientes) {
+                tabelaClientes.style.display = 'block';
+                botaoVisualizar.textContent = 'Minimizar Lista';
+            } else {
+                tabelaClientes.style.display = 'none';
+                mensagemSemItens.style.display = 'flex';
+            }
         } else {
             tabelaClientes.style.display = 'none';
             botaoVisualizar.textContent = 'Visualizar Clientes';

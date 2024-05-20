@@ -265,6 +265,9 @@ tr:nth-child(even) {
 .btn-excluir {
     margin-bottom: 15px;
 }
+#mensagemSemItens{
+    justify-content: center;
+}
 
 /*FOOTER ------------------*/
 footer {
