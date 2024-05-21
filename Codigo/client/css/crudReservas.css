@@ -277,10 +277,12 @@ tr:nth-child(even) {
     justify-content: center;
 }
 
-/*FOOTER ------------------*/
+/* FOOTER ------------------ */
 footer {
     background-color: #FFE3D5;
+    color: #fff;
     padding: 20px 0;
+    margin-top: 50px;
 }
 
 .footer-content {
@@ -292,7 +294,6 @@ footer {
 
 .footer-logo img {
     max-width: 100px;
-    height: auto;
 }
 
 .footer-logo p {
@@ -315,7 +316,6 @@ footer {
 }
 
 .footer-social a {
-    display: block;
     text-decoration: none;
     color: #fff;
     margin-top: 5px;
