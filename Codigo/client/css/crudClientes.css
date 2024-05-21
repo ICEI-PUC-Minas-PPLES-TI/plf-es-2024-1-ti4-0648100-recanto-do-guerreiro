@@ -268,7 +268,7 @@ footer {
     text-decoration: underline;
 }
 
-/* RESPONSIVE DESIGN */
+/* Media query para telas menores */
 @media screen and (max-width: 768px) {
     nav {
         height: auto;
