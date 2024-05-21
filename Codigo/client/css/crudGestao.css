@@ -342,6 +342,7 @@ footer {
         padding-left: 0;
     }
     .menu li {
+        margin-right: 0;
         margin-bottom: 10px;
     }
     .linha-vertical {
@@ -370,8 +371,5 @@ footer {
         padding: 10px;
         width: 80%;
         height: 40px;
-    }
-    footer {
-        margin-top: 150px;
     }
 }
