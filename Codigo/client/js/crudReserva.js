@@ -45,7 +45,11 @@ async function displayWorkshops() {
         const response = await fetch("http://localhost:8000/reserva", { headers });
         const workshops = await response.json();
 
-        workshops.forEach(async(workshop) => {
+        if (workshops.length === 0) {
+            return false;
+        }
+
+        workshops.forEach(async (workshop) => {
             // Obter detalhes do cliente
             const clienteResponse = await fetch(
                 `http://localhost:8000/filterIdCliente/${workshop.idCliente}`, { headers }
@@ -77,6 +81,7 @@ async function displayWorkshops() {
 
         </td>`;
         });
+        return true;
     } catch (error) {
         console.error("Error fetching workshops:", error);
     }
@@ -113,11 +118,14 @@ async function deletereserva(index) {
         "Content-Type": "application/json",
         Authorization: token,
     };
+    const confirmacao = confirm("Tem certeza que deseja excluir essa Reserva?");
 
-    const response = await fetch(`http://localhost:8000/reserva/${index}`, {
-        method: "DELETE",
-        headers,
-    });
+    if (confirmacao) {
+        const response = await fetch(`http://localhost:8000/reserva/${index}`, {
+            method: "DELETE",
+            headers,
+        });
+    }
 
     displayWorkshops();
 }
@@ -158,20 +166,48 @@ async function visualizarReservas() {
     }
 }
 
+//async function alternarLista() {
+//    try {
+//        const botaoVisualizar = document.getElementById('btn_Visualizar');
+//        const tabelaReservas = document.getElementById('tabelaReservas');
+//
+//        if (tabelaReservas.style.display === 'none') {
+//            await visualizarReservas();
+//            tabelaReservas.style.display = 'table';
+//            botaoVisualizar.textContent = 'Minimizar Lista';
+//        } else {
+//            tabelaReservas.style.display = 'none';
+//            botaoVisualizar.textContent = 'Visualizar Reservas';
+//        }
+//    } catch (error) {
+//        console.error("Erro ao alternar lista de Reservas:", error);
+//    }
+//}
+
 async function alternarLista() {
     try {
-        const botaoVisualizar = document.getElementById('btn_Visualizar');
+        const botaoVisualizar = document.getElementById('btn_visualizar');
         const tabelaReservas = document.getElementById('tabelaReservas');
+        const mensagemSemItens = document.getElementById('mensagemSemItens');
 
         if (tabelaReservas.style.display === 'none') {
-            await visualizarReservas();
-            tabelaReservas.style.display = 'block';
-            botaoVisualizar.textContent = 'Minimizar Lista';
+            const temGestao = await displayWorkshops();
+            if (temGestao) {
+                tabelaReservas.style.display = 'table';
+                mensagemSemItens.style.display = 'none';
+                botaoVisualizar.textContent = 'Minimizar Lista';
+            } else {
+                tabelaReservas.style.display = 'none';
+                mensagemSemItens.style.display = 'flex';
+                botaoVisualizar.textContent = 'Minimizar Lista';
+            }
         } else {
             tabelaReservas.style.display = 'none';
-            botaoVisualizar.textContent = 'Visualizar Reservas';
+            mensagemSemItens.style.display = 'none';
+            botaoVisualizar.textContent = 'Visualizar Clientes';
         }
+
     } catch (error) {
-        console.error("Erro ao alternar lista de Reservas:", error);
+        console.error("Erro ao alternar lista de gestões:", error);
     }
 }

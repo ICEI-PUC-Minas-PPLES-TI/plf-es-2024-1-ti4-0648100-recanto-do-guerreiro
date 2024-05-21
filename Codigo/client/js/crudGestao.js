@@ -42,7 +42,7 @@ async function displayWorkshops() {
         return false;
     }
 
-    workshops.forEach(async(workshop) => {
+    workshops.forEach(async (workshop) => {
         // Obter detalhes do cliente;
         let clienteResponse = await fetch(
             `http://localhost:8000/filterIdCliente/${workshop.idCliente}`, { headers }
@@ -78,11 +78,15 @@ async function deletegestao(index) {
         "Content-Type": "application/json",
         Authorization: token,
     };
+    const confirmacao = confirm("Tem certeza que deseja excluir essa Gestão?");
 
-    const response = await fetch(`http://localhost:8000/gestao/${index}`, {
-        method: "DELETE",
-        headers,
-    });
+    if (confirmacao) {
+        const response = await fetch(`http://localhost:8000/gestao/${index}`, {
+            method: "DELETE",
+            headers,
+        });
+
+    }
 
     displayWorkshops();
 }
@@ -164,26 +168,27 @@ async function visualizarGestao() {
 
 async function alternarLista() {
     try {
-        const botaoVisualizarGestao = document.getElementById('btn_visualizar');
+        const botaoVisualizar = document.getElementById('btn_visualizar');
         const tabelaGestao = document.getElementById('tabelaGestao');
         const mensagemSemItens = document.getElementById('mensagemSemItens');
 
-if (tabelaGestao.style.display === 'none') {
-            const temGestoes = await visualizarGestao();
-            if (temGestoes) {
+        if (tabelaGestao.style.display === 'none') {
+            const temGestao = await displayWorkshops();
+            if (temGestao) {
                 tabelaGestao.style.display = 'table';
                 mensagemSemItens.style.display = 'none';
-                botaoVisualizarGestao.textContent = 'Minimizar Lista';
+                botaoVisualizar.textContent = 'Minimizar Lista';
             } else {
                 tabelaGestao.style.display = 'none';
                 mensagemSemItens.style.display = 'flex';
-                botaoVisualizarGestao.textContent = 'Visualizar Gestões';
+                botaoVisualizar.textContent = 'Minimizar Lista';
             }
         } else {
             tabelaGestao.style.display = 'none';
-            mensagemSemItensGestao.style.display = 'none';
-            botaoVisualizarGestao.textContent = 'Visualizar Gestões';
+            mensagemSemItens.style.display = 'none';
+            botaoVisualizar.textContent = 'Visualizar Gestões';
         }
+
     } catch (error) {
         console.error("Erro ao alternar lista de gestões:", error);
     }

@@ -172,8 +172,8 @@ button:hover,
 }
 
 .linha-separadora {
-    width: 90%;
-    max-width: 700px;
+    width: 90%; /* Responsive width */
+    max-width: 700px; /* Maximum width */
     margin: 20px auto;
     border-radius: 10px;
     border-top: 4px solid black;
@@ -273,6 +273,7 @@ footer {
     text-decoration: underline;
 }
 
+/* RESPONSIVE DESIGN */
 @media screen and (max-width: 768px) {
     nav {
         height: auto;
@@ -308,8 +309,8 @@ footer {
     }
 
     .linha-separadora {
-        width: 90%;
-        max-width: 400px;
+        width: 90%; /* Adjusted to be responsive */
+        max-width: 400px; /* Maximum width for smaller screens */
         margin: 20px auto;
     }
 

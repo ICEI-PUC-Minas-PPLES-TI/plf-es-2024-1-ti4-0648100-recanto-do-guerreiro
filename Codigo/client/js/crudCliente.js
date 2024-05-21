@@ -43,7 +43,6 @@ async function displayWorkshops() {
     if (workshops.length === 0) {
         return false;
     }
-    
     workshops.forEach(async (workshop) => {
         const newRow = table.insertRow();
         newRow.innerHTML = `
@@ -70,11 +69,15 @@ async function deletecliente(index) {
         "Content-Type": "application/json",
         Authorization: token,
     };
+    const confirmacao = confirm ("Tem certeza que deseja excluir este cliente?");
 
-    const response = await fetch(`http://localhost:8000/cliente/${index}`, {
+    if (confirmacao) {
+        const response = await fetch(`http://localhost:8000/cliente/${index}`, {
         method: "DELETE",
         headers,
-    });
+    });        
+    }
+
 
     displayWorkshops();
 }
