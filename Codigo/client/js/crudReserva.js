@@ -49,12 +49,26 @@ async function displayWorkshops() {
             return false;
         }
 
-        workshops.forEach(async (workshop) => {
+        for (const workshop of workshops) {
             // Obter detalhes do cliente
+            console.log('Fetching client with ID:', workshop.idCliente);
             const clienteResponse = await fetch(
                 `http://localhost:8000/filterIdCliente/${workshop.idCliente}`, { headers }
             );
-            const cliente = await clienteResponse.json();
+            console.log('Client response:', clienteResponse);
+
+            if (!clienteResponse.ok) {
+                console.error('Error fetching client:', clienteResponse.statusText);
+                continue;
+            }
+
+            let cliente = await clienteResponse.json();
+
+            // Se cliente for null ou não tiver a propriedade 'nome', substitua por um objeto com nome 'N/A'
+            if (!cliente || !cliente.nome) {
+                console.error('Client is null or does not have a name');
+                cliente = { nome: 'N/A' };
+            }
 
             // Extrair dia, mês e ano da data
             const data = new Date(workshop.data);
@@ -66,7 +80,8 @@ async function displayWorkshops() {
             const dataFormatada = `${dia}/${mes}/${ano}`;
 
             const newRow = table.insertRow();
-            newRow.innerHTML = `<td>${workshop.titulo}</td>
+            newRow.innerHTML = `
+            <td>${workshop.titulo}</td>
         <td>${workshop.descricao}</td>
         <td>${dataFormatada}</td> <!-- Utiliza a data formatada -->
         <td>${workshop.hora}</td>
@@ -80,7 +95,7 @@ async function displayWorkshops() {
           <button class = "btn btn-excluir" "onclick="deletereserva(${workshop.id})">Excluir</button>
 
         </td>`;
-        });
+        };
         return true;
     } catch (error) {
         console.error("Error fetching workshops:", error);
