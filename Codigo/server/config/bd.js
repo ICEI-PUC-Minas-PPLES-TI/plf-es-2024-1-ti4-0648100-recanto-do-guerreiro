@@ -22,11 +22,18 @@
 const { Sequelize } = require("sequelize");
 
 // Configurações de conexão com o banco de dados;
-const sequelize = new Sequelize({
+/*const sequelize = new Sequelize({
     dialect: "mysql",
     host: "localhost",
     username: "root",
     password: "Phmcf#2003",
+});*/
+
+const sequelize = new Sequelize({
+  dialect: "mysql",
+  host: "localhost",
+  username: "root",
+  password: "RootTis4#",
 });
 
 /*const sequelize = new Sequelize({
@@ -50,7 +57,7 @@ async function createDatabase() {
 createDatabase();
 
 // Exporta as configurações;
-module.exports = {
+/*module.exports = {
     dialect: "mysql",
     host: "localhost",
     username: "root",
@@ -59,6 +66,17 @@ module.exports = {
     define: {
         timestamp: true,
     },
+};*/
+
+module.exports = {
+  dialect: "mysql",
+  host: "localhost",
+  username: "root",
+  password: "RootTis4#",
+  database: "recantodoguerreiro",
+  define: {
+    timestamp: true,
+  },
 };
 
 /*module.exports = {

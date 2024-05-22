@@ -153,9 +153,17 @@ button {
     transition: background-color 0.3s;
     text-align: center;
 }
-
+.bi {
+    color: #fff;
+    display: inline-block;
+    vertical-align: -.145em;
+    fill: currentcolor;
+}
 .btn-excluir {
     background-color: #c82333;
+}
+.icon-margin {
+    margin-right: 8px; /* Ajuste o valor conforme necessário */
 }
 
 .btn-editar:hover,

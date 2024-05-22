@@ -161,9 +161,17 @@ button {
     transition: background-color 0.3s;
     text-align: center;
 }
-
+.bi {
+    color: #fff;
+    display: inline-block;
+    vertical-align: -.145em;
+    fill: currentcolor;
+}
 .btn-excluir {
     background-color: #c82333;
+}
+.icon-margin {
+    margin-right: 5px; /* Ajuste o valor conforme necessário */
 }
 
 .btn-editar:hover,
@@ -261,7 +269,6 @@ tr:nth-child(even) {
 .btn-excluir {
     padding: 10px;
     width: 45%;
-    height: 40px;
     margin: 10px auto;
     /* Adicionando margem para separar os botões */
     font-weight: bold;
