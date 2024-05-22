@@ -226,6 +226,13 @@ footer {
     }
 }
 
+@media screen and (max-width: 1170px) and (min-width: 769px) and (orientation: landscape) {
+    .menu {
+        padding-left: 17%;
+    }
+}
+
+/* Media query para telas menores */
 @media screen and (max-width: 768px) {
     nav {
         height: auto;

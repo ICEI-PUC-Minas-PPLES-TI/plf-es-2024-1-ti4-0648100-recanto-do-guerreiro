@@ -23,11 +23,6 @@ h1 {
     font-weight: bold;
 }
 
-h2 {
-    text-align: center;
-    color: #555555;
-}
-
 /* NAVBAR ------------------ */
 nav {
     background-color: #FFE3D5;
@@ -325,6 +320,13 @@ footer {
     text-decoration: underline;
 }
 
+@media screen and (max-width: 1170px) and (min-width: 769px) and (orientation: landscape) {
+    .menu {
+        padding-left: 17%;
+    }
+}
+
+/* Media query para telas menores */
 @media screen and (max-width: 768px) {
     nav {
         height: auto;
