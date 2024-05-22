@@ -26,7 +26,7 @@ const sequelize = new Sequelize({
     dialect: "mysql",
     host: "localhost",
     username: "root",
-    password: "RootTis4#",
+    password: "Phmcf#2003",
 });
 
 /*const sequelize = new Sequelize({
@@ -54,7 +54,7 @@ module.exports = {
     dialect: "mysql",
     host: "localhost",
     username: "root",
-    password: "RootTis4#",
+    password: "Phmcf#2003",
     database: "recantodoguerreiro",
     define: {
         timestamp: true,
