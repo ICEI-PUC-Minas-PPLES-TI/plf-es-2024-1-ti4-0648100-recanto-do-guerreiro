@@ -320,14 +320,29 @@ footer {
     text-decoration: underline;
 }
 
-@media screen and (max-width: 1170px) and (min-width: 769px) and (orientation: landscape) {
+/* Estilos para telas maiores */
+@media only screen and (min-width: 933px) {
+    .menu {
+        padding-left: 20%;
+    }
+}
+
+/* Estilos para telas entre 845px e 932px */
+@media only screen and (min-width: 845px) and (max-width: 932px) {
     .menu {
         padding-left: 17%;
     }
 }
 
-/* Media query para telas menores */
-@media screen and (max-width: 768px) {
+/* Estilos para telas entre 769px e 844px */
+@media only screen and (min-width: 769px) and (max-width: 844px) {
+    .menu {
+        padding-left: 15%;
+    }
+}
+
+/* Estilos para telas menores */
+@media only screen and (max-width: 768px) {
     nav {
         height: auto;
     }
