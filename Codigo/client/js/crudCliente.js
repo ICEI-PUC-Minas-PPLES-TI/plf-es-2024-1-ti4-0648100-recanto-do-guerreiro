@@ -1,7 +1,7 @@
 window.addEventListener("load", displayWorkshops());
 
 async function addCliente(e) {
-    const token = sessionStorage.getItem("token"); //PEGA O TOKEM DO LOCAL STORAGE E JOGA NO HEADERS PARA VERIFICACAO
+    const token = sessionStorage.getItem("token");
     const headers = {
         "Content-Type": "application/json",
         Authorization: token,
@@ -22,12 +22,29 @@ async function addCliente(e) {
         });
         const dados = await response.json();
         console.log(dados);
-        window.alert("Cliente Cadastrado Com Sucesso!");
-        window.location.href = "../html/crudCliente.html";
+        // Exibir o modal de sucesso
+        const modalSucesso = document.getElementById("modalSucesso");
+        modalSucesso.style.display = "block";
+        // Redirecionar após 2 segundos (opcional)
+        setTimeout(() => {
+            window.location.href = "../html/crudCliente.html";
+        }, 2000);
     } catch (erro) {
         console.log(erro);
     }
 }
+
+
+function fecharModalSucesso() {
+    const modalSucesso = document.getElementById("modalSucesso");
+    modalSucesso.style.display = "none";
+}
+
+function redirecionarParaCrudCliente() {
+    window.location.href = "../html/crudCliente.html";
+}
+
+
 
 async function displayWorkshops() {
     const table = document.getElementById("displayClientes");
@@ -111,19 +128,19 @@ async function deletecliente(index) {
     };
 
     // Fechar o modal se o usuário clicar no botão "x"
-const spanClose = document.getElementsByClassName("close")[0];
-spanClose.onclick = () => {
-    const modal = document.getElementById("modalConfirmacao");
-    modal.style.display = "none";
-};
-
-// Fechar o modal se o usuário clicar fora dele
-window.onclick = (event) => {
-    const modal = document.getElementById("modalConfirmacao");
-    if (event.target == modal) {
+    const spanClose = document.getElementsByClassName("close")[0];
+    spanClose.onclick = () => {
+        const modal = document.getElementById("modalConfirmacao");
         modal.style.display = "none";
-    }
-};
+    };
+
+    // Fechar o modal se o usuário clicar fora dele
+    window.onclick = (event) => {
+        const modal = document.getElementById("modalConfirmacao");
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
 }
 
 async function visualizarClientes() {
