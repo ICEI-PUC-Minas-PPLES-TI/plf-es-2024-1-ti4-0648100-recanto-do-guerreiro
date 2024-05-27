@@ -109,9 +109,8 @@ async function deletecliente(index) {
     btnCancelar.onclick = () => {
         modal.style.display = "none"; // Fechar modal
     };
-}
 
-// Fechar o modal se o usuário clicar no botão "x"
+    // Fechar o modal se o usuário clicar no botão "x"
 const spanClose = document.getElementsByClassName("close")[0];
 spanClose.onclick = () => {
     const modal = document.getElementById("modalConfirmacao");
@@ -125,7 +124,7 @@ window.onclick = (event) => {
         modal.style.display = "none";
     }
 };
-
+}
 
 async function visualizarClientes() {
     try {

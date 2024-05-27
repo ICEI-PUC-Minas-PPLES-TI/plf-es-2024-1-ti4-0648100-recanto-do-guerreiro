@@ -72,28 +72,59 @@ async function displayWorkshops() {
             <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5m-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5M4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06m6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528M8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5"/>
           </svg>Excluir</button>
             </td>
+            <div id="modalConfirmacao" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="fecharModal()">&times;</span>
+                <p>Você realmente deseja excluir essa Reserva?</p>
+                <button id="btnConfirmarExclusao">Confirmar</button>
+                <button id="btnCancelarExclusao">Cancelar</button>
+            </div>
         `;
     });
     return true;
 }
 
 async function deletegestao(index) {
-    const token = sessionStorage.getItem("token"); //PEGA O TOKEM DO LOCAL STORAGE E JOGA NO HEADERS PARA VERIFICACAO
-    const headers = {
-        "Content-Type": "application/json",
-        Authorization: token,
-    };
-    const confirmacao = confirm("Tem certeza que deseja excluir essa Gestão?");
+    // Abrir modal de confirmação
+    const modal = document.getElementById("modalConfirmacao");
+    modal.style.display = "block";
 
-    if (confirmacao) {
+    // Quando o usuário clica no botão de confirmar
+    const btnConfirmar = document.getElementById("btnConfirmarExclusao");
+    btnConfirmar.onclick = async () => {
+        const token = sessionStorage.getItem("token");
+        const headers = {
+            "Content-Type": "application/json",
+            Authorization: token,
+        };
         const response = await fetch(`http://localhost:8000/gestao/${index}`, {
             method: "DELETE",
             headers,
         });
+        modal.style.display = "none"; // Fechar modal
+        displayWorkshops();
+    };
 
-    }
+    // Quando o usuário clica no botão de cancelar
+    const btnCancelar = document.getElementById("btnCancelarExclusao");
+    btnCancelar.onclick = () => {
+        modal.style.display = "none"; // Fechar modal
+    };
 
-    displayWorkshops();
+    // Fechar o modal se o usuário clicar no botão "x"
+    const spanClose = document.getElementsByClassName("close")[0];
+    spanClose.onclick = () => {
+        const modal = document.getElementById("modalConfirmacao");
+        modal.style.display = "none";
+    };
+    // Fechar o modal se o usuário clicar fora dele
+    window.onclick = (event) => {
+        const modal = document.getElementById("modalConfirmacao");
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
+    event.preventDefault();
 }
 
 // Função para buscar Clientes cadastrados e preencher a lista suspensa;

@@ -1,4 +1,7 @@
-window.addEventListener("load", displayWorkshops());
+window.addEventListener("load", () => {
+    populateClienteSelect();
+    displayWorkshops();
+});
 
 async function addReserva(e) {
     e.preventDefault();
@@ -105,9 +108,15 @@ async function displayWorkshops() {
   </svg>
   Excluir
 </button>
-
-
-        </td>`;
+        </td>
+        <div id="modalConfirmacao" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal()">&times;</span>
+            <p>Você realmente deseja excluir essa Reserva?</p>
+            <button id="btnConfirmarExclusao">Confirmar</button>
+            <button id="btnCancelarExclusao">Cancelar</button>
+        </div>
+    </div>`;
         };
         return true;
     } catch (error) {
@@ -141,23 +150,48 @@ async function populateClienteSelect() {
 }
 
 async function deletereserva(index) {
-    event.preventDefault();
-    const token = sessionStorage.getItem("token"); //PEGA O TOKEM DO LOCAL STORAGE E JOGA NO HEADERS PARA VERIFICACAO
-    const headers = {
-        "Content-Type": "application/json",
-        Authorization: token,
-    };
-    const confirmacao = confirm("Tem certeza que deseja excluir essa Reserva?");
+    // Abrir modal de confirmação
+    const modal = document.getElementById("modalConfirmacao");
+    modal.style.display = "block";
 
-    if (confirmacao) {
+    // Quando o usuário clica no botão de confirmar
+    const btnConfirmar = document.getElementById("btnConfirmarExclusao");
+    btnConfirmar.onclick = async () => {
+        const token = sessionStorage.getItem("token");
+        const headers = {
+            "Content-Type": "application/json",
+            Authorization: token,
+        };
         const response = await fetch(`http://localhost:8000/reserva/${index}`, {
             method: "DELETE",
             headers,
         });
-    }
+        modal.style.display = "none"; // Fechar modal
+        displayWorkshops();
+    };
 
-    displayWorkshops();
+    // Quando o usuário clica no botão de cancelar
+    const btnCancelar = document.getElementById("btnCancelarExclusao");
+    btnCancelar.onclick = () => {
+        modal.style.display = "none"; // Fechar modal
+    };
+
+    // Fechar o modal se o usuário clicar no botão "x"
+    const spanClose = document.getElementsByClassName("close")[0];
+    spanClose.onclick = () => {
+        const modal = document.getElementById("modalConfirmacao");
+        modal.style.display = "none";
+    };
+    // Fechar o modal se o usuário clicar fora dele
+    window.onclick = (event) => {
+        const modal = document.getElementById("modalConfirmacao");
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
+    event.preventDefault();
 }
+
 // Verificar se a data selecionada é um sábado ou domingo
 function checkWeekend(input) {
     const selectedDate = new Date(input.value);
@@ -170,11 +204,6 @@ function checkWeekend(input) {
         );
     }
 }
-
-// Preencher as listas suspensas quando a página for carregada;
-window.addEventListener("load", () => {
-    populateClienteSelect();
-});
 
 async function visualizarReservas() {
     try {
