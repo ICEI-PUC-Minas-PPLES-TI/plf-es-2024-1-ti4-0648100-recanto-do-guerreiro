@@ -20,12 +20,29 @@ async function addGestao(e) {
         });
         const dados = await response.json();
         console.log(dados);
-        window.alert("Gestão Cadastrada Com Sucesso!");
-        window.location.href = "../html/crudGestao.html";
+        // window.alert("Gestão Cadastrada Com Sucesso!");
+        // window.location.href = "../html/crudGestao.html";
+        // Exibir o modal de sucesso
+        const modalSucesso = document.getElementById("modalSucesso");
+        modalSucesso.style.display = "block";
+        // Redirecionar após 2 segundos (opcional)
+        setTimeout(() => {
+            window.location.href = "../html/crudGestao.html";
+        }, 2000);
     } catch (erro) {
         console.log(erro);
     }
 }
+
+function fecharModalSucesso() {
+    const modalSucesso = document.getElementById("modalSucesso");
+    modalSucesso.style.display = "none";
+}
+
+function redirecionarParaCrudCliente() {
+    window.location.href = "../html/crudCliente.html";
+}
+
 
 async function displayWorkshops() {
     const table = document.getElementById("displayGestoes");
@@ -82,6 +99,10 @@ async function displayWorkshops() {
         `;
     });
     return true;
+}
+function fecharModal() {
+    const modal = document.getElementById("modalConfirmacao");
+    modal.style.display = "none";
 }
 
 async function deletegestao(index) {

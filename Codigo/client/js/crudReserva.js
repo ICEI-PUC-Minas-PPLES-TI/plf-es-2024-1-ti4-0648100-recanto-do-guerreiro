@@ -29,11 +29,28 @@ async function addReserva(e) {
     // Obtenha os dados da reserva criada
     const dados = await createReservaResponse.json();
     console.log(dados);
-    window.alert("Reserva Cadastrada Com Sucesso!");
-    window.location.href = "../html/crudReserva.html";
-
+    // window.alert("Reserva Cadastrada Com Sucesso!");
+    // window.location.href = "../html/crudReserva.html";
+    // Exibir o modal de sucesso
+    const modalSucesso = document.getElementById("modalSucesso");
+    modalSucesso.style.display = "block";
+    // Redirecionar após 2 segundos (opcional)
+    setTimeout(() => {
+        window.location.href = "../html/crudReserva.html";
+    }, 2000);
 
 }
+
+
+function fecharModalSucesso() {
+    const modalSucesso = document.getElementById("modalSucesso");
+    modalSucesso.style.display = "none";
+}
+
+function redirecionarParaCrudCliente() {
+    window.location.href = "../html/crudCliente.html";
+}
+
 
 async function displayWorkshops() {
     const table = document.getElementById("displayReservas");
@@ -122,6 +139,10 @@ async function displayWorkshops() {
     } catch (error) {
         console.error("Error fetching workshops:", error);
     }
+}
+function fecharModal() {
+    const modal = document.getElementById("modalConfirmacao");
+    modal.style.display = "none";
 }
 
 // Função para buscar Clientes cadastrados e preencher a lista suspensa;
