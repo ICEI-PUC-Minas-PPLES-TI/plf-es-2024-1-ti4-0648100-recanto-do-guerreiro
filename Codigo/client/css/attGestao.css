@@ -310,6 +310,16 @@ footer {
         margin-bottom: 1rem;
     }
 
+    label,
+    input,
+    .btn-atualizar {
+        margin-bottom: 1.5rem;
+    }
+
+    .btn-atualizar {
+        margin-top: 20px;
+    }
+
     input[type="text"] {
         padding: 1rem;
     }
