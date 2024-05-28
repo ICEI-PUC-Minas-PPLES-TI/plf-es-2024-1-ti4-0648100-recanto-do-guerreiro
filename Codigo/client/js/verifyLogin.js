@@ -3,6 +3,6 @@ window.addEventListener("load", () => {
     const token = sessionStorage.getItem("token");
     if (!token) {
         window.alert("Voce precisa estar logado!");
-        window.location.href = "../index.html";
+        window.location.href = "../login.html";
     }
 });

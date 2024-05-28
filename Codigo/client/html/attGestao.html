@@ -8,22 +8,23 @@
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="../css/attGestao.css">
     <title>Sistema Recanto do Guerreiro - Atualizar Gestões</title>
-
 </head>
 
 <body>
     <nav>
         <div class="navbar">
-            <div class="logo">Recanto do Guerreiro</div>
+            <div class="logo"><img src="../img/LogoRecanto_Guerreiro.png" alt=""></div>
             <ul class="menu">
                 <li>
                     <a href="crudCliente.html">Clientes</a>
                 </li>
+                <div class="linha-vertical"></div>
                 <li>
                     <a href="crudReserva.html">Reservas</a>
                 </li>
+                <div class="linha-vertical"></div>
                 <li>
-                    <a href="crudGestao.html">Gestão de reserva</a>
+                    <a href="crudGestao.html">Gestões</a>
                 </li>
             </ul>
             <div class="logout-button" id="logoutButton">
@@ -32,8 +33,7 @@
         </div>
     </nav>
     <div class="container">
-        <h1>Sistema Recanto do Guerreiro - Atualizar Gestões</h1>
-        <h2>Atualizar Gestão</h2>
+        <h1>Atualizar Gestão</h1>
         <!-- <form id="add-workshop-form" onsubmit="Oficina(event)"> -->
         <form id="add-workshop-form" onsubmit="putGestao(event)">
 
@@ -52,7 +52,7 @@
             <label for="descricao" class="form-label">Descrição:</label>
             <textarea class="form-control" id="descricao" name="descricao" rows="3" required></textarea>
 
-            <button type="submit" id="btn_submit">Atualizar Gestão</button>
+            <button class="btn-atualizar" type="submit" id="btn_submit">Atualizar Gestão</button>
 
         </form>
     </div>
