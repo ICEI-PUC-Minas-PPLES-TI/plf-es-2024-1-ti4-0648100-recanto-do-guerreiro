@@ -30,10 +30,10 @@ const { Sequelize } = require("sequelize");
 });*/
 
 const sequelize = new Sequelize({
-  dialect: "mysql",
-  host: "localhost",
-  username: "root",
-  password: "RootTis4#",
+    dialect: "mysql",
+    host: "localhost",
+    username: "root",
+    password: "Phmcf#2003",
 });
 
 /*const sequelize = new Sequelize({
@@ -69,14 +69,14 @@ createDatabase();
 };*/
 
 module.exports = {
-  dialect: "mysql",
-  host: "localhost",
-  username: "root",
-  password: "RootTis4#",
-  database: "recantodoguerreiro",
-  define: {
-    timestamp: true,
-  },
+    dialect: "mysql",
+    host: "localhost",
+    username: "root",
+    password: "Phmcf#2003",
+    database: "recantodoguerreiro",
+    define: {
+        timestamp: true,
+    },
 };
 
 /*module.exports = {
