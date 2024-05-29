@@ -33,7 +33,7 @@ const sequelize = new Sequelize({
     dialect: "mysql",
     host: "localhost",
     username: "root",
-    password: "Phmcf#2003",
+    password: "RootTis4#",
 });
 
 /*const sequelize = new Sequelize({
@@ -72,7 +72,7 @@ module.exports = {
     dialect: "mysql",
     host: "localhost",
     username: "root",
-    password: "Phmcf#2003",
+    password: "RootTis4#",
     database: "recantodoguerreiro",
     define: {
         timestamp: true,

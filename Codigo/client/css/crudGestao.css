@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
     padding: 0;
@@ -164,17 +165,21 @@ button {
     transition: background-color 0.3s;
     text-align: center;
 }
+
 .bi {
     color: #fff;
     display: inline-block;
     vertical-align: -.145em;
     fill: currentcolor;
 }
+
 .btn-excluir {
     background-color: #c82333;
 }
+
 .icon-margin {
-    margin-right: 8px; /* Ajuste o valor conforme necessário */
+    margin-right: 8px;
+    /* Ajuste o valor conforme necessário */
 }
 
 .btn-editar:hover,
@@ -212,9 +217,9 @@ button:hover {
 
 /*MODAL DE CONFIRMAÇÃO DE CADASTRO*/
 .modal-text {
-    color: #555555; 
-    font-size: 16px; 
-    font-weight: bold; 
+    color: #555555;
+    font-size: 16px;
+    font-weight: bold;
     text-align: center;
 }
 
@@ -267,27 +272,21 @@ tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
+.btn-container {
+    display: flex;
+    /* Use flexbox para alinhar os botões lado a lado */
+}
+
 .btn-editar,
 .btn-excluir {
     padding: 10px;
-    display: inline-block;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 80%;
-    height: 40px;
+    width: 45%;
+    margin: 10px auto;
+    /* Adicionando margem para separar os botões */
     font-weight: bold;
 }
 
-.btn-editar {
-    margin-top: 15px;
-}
-
-.btn-excluir {
-    margin-bottom: 15px;
-}
-
-#mensagemSemItens{
+#mensagemSemItens {
     justify-content: center;
 }
 
@@ -301,15 +300,18 @@ tr:nth-child(even) {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5); /* Fundo preto com transparência */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Fundo preto com transparência */
 }
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* Centralizar verticalmente, ajuste conforme necessário */
+    margin: 15% auto;
+    /* Centralizar verticalmente, ajuste conforme necessário */
     padding: 20px;
     border: 1px solid #888;
-    width: 30%; /* Defina o tamanho do modal, ajuste conforme necessário */
+    width: 30%;
+    /* Defina o tamanho do modal, ajuste conforme necessário */
 }
 
 .close {
@@ -406,19 +408,23 @@ footer {
     nav {
         height: auto;
     }
+
     .navbar {
         flex-direction: column;
         align-items: center;
         padding: 10px;
     }
+
     .logo {
         order: 1;
         margin-top: 10px;
     }
+
     .logout-button {
         order: 3;
         margin-top: 10px;
     }
+
     .menu {
         order: 2;
         flex-direction: column;
@@ -426,31 +432,38 @@ footer {
         margin-top: 10px;
         padding-left: 0;
     }
+
     .menu li {
         margin-right: 0;
         margin-bottom: 10px;
     }
+
     .linha-vertical {
         display: none;
     }
+
     .linha-separadora {
         width: 90%;
         max-width: 400px;
         margin: 20px auto;
     }
+
     th,
     td {
         padding: 0px;
     }
+
     th:nth-child(2),
     th:nth-child(4) {
         display: none;
     }
+
     /* Esconder as células das linhas que você não quer mostrar */
     td:nth-child(2),
     td:nth-child(4) {
         display: none;
     }
+
     .btn-editar,
     .btn-excluir {
         padding: 10px;
