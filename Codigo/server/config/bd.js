@@ -19,56 +19,46 @@
 };*/
 
 //BANCO DE DADOS LOCAL;
-/*import { Sequelize } from '@sequelize/core';
-import { PostgresDialect } from '@sequelize/postgres';
 
-/*const sequelize = new Sequelize({
-  dialect: "mysql",
-  host: "localhost",
-  username: "root",
-  password: "cacau69#Deus",
-});*/
+const { Sequelize } = require('sequelize');
+
+const sequelize = new Sequelize({
+    dialect: "mysql",
+    host: "localhost",
+    username: "root",
+    password: "Phmcf#2003",
+});
 
 // Função para criar o banco de dados se não existir;
-/*async function createDatabase() {
+async function createDatabase() {
     try {
         await sequelize.query(`CREATE DATABASE IF NOT EXISTS recantodoguerreiro;`);
         console.log("Banco de dados criado com sucesso ou já existente");
     } catch (error) {
         console.error("Erro ao criar banco de dados:", error);
     }
-}*/
+}
 
 // Chama a função para criar o banco de dados;
-/*createDatabase();
+createDatabase();
 
 // Exporta as configurações;
-module.exports = {
-    dialect: PostgresDialect,
-    host: 'dpg-cpdr1otds78s73emtgg0-a',
-    user: { user },
-    password: { password },
-    database: 'recantodoguerreiro',
-    define: {
-        timestamp: true,
-    },
-};*/
 
-/*module.exports = {
+module.exports = {
     dialect: "mysql",
     host: "localhost",
     username: "root",
-    password: "RootTis4#",
+    password: "Phmcf#2003",
     database: "recantodoguerreiro",
     define: {
         timestamp: true,
     },
-};*/
+};
 
 // TESTE DE DEPLOY
 
 // Importando o módulo dotenv para carregar variáveis de ambiente do arquivo .env
-module.exports = {
+/*module.exports = {
     development: {
         use_env_variable: 'DATABASE_URL_DEV',
         dialect: 'postgres',
@@ -102,4 +92,4 @@ module.exports = {
             }
         }
     }
-};
+};*/

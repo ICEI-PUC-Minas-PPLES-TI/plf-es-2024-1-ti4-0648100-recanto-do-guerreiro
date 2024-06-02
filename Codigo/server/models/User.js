@@ -24,11 +24,6 @@ class User extends Model {
                     type: Sequelize.STRING,
                     allowNull: true,
                 },
-
-                internalLink: {
-                    type: Sequelize.STRING,
-                    allowNull: true,
-                },
             },
 
             {
@@ -38,9 +33,7 @@ class User extends Model {
                 timestamps: true, // Adiciona timestamps automaticamente
             }
         );
-
-        this.addHook('afterCreate', 'addInternalLink', (user, options) => {
-            user.internalLink = 'http://localhost:8000/' + user.id;
-        });
     }
 }
+
+module.exports = User;

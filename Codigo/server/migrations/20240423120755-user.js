@@ -21,10 +21,6 @@ module.exports = {
                 type: Sequelize.STRING,
                 allowNull: true,
             },
-            internalLink: {
-                type: Sequelize.STRING,
-                allowNull: true,
-            },
             createdAt: {
                 type: Sequelize.DATE,
                 allowNull: false,

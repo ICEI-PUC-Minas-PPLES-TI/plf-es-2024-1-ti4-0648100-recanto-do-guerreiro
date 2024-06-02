@@ -50,11 +50,6 @@ class Reserva extends Model {
                     type: Sequelize.STRING,
                     allowNull: true,
                 },
-
-                internalLink: {
-                    type: Sequelize.STRING,
-                    allowNull: true,
-                },
             },
 
             {
@@ -64,9 +59,7 @@ class Reserva extends Model {
                 timestamps: true, // Adiciona timestamps automaticamente
             }
         );
-
-        this.addHook('afterCreate', 'addInternalLink', (reserva, options) => {
-            reserva.internalLink = 'http://localhost:8000/' + reserva.id;
-        });
     }
 }
+
+module.exports = Reserva;

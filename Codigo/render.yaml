@@ -1,9 +1,0 @@
-services:
-- type: web
-  name: recantodoguerreiro
-  runtime: node
-  buildCommand: cd server && npm install && npm install -g sequelize-cli && npx sequelize-cli db:migrate
-  startCommand: cd server && node index.js
-  envVars:
-  - key: NODE_ENV
-    value: production

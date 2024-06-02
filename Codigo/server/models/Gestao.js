@@ -41,11 +41,6 @@ class Gestao extends Model {
                     type: Sequelize.STRING,
                     allowNull: true,
                 },
-
-                internalLink: {
-                    type: Sequelize.STRING,
-                    allowNull: true,
-                },
             },
 
             {
@@ -55,10 +50,6 @@ class Gestao extends Model {
                 timestamps: true, // Adiciona timestamps automaticamente
             }
         );
-
-        this.addHook('afterCreate', 'addInternalLink', (gestao, options) => {
-            gestao.internalLink = 'http://localhost:8000/' + gestao.id;
-        });
     }
 }
 

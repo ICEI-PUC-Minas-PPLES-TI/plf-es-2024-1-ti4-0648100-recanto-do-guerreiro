@@ -1,26 +1,17 @@
-const { Sequelize } = require('sequelize');
+//importar modelos aqui
+//inicializa os modelos e conecta ao bd
 const config = require('../config/bd');
-const Reserva = require('../models/Reserva');
+const { Sequelize } = require('sequelize');
 const Cliente = require('../models/Cliente');
+const Reserva = require('../models/Reserva');
 const Gestao = require('../models/Gestao');
 const User = require('../models/User');
 
-const models = [Reserva, Cliente, Gestao, User];
+const models = [Cliente, Reserva, Gestao, User]
 
 class Database {
     constructor() {
-        // Obtendo as configurações para o ambiente atual
-        const env = process.env.NODE_ENV || 'development';
-        const dbConfig = config[env];
-
-        let sequelize;
-        if (dbConfig.use_env_variable) {
-            sequelize = new Sequelize(process.env[dbConfig.use_env_variable], dbConfig);
-        } else {
-            sequelize = new Sequelize(dbConfig.database, dbConfig.username, dbConfig.password, dbConfig);
-        }
-
-        this.connection = sequelize;
+        this.connection = new Sequelize(config);
         this.init();
         this.associate();
     }
@@ -37,4 +28,4 @@ class Database {
     }
 }
 
-module.exports = new Database();
+module.exports = new Database()

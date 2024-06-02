@@ -39,11 +39,6 @@ class Cliente extends Model {
                     type: Sequelize.STRING,
                     allowNull: true,
                 },
-
-                internalLink: {
-                    type: Sequelize.STRING,
-                    allowNull: true,
-                },
             },
 
             {
@@ -53,10 +48,6 @@ class Cliente extends Model {
                 timestamps: true, // Adiciona timestamps automaticamente
             }
         );
-
-        this.addHook('afterCreate', 'addInternalLink', (cliente, options) => {
-            cliente.internalLink = 'http://localhost:8000/' + cliente.id;
-        });
     }
 }
 
