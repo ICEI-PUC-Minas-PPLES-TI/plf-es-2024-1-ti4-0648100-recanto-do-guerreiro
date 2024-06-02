@@ -67,27 +67,28 @@ module.exports = {
 
 // TESTE DE DEPLOY
 
-import { Sequelize } from 'sequelize';
-import { PostgresDialect } from '@sequelize/postgres';
+require('dotenv').config();
 
-const sequelize = new Sequelize('postgres://recantodoguerreiro_user:toiuly1A8znmL3CQJiTcSd6Bq2ubvODR@localhost/recantodoguerreiro', {
-    dialect: PostgresDialect,
-    protocol: 'postgres',
-});
-
-async function createDatabase() {
-    try {
-        await sequelize.authenticate();
-        console.log("Conexão estabelecida com sucesso.");
-    } catch (error) {
-        console.error("Erro ao criar banco de dados:", error);
+module.exports = {
+    development: {
+        username: process.env.DB_USER,
+        password: process.env.DB_PASSWORD,
+        database: process.env.DB_NAME,
+        host: process.env.DB_HOST,
+        dialect: process.env.DB_DIALECT,
+    },
+    test: {
+        username: process.env.DB_USER,
+        password: process.env.DB_PASSWORD,
+        database: process.env.DB_NAME,
+        host: process.env.DB_HOST,
+        dialect: process.env.DB_DIALECT,
+    },
+    production: {
+        username: process.env.DB_USER,
+        password: process.env.DB_PASSWORD,
+        database: process.env.DB_NAME,
+        host: process.env.DB_HOST,
+        dialect: process.env.DB_DIALECT,
     }
-}
-
-createDatabase();
-
-sequelize.addHook('afterCreate', 'myHook', (instance, options) => {
-    instance.internalLink = 'http://localhost:8000/' + instance.id;
-});
-
-module.exports = sequelize;
+};
