@@ -1,5 +1,3 @@
-//importar modelos aqui
-//inicializa os modelos e conecta ao bd
 const { Sequelize } = require('sequelize');
 const config = require('../config/bd');
 const Reserva = require('../models/Reserva');
@@ -7,11 +5,15 @@ const Cliente = require('../models/Cliente');
 const Gestao = require('../models/Gestao');
 const User = require('../models/User');
 
-const models = [Reserva, Cliente, Gestao, User]
+const models = [Reserva, Cliente, Gestao, User];
 
 class Database {
     constructor() {
-        this.connection = new Sequelize(config);
+        // Aqui você precisa passar explicitamente o dialeto 'postgres'
+        this.connection = new Sequelize(config.development.database, config.development.username, config.development.password, {
+            host: config.development.host,
+            dialect: 'postgres', // Dialeto PostgreSQL
+        });
         this.init();
         this.associate();
     }
@@ -28,4 +30,4 @@ class Database {
     }
 }
 
-module.exports = new Database()
+module.exports = new Database();
