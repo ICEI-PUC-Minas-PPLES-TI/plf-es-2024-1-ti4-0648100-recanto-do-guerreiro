@@ -1,0 +1,9 @@
+services:
+- type: web
+  name: recantodoguerreiro
+  runtime: node
+  buildCommand: cd server && npm install && npm install -g sequelize-cli && Get-ExecutionPolicy && Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass && sequelize db:migrate
+  startCommand: cd server && node index.js
+  envVars:
+  - key: NODE_ENV
+    value: production
