@@ -9,8 +9,9 @@ const models = [Reserva, Cliente, Gestao, User];
 
 class Database {
     constructor() {
-        // Obtendo as configurações para o ambiente de desenvolvimento
-        const { username, password, database, host, dialect } = config.development;
+        // Obtendo as configurações para o ambiente atual
+        const env = process.env.NODE_ENV || 'development';
+        const { username, password, database, host, dialect } = config[env];
 
         // Inicializando a conexão com o banco de dados usando as configurações
         this.connection = new Sequelize(database, username, password, {
