@@ -66,7 +66,6 @@ module.exports = {
 };*/
 
 // TESTE DE DEPLOY
-
 require('dotenv').config();
 
 module.exports = {
@@ -75,6 +74,20 @@ module.exports = {
         password: process.env.DB_PASSWORD,
         database: process.env.DB_NAME,
         host: process.env.DB_HOST,
-        dialect: process.env.DB_DIALECT,
+        dialect: 'postgres', // Defina o dialeto como 'postgres'
+    },
+    test: {
+        username: process.env.DB_USER,
+        password: process.env.DB_PASSWORD,
+        database: process.env.DB_NAME,
+        host: process.env.DB_HOST,
+        dialect: 'postgres', // Defina o dialeto como 'postgres'
+    },
+    production: {
+        username: process.env.DB_USER,
+        password: process.env.DB_PASSWORD,
+        database: process.env.DB_NAME,
+        host: process.env.DB_HOST,
+        dialect: 'postgres', // Defina o dialeto como 'postgres'
     }
 };
