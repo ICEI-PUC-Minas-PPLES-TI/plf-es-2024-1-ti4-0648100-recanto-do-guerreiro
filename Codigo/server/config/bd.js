@@ -78,7 +78,8 @@ module.exports = {
         password: process.env.DB_PASSWORD, // Senha do banco de dados
         database: process.env.DB_NAME, // Nome do banco de dados
         host: process.env.DB_HOST, // Host do banco de dados
-        dialect: process.env.DB_DIALECT, // Dialeto do banco de dados (no caso, PostgreSQL)
+        dialect: process.env.DB_DIALECT,
+        // Dialeto do banco de dados (no caso, PostgreSQL)
     },
     test: {
         // Configurações para o ambiente de teste (pode ser similar às de desenvolvimento)
