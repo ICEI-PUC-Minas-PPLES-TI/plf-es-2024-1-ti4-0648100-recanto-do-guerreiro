@@ -19,22 +19,8 @@
 };*/
 
 //BANCO DE DADOS LOCAL;
-const { Sequelize } = require("sequelize");
-
-// Configurações de conexão com o banco de dados;
-/*const sequelize = new Sequelize({
-    dialect: "mysql",
-    host: "localhost",
-    username: "root",
-    password: "Phmcf#2003",
-});*/
-
-const sequelize = new Sequelize({
-    dialect: "mysql",
-    host: "localhost",
-    username: "root",
-    password: "Phmcf#2003",
-});
+/*import { Sequelize } from '@sequelize/core';
+import { PostgresDialect } from '@sequelize/postgres';
 
 /*const sequelize = new Sequelize({
   dialect: "mysql",
@@ -44,48 +30,63 @@ const sequelize = new Sequelize({
 });*/
 
 // Função para criar o banco de dados se não existir;
-async function createDatabase() {
+/*async function createDatabase() {
     try {
         await sequelize.query(`CREATE DATABASE IF NOT EXISTS recantodoguerreiro;`);
         console.log("Banco de dados criado com sucesso ou já existente");
     } catch (error) {
         console.error("Erro ao criar banco de dados:", error);
     }
-}
+}*/
 
 // Chama a função para criar o banco de dados;
-createDatabase();
+/*createDatabase();
 
 // Exporta as configurações;
-/*module.exports = {
-    dialect: "mysql",
-    host: "localhost",
-    username: "root",
-    password: "Phmcf#2003",
-    database: "recantodoguerreiro",
-    define: {
-        timestamp: true,
-    },
-};*/
-
 module.exports = {
+    dialect: PostgresDialect,
+    host: 'dpg-cpdr1otds78s73emtgg0-a',
+    user: { user },
+    password: { password },
+    database: 'recantodoguerreiro',
+    define: {
+        timestamp: true,
+    },
+};*/
+
+/*module.exports = {
     dialect: "mysql",
     host: "localhost",
     username: "root",
-    password: "Phmcf#2003",
+    password: "RootTis4#",
     database: "recantodoguerreiro",
     define: {
         timestamp: true,
     },
-};
-
-/*module.exports = {
-  dialect: "mysql",
-  host: "localhost",
-  username: "root",
-  password: "cacau69#Deus",
-  database: "recantodoguerreiro",
-  define: {
-    timestamp: true,
-  },
 };*/
+
+// TESTE DE DEPLOY
+
+import { Sequelize } from 'sequelize';
+
+const sequelize = new Sequelize('postgres://recantodoguerreiro_user:toiuly1A8znmL3CQJiTcSd6Bq2ubvODR@localhost/recantodoguerreiro', {
+    dialect: 'postgres',
+    protocol: 'postgres',
+});
+
+async function createDatabase() {
+    try {
+        await sequelize.authenticate();
+        console.log("Conexão estabelecida com sucesso.");
+    } catch (error) {
+        console.error("Erro ao criar banco de dados:", error);
+    }
+}
+
+createDatabase();
+
+sequelize.addHook('afterCreate', 'myHook', (instance, options) => {
+    instance.internalLink = 'http://localhost:8000/' + instance.id;
+});
+
+module.exports = sequelize;
