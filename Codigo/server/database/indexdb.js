@@ -9,10 +9,13 @@ const models = [Reserva, Cliente, Gestao, User];
 
 class Database {
     constructor() {
-        // Aqui você precisa passar explicitamente o dialeto 'postgres'
-        this.connection = new Sequelize(config.development.database, config.development.username, config.development.password, {
-            host: config.development.host,
-            dialect: 'postgres', // Dialeto PostgreSQL
+        // Obtendo as configurações para o ambiente de desenvolvimento
+        const { username, password, database, host, dialect } = config.development;
+
+        // Inicializando a conexão com o banco de dados usando as configurações
+        this.connection = new Sequelize(database, username, password, {
+            host: host,
+            dialect: dialect, // Usando o dialeto definido nas configurações
         });
         this.init();
         this.associate();
