@@ -66,7 +66,7 @@ module.exports = {
 };*/
 
 // TESTE DE DEPLOY
-
+import { PostgresDialect } from '@sequelize/postgres';
 require('dotenv').config();
 
 module.exports = {
@@ -75,20 +75,20 @@ module.exports = {
         password: process.env.DB_PASSWORD,
         database: process.env.DB_NAME,
         host: process.env.DB_HOST,
-        dialect: process.env.DB_DIALECT,
+        dialect: PostgresDialect,
     },
     test: {
         username: process.env.DB_USER,
         password: process.env.DB_PASSWORD,
         database: process.env.DB_NAME,
         host: process.env.DB_HOST,
-        dialect: process.env.DB_DIALECT,
+        dialect: PostgresDialect,
     },
     production: {
         username: process.env.DB_USER,
         password: process.env.DB_PASSWORD,
         database: process.env.DB_NAME,
         host: process.env.DB_HOST,
-        dialect: process.env.DB_DIALECT,
+        dialect: PostgresDialect,
     }
 };
