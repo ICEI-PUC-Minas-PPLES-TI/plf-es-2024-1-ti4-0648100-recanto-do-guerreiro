@@ -5,12 +5,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
-
-    
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@sequelize/postgres": "^7.0.0-alpha.41",
     "bcrypt": "^5.1.1",
     "connect-ensure-login": "^0.1.1",
     "cors": "^2.8.5",
