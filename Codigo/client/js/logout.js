@@ -3,5 +3,5 @@ function logout() {
     sessionStorage.removeItem("token");
     console.log("Token removed from session storage: ", sessionStorage.getItem("token")); // Deve imprimir null
     window.alert("Saiu!");
-    window.location.href = "../login.html";
+    window.location.href = "../index.html";
 }
