@@ -67,10 +67,13 @@ module.exports = {
 
 // TESTE DE DEPLOY
 
-import { Sequelize } from 'sequelize';
+//import { Sequelize } from 'sequelize';
+
+const { Sequelize } = require('sequelize');
+import { PostgresDialect } from '@sequelize/postgres';
 
 const sequelize = new Sequelize('postgres://recantodoguerreiro_user:toiuly1A8znmL3CQJiTcSd6Bq2ubvODR@localhost/recantodoguerreiro', {
-    dialect: 'postgres',
+    dialect: PostgresDialect,
     protocol: 'postgres',
 });
 
