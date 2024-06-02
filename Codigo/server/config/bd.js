@@ -68,8 +68,6 @@ module.exports = {
 // TESTE DE DEPLOY
 
 // Importando o módulo dotenv para carregar variáveis de ambiente do arquivo .env
-require('dotenv').config();
-
 module.exports = {
     development: {
         use_env_variable: 'DATABASE_URL_DEV',

@@ -4,7 +4,6 @@ const cors = require("cors");
 const routes = require("./routes");
 const database = require("./database/indexdb");
 const session = require("express-session");
-const Reserva = require("./models/Reserva"); // Certifique-se de que o caminho está correto
 
 const router = express.Router();
 
