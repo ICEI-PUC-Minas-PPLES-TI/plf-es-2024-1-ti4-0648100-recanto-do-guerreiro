@@ -70,31 +70,38 @@ module.exports = {
 // Importando o módulo dotenv para carregar variáveis de ambiente do arquivo .env
 require('dotenv').config();
 
-// Exportando as configurações do banco de dados de acordo com o ambiente
 module.exports = {
     development: {
-        // Configurações para o ambiente de desenvolvimento
-        username: process.env.DB_USER, // Nome de usuário do banco de dados
-        password: process.env.DB_PASSWORD, // Senha do banco de dados
-        database: process.env.DB_NAME, // Nome do banco de dados
-        host: process.env.DB_HOST, // Host do banco de dados
-        dialect: process.env.DB_DIALECT,
-        // Dialeto do banco de dados (no caso, PostgreSQL)
+        use_env_variable: 'DATABASE_URL_DEV',
+        dialect: 'postgres',
+        protocol: 'postgres',
+        dialectOptions: {
+            ssl: {
+                require: true,
+                rejectUnauthorized: false
+            }
+        }
     },
     test: {
-        // Configurações para o ambiente de teste (pode ser similar às de desenvolvimento)
-        username: process.env.DB_USER,
-        password: process.env.DB_PASSWORD,
-        database: process.env.DB_NAME,
-        host: process.env.DB_HOST,
-        dialect: process.env.DB_DIALECT,
+        use_env_variable: 'DATABASE_URL_TEST',
+        dialect: 'postgres',
+        protocol: 'postgres',
+        dialectOptions: {
+            ssl: {
+                require: true,
+                rejectUnauthorized: false
+            }
+        }
     },
     production: {
-        // Configurações para o ambiente de produção (normalmente diferentes das configurações de desenvolvimento)
-        username: process.env.DB_USER,
-        password: process.env.DB_PASSWORD,
-        database: process.env.DB_NAME,
-        host: process.env.DB_HOST,
-        dialect: process.env.DB_DIALECT,
+        use_env_variable: 'DATABASE_URL_PROD',
+        dialect: 'postgres',
+        protocol: 'postgres',
+        dialectOptions: {
+            ssl: {
+                require: true,
+                rejectUnauthorized: false
+            }
+        }
     }
 };

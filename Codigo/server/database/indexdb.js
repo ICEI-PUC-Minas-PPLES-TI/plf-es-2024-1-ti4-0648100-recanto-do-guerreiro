@@ -11,13 +11,16 @@ class Database {
     constructor() {
         // Obtendo as configurações para o ambiente atual
         const env = process.env.NODE_ENV || 'development';
-        const { username, password, database, host, dialect } = config[env];
+        const dbConfig = config[env];
 
-        // Inicializando a conexão com o banco de dados usando as configurações
-        this.connection = new Sequelize(database, username, password, {
-            host: host,
-            dialect: dialect, // Usando o dialeto definido nas configurações
-        });
+        let sequelize;
+        if (dbConfig.use_env_variable) {
+            sequelize = new Sequelize(process.env[dbConfig.use_env_variable], dbConfig);
+        } else {
+            sequelize = new Sequelize(dbConfig.database, dbConfig.username, dbConfig.password, dbConfig);
+        }
+
+        this.connection = sequelize;
         this.init();
         this.associate();
     }
