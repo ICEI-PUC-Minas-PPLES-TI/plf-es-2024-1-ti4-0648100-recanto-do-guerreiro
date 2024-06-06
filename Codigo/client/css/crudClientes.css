@@ -230,21 +230,22 @@ td {
 
 th,
 td {
-    padding: 5px;
+    padding: 2px;
     text-align: center;
+    align-items: center;
+    width: 10%;
 }
 
 th {
     background-color: #f2f2f2;
 }
 
-/* Esconder as células das linhas que você não quer mostrar */
+
 th:nth-child(4),
 th:nth-child(5) {
     display: none;
 }
 
-/* Esconder as células das linhas que você não quer mostrar */
 td:nth-child(4),
 td:nth-child(5) {
     display: none;
@@ -261,11 +262,12 @@ tr:nth-child(even) {
 
 .btn-editar,
 .btn-excluir {
-    padding: 10px;
+    padding: 5px;
     width: 45%;
-    margin: 10px auto;
-    /* Adicionando margem para separar os botões */
+    margin: 5px auto;
     font-weight: bold;
+    align-items: center;
+    justify-content: center;
 }
 
 

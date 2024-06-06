@@ -221,7 +221,6 @@ button:hover {
     font-weight: bold; 
     text-align: center;
 }
-
 /*TABELA ------------------*/
 table {
     width: 100%;
@@ -238,15 +237,14 @@ td {
 
 th,
 td {
-    padding: 5px;
+    padding: 2px;
     text-align: center;
     align-items: center;
     width: 10%;
-    height: 10%;
 }
 
 .th-especial {
-    width: 30%;
+    width: 10%;
 }
 
 .td-especial {
@@ -258,18 +256,14 @@ th {
     background-color: #f2f2f2;
 }
 
-td {
-    height: 100px;
-}
 
-/* Esconder as células das linhas que você não quer mostrar */
+/* Esconder as células das colunas que você não quer mostrar */
 th:nth-child(2),
 th:nth-child(5),
 th:nth-child(6) {
     display: none;
 }
 
-/* Esconder as células das linhas que você não quer mostrar */
 td:nth-child(2),
 td:nth-child(5),
 td:nth-child(6) {
@@ -282,14 +276,12 @@ tr:nth-child(even) {
 
 .btn-editar,
 .btn-excluir {
-    padding: 10px;
-    width: 45%;
-    margin: 10px auto;
-    /* Adicionando margem para separar os botões */
+    padding: 5px;
+    width: 40%;
+    margin: 5px auto;
     font-weight: bold;
     display: inline;
 }
-
 #mensagemSemItens{
     justify-content: center;
 }
