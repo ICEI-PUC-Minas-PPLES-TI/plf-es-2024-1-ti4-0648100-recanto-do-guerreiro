@@ -38,7 +38,7 @@ createDatabase();*/
 //BANCO DE DADOS EXTERNO;
 module.exports = {
     dialect: 'mysql',
-    host: 'recantodoguerreiro.cf2kmamuy1pj.us-east-2.rds.amazonaws.com',
+    host: 'recantodoguerreiro.cukxuqikhjuw.us-east-1.rds.amazonaws.com',
     username: 'admin',
     password: 'Phmcf#2003',
     database: 'recantodoguerreiro',
