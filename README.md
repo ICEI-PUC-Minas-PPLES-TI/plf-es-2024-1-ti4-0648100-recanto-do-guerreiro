@@ -1,8 +1,8 @@
 # Recanto do Guerreiro
 
-O Recanto do Guerreiro inicialmente adquirido visando se tornar um centro de treinamento de combate a incêndios, viu seu propósito evoluir ao longo do tempo. Amigos e familiares do proprietário começaram a solicitar o local para realização de cerimônias, gradualmente transformando o foco do local para a realização de eventos.
+O Recanto do Guerreiro, um local inicialmente adquirido para ser utilizado como um centro de treinamento de combate a incêndios, viu seu propósito evoluir ao longo do tempo. Amigos e familiares do proprietário começaram a solicitar o local para a realização de cerimônias, gradualmente transformando o seu foco para a realização de eventos.
 
-Atualmente, toda a gestão administrativo do local é realizada através de uma agenda de papel, no entanto, o aumento constante na demanda por eventos tem tornado esse processo cada vez mais suscetível a erros. Sendo assim, o objetivo do projeto é desenvolver um sistema visando otimizar a gestão dos processos da empresa, dessa forma, ajudando o Recanto do Guerreiro em sua jornada de crescimento.
+Atualmente, toda a gestão administrativo do Recanto do Guerreiro é realizada por meio de uma agenda de papel, no entanto, o aumento constante na demanda por eventos tem tornado esse processo cada vez mais suscetível a erros. Sendo assim, o objetivo do projeto é desenvolver um sistema visando otimizar a gestão dos processos da empresa, dessa forma, ajudando o Recanto do Guerreiro em sua jornada de crescimento.
 
 ## Alunos integrantes da equipe
 
@@ -42,4 +42,4 @@ Para poder utilizar o sistema, deve abrir a IDE do VSCode, após isso acessar a 
 
 5 - Quando houver mais cadastros, o administrador poderá navegar pelas páginas do sistema.
 
-6 - Ao terminar a utilização do sistema, só clicar no botão sair e encerrar a seção
+6 - Ao terminar a utilização do sistema, só clicar no botão sair e encerrar a seção.
