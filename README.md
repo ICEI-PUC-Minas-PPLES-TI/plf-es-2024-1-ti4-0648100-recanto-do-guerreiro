@@ -2,7 +2,7 @@
 
 O Recanto do Guerreiro inicialmente adquirido visando se tornar um centro de treinamento de combate a incêndios, viu seu propósito evoluir ao longo do tempo. Amigos e familiares do proprietário começaram a solicitar o local para realização de cerimônias, gradualmente transformando o foco do local para a realização de eventos.
 
-Atualmente, toda a gestão administrativo do local é realizado através de uma agenda de papel, no entanto, o aumento constante na demanda por eventos tem tornado esse processo cada vez mais suscetível a erros. Sendo assim, o objetivo do projeto desenvolver um sistema visando otimizar a gestão dos processos da empresa, dessa forma, ajudando o Recanto do Guerreiro em sua jornada de crescimento.
+Atualmente, toda a gestão administrativo do local é realizada através de uma agenda de papel, no entanto, o aumento constante na demanda por eventos tem tornado esse processo cada vez mais suscetível a erros. Sendo assim, o objetivo do projeto é desenvolver um sistema visando otimizar a gestão dos processos da empresa, dessa forma, ajudando o Recanto do Guerreiro em sua jornada de crescimento.
 
 ## Alunos integrantes da equipe
 
