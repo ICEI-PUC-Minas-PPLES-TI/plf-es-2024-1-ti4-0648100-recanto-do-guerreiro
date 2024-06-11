@@ -26,8 +26,20 @@ Atualmente, toda a gestão administrativo do local é realizado através de uma 
 - Node.js
   
 ### Banco de Dados
-- MySQL
+- MySQL - AWS
 
 ## Instruções de utilização
 
-[Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.]
+Para poder utilizar o sistema, deve abrir a IDE do VSCode, após isso acessar a pasta cd Codigo/server pelo terminal, realizar a execução do comando npm install logo depois node index.js, para finalizar aperte Go Live.
+
+1 - Ao entrar no sistema, o administrador deverá realizar o login com as informações fornecidas a ele.
+
+2 - Após realizar o login, o administrador deverá primeiramente inserir um cliente pois não pode estar vazio.
+
+3 - Próximo passo, o administrador deverá criar reserva.
+
+4 - Próximo passo, caso tenha cliente e reserva cadastrado, o administrador poderá gerenciar a reserva.
+
+5 - Quando houver mais cadastros, o administrador poderá navegar pelas páginas do sistema.
+
+6 - Ao terminar a utilização do sistema, só clicar no botão sair e encerrar a seção
