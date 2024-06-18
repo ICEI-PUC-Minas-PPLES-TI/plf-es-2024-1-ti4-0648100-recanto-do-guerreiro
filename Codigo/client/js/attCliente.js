@@ -9,7 +9,7 @@ window.onload = async function getCliente() {
         const urlParams = new URLSearchParams(window.location.search);
         const id = urlParams.get("id");
         const dadosBrutos = await fetch(
-            `http://localhost:8000/filterIdCliente/${id}`, { headers }
+            `http://54.224.181.58:8000/filterIdCliente/${id}`, { headers }
         );
         const cliente = await dadosBrutos.json();
 
@@ -57,7 +57,7 @@ async function putCliente(e) {
         }
 
         const response = await fetch(
-            `http://localhost:8000/clientePut/${clienteid}`, {
+            `http://54.224.181.58:8000/clientePut/${clienteid}`, {
                 method: "PUT",
                 headers,
                 body: JSON.stringify(body),

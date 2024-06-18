@@ -12,7 +12,7 @@ async function addReserva(e) {
     };
 
     // Se a data não existir, prossiga com a criação da reserva
-    const createReservaResponse = await fetch("http://localhost:8000/reserva", {
+    const createReservaResponse = await fetch("http://54.224.181.58:8000/reserva", {
         method: "POST",
         headers,
         body: JSON.stringify({
@@ -62,7 +62,7 @@ async function displayWorkshops() {
     };
 
     try {
-        const response = await fetch("http://localhost:8000/reserva", { headers });
+        const response = await fetch("http://54.224.181.58:8000/reserva", { headers });
         const workshops = await response.json();
 
         if (workshops.length === 0) {
@@ -73,7 +73,7 @@ async function displayWorkshops() {
             // Obter detalhes do cliente
             console.log('Fetching client with ID:', workshop.idCliente);
             const clienteResponse = await fetch(
-                `http://localhost:8000/filterIdCliente/${workshop.idCliente}`, { headers }
+                `http://54.224.181.58:8000/filterIdCliente/${workshop.idCliente}`, { headers }
             );
             console.log('Client response:', clienteResponse);
 
@@ -139,6 +139,7 @@ async function displayWorkshops() {
         console.error("Error fetching workshops:", error);
     }
 }
+
 function fecharModal() {
     const modal = document.getElementById("modalConfirmacao");
     modal.style.display = "none";
@@ -153,7 +154,7 @@ async function populateClienteSelect() {
     };
 
     try {
-        const response = await fetch("http://localhost:8000/cliente", { headers });
+        const response = await fetch("http://54.224.181.58:8000/cliente", { headers });
         const clientes = await response.json();
         const clienteSelect = document.getElementById("idCliente");
 
@@ -176,13 +177,13 @@ async function deletereserva(index) {
 
     // Quando o usuário clica no botão de confirmar
     const btnConfirmar = document.getElementById("btnConfirmarExclusao");
-    btnConfirmar.onclick = async () => {
+    btnConfirmar.onclick = async() => {
         const token = sessionStorage.getItem("token");
         const headers = {
             "Content-Type": "application/json",
             Authorization: token,
         };
-        const response = await fetch(`http://localhost:8000/reserva/${index}`, {
+        const response = await fetch(`http://54.224.181.58:8000/reserva/${index}`, {
             method: "DELETE",
             headers,
         });
@@ -233,7 +234,7 @@ async function visualizarReservas() {
             Authorization: token,
         }
 
-        const response = await fetch("http://localhost:8000/reserva", { headers, });
+        const response = await fetch("http://54.224.181.58:8000/reserva", { headers, });
         if (!response.ok) {
             throw new Error("Erro ao obter Reservas");
         }

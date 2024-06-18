@@ -4,7 +4,7 @@
 
 const sequelize = new Sequelize({
     dialect: "mysql",
-    host: "localhost",
+    host: "54.224.181.58",
     username: "root",
     password: "Phmcf#2003",
 });*/
@@ -26,7 +26,7 @@ createDatabase();*/
 
 /*module.exports = {
     dialect: "mysql",
-    host: "localhost",
+    host: "54.224.181.58",
     username: "root",
     password: "Phmcf#2003",
     database: "recantodoguerreiro",
