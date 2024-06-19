@@ -8,7 +8,7 @@ async function addCliente(e) {
     };
     e.preventDefault();
     try {
-        const response = await fetch("http://54.224.181.58:8000/cliente", {
+        const response = await fetch("http://localhost:8000/cliente", {
             method: "POST",
             headers,
             body: JSON.stringify({
@@ -54,7 +54,7 @@ async function displayWorkshops() {
         "Content-Type": "application/json",
         Authorization: token,
     };
-    let dadoBruto = await fetch("http://54.224.181.58:8000/cliente", { headers });
+    let dadoBruto = await fetch("http://localhost:8000/cliente", { headers });
     let workshops = await dadoBruto.json();
 
     if (workshops.length === 0) {
@@ -120,7 +120,7 @@ async function deletecliente(index) {
             "Content-Type": "application/json",
             Authorization: token,
         };
-        const response = await fetch(`http://54.224.181.58:8000/cliente/${index}`, {
+        const response = await fetch(`http://localhost:8000/cliente/${index}`, {
             method: "DELETE",
             headers,
         });
@@ -158,7 +158,7 @@ async function visualizarClientes() {
             Authorization: token,
         }
 
-        const response = await fetch("http://54.224.181.58:8000/cliente", { headers, });
+        const response = await fetch("http://localhost:8000/cliente", { headers, });
         if (!response.ok) {
             throw new Error("Erro ao obter clientes");
         }

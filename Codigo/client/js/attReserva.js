@@ -9,7 +9,7 @@ window.onload = async function getReserva() {
         const urlParams = new URLSearchParams(window.location.search);
         const id = urlParams.get("id");
         const dadosBrutos = await fetch(
-            `http://54.224.181.58:8000/filterIdReserva/${id}`, { headers }
+            `http://localhost:8000/filterIdReserva/${id}`, { headers }
         );
         const reserva = await dadosBrutos.json();
 
@@ -65,7 +65,7 @@ async function putReserva(e) {
         }
 
         const response = await fetch(
-            `http://54.224.181.58:8000/reservaPut/${reservaid}`, {
+            `http://localhost:8000/reservaPut/${reservaid}`, {
                 method: "PUT",
                 headers,
                 body: JSON.stringify(body),

@@ -9,7 +9,7 @@ window.onload = async function getGestao() {
         const urlParams = new URLSearchParams(window.location.search);
         const id = urlParams.get("id");
         const dadosBrutos = await fetch(
-            `http://54.224.181.58:8000/filterIdGestao/${id}`, { headers }
+            `http://localhost:8000/filterIdGestao/${id}`, { headers }
         );
         const gestao = await dadosBrutos.json();
 
@@ -50,7 +50,7 @@ async function putGestao(e) {
         }
 
         const response = await fetch(
-            `http://54.224.181.58:8000/gestaoPut/${gestaoid}`, {
+            `http://localhost:8000/gestaoPut/${gestaoid}`, {
                 method: "PUT",
                 headers,
                 body: JSON.stringify(body),

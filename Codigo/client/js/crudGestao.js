@@ -8,7 +8,7 @@ async function addGestao(e) {
     };
     e.preventDefault();
     try {
-        const response = await fetch("http://54.224.181.58:8000/gestao", {
+        const response = await fetch("http://localhost:8000/gestao", {
             method: "POST",
             headers,
             body: JSON.stringify({
@@ -52,7 +52,7 @@ async function displayWorkshops() {
         "Content-Type": "application/json",
         Authorization: token,
     };
-    let dadoBruto = await fetch("http://54.224.181.58:8000/gestao", { headers });
+    let dadoBruto = await fetch("http://localhost:8000/gestao", { headers });
     let workshops = await dadoBruto.json();
 
     if (workshops.length === 0) {
@@ -62,13 +62,13 @@ async function displayWorkshops() {
     workshops.forEach(async(workshop) => {
         // Obter detalhes do cliente;
         let clienteResponse = await fetch(
-            `http://54.224.181.58:8000/filterIdCliente/${workshop.idCliente}`, { headers }
+            `http://localhost:8000/filterIdCliente/${workshop.idCliente}`, { headers }
         );
         let cliente = await clienteResponse.json();
 
         // Obter detalhes da Reserva;
         let reservaResponse = await fetch(
-            `http://54.224.181.58:8000/filterIdReserva/${workshop.idReserva}`, { headers }
+            `http://localhost:8000/filterIdReserva/${workshop.idReserva}`, { headers }
         );
         let reserva = await reservaResponse.json();
 
@@ -121,7 +121,7 @@ async function deletegestao(index) {
             "Content-Type": "application/json",
             Authorization: token,
         };
-        const response = await fetch(`http://54.224.181.58:8000/gestao/${index}`, {
+        const response = await fetch(`http://localhost:8000/gestao/${index}`, {
             method: "DELETE",
             headers,
         });
@@ -160,7 +160,7 @@ async function populateClienteSelect() {
     };
 
     try {
-        const response = await fetch("http://54.224.181.58:8000/cliente", { headers });
+        const response = await fetch("http://localhost:8000/cliente", { headers });
         const clientes = await response.json();
         const clienteSelect = document.getElementById("idCliente");
 
@@ -185,7 +185,7 @@ async function populateReservaSelect() {
     };
 
     try {
-        const response = await fetch("http://54.224.181.58:8000/reserva", { headers });
+        const response = await fetch("http://localhost:8000/reserva", { headers });
         const reservas = await response.json();
         const reservaSelect = document.getElementById("idReserva");
 
@@ -215,7 +215,7 @@ async function visualizarGestao() {
             Authorization: token,
         }
 
-        const response = await fetch("http://54.224.181.58:8000/gestao", { headers, });
+        const response = await fetch("http://localhost:8000/gestao", { headers, });
         if (!response.ok) {
             throw new Error("Erro ao obter gestões");
         }

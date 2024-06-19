@@ -11,4 +11,4 @@ router.get("/filterIdUser/:id", user.filterIdUser);
 
 module.exports = router;
 
-// http://54.224.181.58:8000/user
+// http://localhost:8000/user
