@@ -8,13 +8,7 @@ Este diretório mantém os artefatos do projeto.
 
 [Ata reunião 2](atas/Ata_Reuniao_2.pdf) - Ata reunião 2
 
-[Ata reunião 3](atas/Ata_Reuniao_3.pdf) - Ata reunião 3
-
-[Ata reunião 4](atas/Ata_Reuniao_4.pdf) - Ata reunião 4
-
-[Ata reunião 5](atas/Ata_Reuniao_5.pdf) - Ata reunião 5
-
-[Apresentação sprint 1](ApresentacaoTIS4-Sprint1.pdf) - Apresentação sprint 1.
+[Apresentação sprint 1](../Divulgacao/Apresentacao/ApresentacaoTIS4-Sprint1.pdf) - Apresentação sprint 1.
 
 [Termo de Confidencialidade](Termo_de_Confidencialidade.pdf) - Termo de Confidencialidade
 
