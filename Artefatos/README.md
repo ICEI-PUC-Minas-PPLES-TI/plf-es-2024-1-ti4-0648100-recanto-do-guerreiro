@@ -28,7 +28,7 @@ Este diretório mantém os artefatos do projeto.
 
 [Apresentação Final](../Divulgacao/Apresentacao/apresentacaoFinal.pdf) - Apresentação final
 
-[Video](../Divulgacao/Video/video.mp4) - Video apresetação
+[Video](../Divulgacao/Video/ApresentacaoTI4.mp4) - Video apresetação
 
 Liste os artefatos produzidos, com suas localizações e descrição do conteúdo.
 
