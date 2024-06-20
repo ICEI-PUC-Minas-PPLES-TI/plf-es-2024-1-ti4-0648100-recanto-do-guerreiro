@@ -10,19 +10,19 @@ Este diretório mantém os artefatos do projeto.
 
 [Apresentação sprint 1](../Divulgacao/Apresentacao/ApresentacaoTIS4-Sprint1.pdf) - Apresentação sprint 1.
 
-[Termo de Confidencialidade](Termo_de_Confidencialidade.pdf) - Termo de Confidencialidade
+[Termo de Confidencialidade](atas/Termo_de_Confidencialidade.pdf) - Termo de Confidencialidade
 
-[Requisitos](TIS4-TemplateRequistos.pdf) - Requisitos
+[Requisitos](Modelagem/TIS4-TemplateRequistos.pdf) - Requisitos
 
 [Telas](Telas/) - Prototipo telas
 
-[Diagrama caso de uso](Diagrama_CasoUso_Recanto_do_Guerreiro.png) - Diagrama caso de uso
+[Diagrama caso de uso](Modelagem/Diagrama_CasoUso_Recanto_do_Guerreiro.png) - Diagrama caso de uso
 
-[Diagrama ER](Diagrama_ER_Novo.png) - Diagrama ER
+[Diagrama ER](Modelagem/Diagrama_ER_Novo.png) - Diagrama ER
 
-[Diagrama Logico](Diagrama_Logico.png) - Diagrama Logico
+[Diagrama Logico](Modelagem/Diagrama_Logico.png) - Diagrama Logico
 
-[Diagrama de Classes](Diagrama_Classes_Recanto_Guerreiro.png) - Diagrama de Classes
+[Diagrama de Classes](Modelagem/Diagrama_Classes_Recanto_Guerreiro.png) - Diagrama de Classes
 
 [Documento Overleaf](../Documentacao/Recanto_do_Guerreiro_Overleaf.pdf) - Documento latex(Overleaf)
 
