@@ -12,6 +12,8 @@ Este diretório mantém os artefatos do projeto.
 
 [Termo de Confidencialidade](atas/Termo_de_Confidencialidade.pdf) - Termo de Confidencialidade
 
+[Modelo Proex](ModeloProex.pdf) - Modelo da Proex
+
 [Requisitos](Modelagem/TIS4-TemplateRequistos.pdf) - Requisitos
 
 [Telas](Telas/) - Prototipo telas
