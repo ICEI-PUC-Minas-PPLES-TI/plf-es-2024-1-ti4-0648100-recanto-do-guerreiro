@@ -78,6 +78,7 @@ async function displayWorkshops() {
             <td>${reserva.titulo}</td>      
             <td>${workshop.custos}</td>
             <td>${workshop.descricao}</td>
+            <td>${workshop.descricao}</td>
             <td>
             <div class="btn-container">
             <a class="btn btn-editar" href="../html/attGestao.html?id=${workshop.id}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square icon-margin" viewBox="0 0 16 16">
