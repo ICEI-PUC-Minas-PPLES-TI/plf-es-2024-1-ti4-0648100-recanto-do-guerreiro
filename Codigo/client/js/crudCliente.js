@@ -66,8 +66,7 @@ async function displayWorkshops() {
             <td>${workshop.nome}</td>
             <td>${workshop.telefone}</td>
             <td>${workshop.email}</td>
-            <td>${workshop.logradouro}</td>
-            <td>${workshop.complemento}</td> 
+            <td>${workshop.bairro}</td>
             <td>${workshop.bairro}</td>
             <td>
     <div class="btn-container">
