@@ -26,7 +26,7 @@ Este diretório mantém os artefatos do projeto.
 
 [Documento Overleaf](../Documentacao/Recanto_do_Guerreiro_Overleaf.pdf) - Documento latex(Overleaf)
 
-[Apresentação Final](../Divulgacao/Apresentacao/apresentacaoFinal.pdf) - Apresentação final
+[Apresentação Final](../Divulgacao/Apresentacao/ApresentacaoTIS4-Final.pdf) - Apresentação final
 
 [Resumo Mostra](../Divulgacao/Resumo_Final_Mostra.pdf) - Resumo da mostra
 
