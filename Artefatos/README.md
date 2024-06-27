@@ -8,8 +8,6 @@ Este diretório mantém os artefatos do projeto.
 
 [Ata reunião 2](atas/Ata_Reuniao_2.pdf) - Ata reunião 2
 
-[Apresentação sprint 1](../Divulgacao/Apresentacao/ApresentacaoTIS4-Sprint1.pdf) - Apresentação sprint 1.
-
 [Termo de Confidencialidade](atas/Termo_de_Confidencialidade.pdf) - Termo de Confidencialidade
 
 [Requisitos](Modelagem/TIS4-TemplateRequistos.pdf) - Requisitos
@@ -23,12 +21,3 @@ Este diretório mantém os artefatos do projeto.
 [Diagrama Logico](Modelagem/Diagrama_Logico.png) - Diagrama Logico
 
 [Diagrama de Classes](Modelagem/Diagrama_Classes_Recanto_Guerreiro.png) - Diagrama de Classes
-
-[Documento Overleaf](../Documentacao/Recanto_do_Guerreiro_Overleaf.pdf) - Documento latex(Overleaf)
-
-[Apresentação Final](../Divulgacao/Apresentacao/ApresentacaoTIS4-Final.pdf) - Apresentação final
-
-[Resumo Mostra](../Divulgacao/Resumo_Final_Mostra.pdf) - Resumo da mostra
-
-[Video](../Divulgacao/Video/ApresentacaoTI4.mp4) - Video apresetação
-
